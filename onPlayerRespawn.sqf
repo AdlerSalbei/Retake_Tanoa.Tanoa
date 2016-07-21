@@ -1,1 +1,1 @@
-[player] execVM "loadouts\_client.sqf";;
+[player] execVM "loadouts\_client.sqf";
