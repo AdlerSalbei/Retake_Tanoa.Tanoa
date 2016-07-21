@@ -1,0 +1,4 @@
+Links:
+
+Patrol:
+https://dev.withsix.com/docs/cba/files/ai/fnc_taskPatrol-sqf.html
