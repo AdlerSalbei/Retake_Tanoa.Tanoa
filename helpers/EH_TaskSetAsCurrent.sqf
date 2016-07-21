@@ -34,6 +34,6 @@ diag_log format ["EH: %1 = Index", _index];
  if (_index != -1) then {
 	diag_log format ["EH: %1 = count, %2 = maxTasks, %3 = Index", _count, _maxTasks, _index];
 	// Check if the max amount of tasks have been triggert
-	if (_count > _maxTasks) then {runningTasksArray deleteAt 0};
+	if (_count > _maxTasks) then {runningTasksArray deleteAt 0;};
 	[_task] execVM "server\Missons.sqf";
  };
