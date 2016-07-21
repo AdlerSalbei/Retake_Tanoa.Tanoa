@@ -230,7 +230,7 @@ _i = 0;
   _x setVariable ["myMuzzleItem", MUZZLEITEMS select _i, true];
   _x setVariable ["myScope", SCOPES select _i, true];
   _x setVariable ["myMagazine", CHOSENMAGAZINES select _i, true];
-
+  _x setVariable ["myRole", _role];
 } forEach allPlayers;
 
 WEAPONSETUPDONE = true;
