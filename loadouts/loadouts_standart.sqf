@@ -103,7 +103,7 @@ gear_basic = {
 	_gimmeMagazin = player getVariable ["myMagazine", ""];
 	_gimmeRole = player getVariable ["myRole","Rifleman"];
 
-	diag_log format ["Weapon: %1 , Muzzle: %2 , Scope: %3 , Magazin: %4", _gimmeWeapon, _gimmeMuzzleItem, _gimmeScope, _gimmeMagazin];
+	diag_log format ["Role: %5, Weapon: %1 , Muzzle: %2 , Scope: %3 , Magazin: %4", _gimmeWeapon, _gimmeMuzzleItem, _gimmeScope, _gimmeMagazin, _gimmeRole];
 
 	switch _gimmeRole do {
 		case "Rifleman": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
