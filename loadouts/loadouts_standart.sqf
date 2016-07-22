@@ -74,16 +74,29 @@ randomHeadgear = [
 	"rhsusf_lwh_helmet_marpatwd"
 ];
 
-_gearAA = {
+gearAA = {
 	diag_log format ["Yay, you made it here, %1", _gimmeRole];
+	_myAALauncher = selectRandom ["rhs_weapon_igla", "rhs_weapon_fim92"];
+	if _myAALauncher == "rhs_weapon_igla" then {} else {};
+	this addWeapon _myAALauncher;
 };
 
-_gearAT = {
+gearAT = {
 	diag_log format ["Yay, you made it here, %1", _gimmeRole];
+	_myATLauncher = selectRandom ["rhs_weapon_rpg26", "rhs_weapon_rpg7", "rhs_weapon_M136"];
+	switch _myATLauncher do {
+		case "rhs_weapon_rpg7": {[this, "rhs_rpg7_PG7VL_mag", 3] call addMagazinesToBackpack;};
+		case "rhs_weapon_rpg26": {[this, "rhs_rpg7_PG7VL_mag", 3] call addMagazinesToBackpack;};
+		case "rhs_weapon_M136": {[this, "rhs_rpg7_PG7VL_mag", 3] call addMagazinesToBackpack;};
+	};
+	this addWeapon _myATLauncher;
 };
 
-_gearMedic = {
+gearMedic = {
 	diag_log format ["Yay, you made it here, %1", _gimmeRole];
+	[this, "ACE_fieldDressing", 40] call addItemsToBackpack;
+	[this, "ACE_Morphine", 30] call addItemsToBackpack;
+	[this, "ACE_epinephrine", 20] call addItemsToBackpack;
 };
 
 gear_basic = {
@@ -104,18 +117,6 @@ gear_basic = {
 	_gimmeRole = player getVariable ["myRole","Rifleman"];
 
 	diag_log format ["Role: %5, Weapon: %1 , Muzzle: %2 , Scope: %3 , Magazin: %4", _gimmeWeapon, _gimmeMuzzleItem, _gimmeScope, _gimmeMagazin, _gimmeRole];
-
-	switch _gimmeRole do {
-		case "Rifleman": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "TL": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "SQL": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "Medic": {[] call _gearMedic};
-		case "Sniper": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "MG": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "AT": {[] call _gearAT};
-		case "AA": {[] call _gearAA};
-		default {diag_log format ["Has no Class selected"]};
-	};
 	
 	this forceAddUniform(randomUniforms call BIS_fnc_selectRandom);
 	this addVest(randomVest call BIS_fnc_selectRandom);
@@ -128,12 +129,24 @@ gear_basic = {
 	[this, _gimmeMagazin, 5] call addMagazinesToBackpack;
 
 	this addWeapon _gimmeWeapon;
-	this addPrimaryWeaponItem _gimmeMuzzleItem;
-	this addPrimaryWeaponItem _gimmeScope;
-
+	if _gimmeMuzzleItem != "EMPTY" then {this addPrimaryWeaponItem _gimmeMuzzleItem;};
+	if _gimmeMuzzleItem != "EMPTY" then {this addPrimaryWeaponItem _gimmeScope;};
+	
 	this linkItem "ItemMap";
 	this linkItem "ItemCompass";
 	this linkItem "ItemWatch";
 	this linkItem "ItemGPS";
 	this linkItem "tf_anprc148jem";
+	
+	switch _gimmeRole do {
+		case "Rifleman": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "TL": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "SQL": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "Medic": {[] call gearMedic};
+		case "Sniper": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "MG": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "AT": {[] call gearAT};
+		case "AA": {[] call gearAA};
+		default {diag_log format ["Has no Class selected"]};
+	};
 };
