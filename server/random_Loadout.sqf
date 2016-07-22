@@ -28,7 +28,8 @@ _weaponSniper = [
 	"rhs_weap_svdp",
 	"rhs_weap_svdp_npz",
 	"rhs_weap_svds",
-	"rhs_weap_svds_npz"
+	"rhs_weap_svds_npz",
+	"rhs_weapon_XM2010"
 ];
 
 _weaponMG = [
@@ -120,8 +121,6 @@ _opticSniper = [
   ];
 
 _role = selectRandom _classPlayer; //Defines a role for the
-MUZZLEATTACHMENTPROB = 100; //Wahrscheinlichkeit, ein muzzle attachment zu haben.
-SCOPESPROB = 100; //Wahrscheinlichkeit, ein scope zu haben
 _weapon = "";
 _magazine = "";
 _scope = "";
@@ -131,16 +130,16 @@ MUZZLEITEMS = [];
 SCOPES = [];
 CHOSENMAGAZINES = [];
 
-//Waffen aussuchen ===================================================================
+//Waffen aussuchen, Chancen setzen ===============================================================
 switch _role do {
-	case "Rifleman": {_weapon = selectRandom _weaponStandart};
-	case "TL": {_weapon = selectRandom _weaponStandart};
-	case "SQL": {_weapon = selectRandom _weaponStandart};
-	case "Medic": {_weapon = selectRandom _weaponStandart};
-	case "Sniper": {_weapon = selectRandom _weaponStandart};
-	case "MG": {_weapon = selectRandom _weaponStandart};
-	case "AT": {_weapon = selectRandom _weaponStandart};
-	case "AA": {_weapon = selectRandom _weaponStandart};
+	case "Rifleman": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 50; MUZZLEATTACHMENTPROB = 90;};
+	case "TL": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 50; MUZZLEATTACHMENTPROB = 50;};
+	case "SQL": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 60; MUZZLEATTACHMENTPROB = 60;};
+	case "Medic": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 30; MUZZLEATTACHMENTPROB = 30;};
+	case "Sniper": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 100; MUZZLEATTACHMENTPROB = 50;};
+	case "MG": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 10; MUZZLEATTACHMENTPROB = 60;};
+	case "AT": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 20; MUZZLEATTACHMENTPROB = 20;};
+	case "AA": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 20; MUZZLEATTACHMENTPROB = 20;};
 	default {diag_log format ["Has no Class selected"]};
 };
 
