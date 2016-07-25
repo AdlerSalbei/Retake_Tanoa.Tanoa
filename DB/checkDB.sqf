@@ -13,5 +13,5 @@
 //		removeBackpack this;
 		// [_unit] execVM "loadouts\getGearFromDB.sqf";
 	//} else {
-		player setDammage 1;
+		forceRespawn player;
 	// }
