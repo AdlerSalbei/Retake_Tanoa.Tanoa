@@ -9,7 +9,6 @@ loadScreen = "pic\gruppe-adler.paa";
 respawn = 3;
 respawnDelay = 30;	//seconds
 respawnTemplatesWest[] = {"MenuPosition"};
-respawnOnStart = 1;	//Respawn on Start
 wreckLimit = 5;
 wreckRemovalMinTime = 30; //seconds
 wreckRemovalMaxTime = 240; //seconds
