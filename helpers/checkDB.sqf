@@ -11,7 +11,7 @@
 //		removeUniform this;
 //		removeAllAssignedItems this;
 //		removeBackpack this;
-		// [_unit] call getGearFromDB;
+		// [_unit] execVM "loadouts\getGearFromDB.sqf";
 	//} else {
 		player setDammage 1;
 	// }
