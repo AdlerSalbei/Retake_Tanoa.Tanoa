@@ -16,7 +16,7 @@ if (local _unit) then {
 	// if (_uid == _uidDatabase) then {
 		// _playerSate = ;
 		//if (_playerSate != 0) then {
-		
+			// [_unit] call getGearFromDatabase;
 		// } else {
 		//	[_unit] call gear_basic;
 		//	diag_log format ["loadouts processed for _unit %1, becouse he died!",typeOf _unit];
