@@ -30,3 +30,6 @@ taskSelector = {
 	default {diag_log format ["Has no Class selected"]};
 	};
 };
+
+SPAWNSETUPDONE = true;
+publicVariable "SPAWNSETUPDONE";
