@@ -98,6 +98,9 @@ gear_basic = {
 	_mySprayPaint = selectRandom ["ACE_SpraypaintBlack", "ACE_SpraypaintBlue", "ACE_SpraypaintGreen", "ACE_SpraypaintRed"];
 	
 	[this, "ACE_fieldDressing", 10] call addItemsToUniform;
+	[this, "ACE_elasticBandage", 10] call addMagazinesToVest;
+	[this, "ACE_quikclot", 10] call addMagazinesToVest;
+	[this, "ACE_packingBandage", 10] call addItemsToUniform;
 	[this, "ACE_Morphine", 5] call addItemsToUniform;
 	[this, "ACE_epinephrine", 1] call addItemsToUniform;
 	[this, "ACE_salineIV_250", 1] call addMagazinesToBackpack;
