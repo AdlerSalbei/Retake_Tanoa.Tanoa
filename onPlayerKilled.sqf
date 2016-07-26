@@ -1,2 +1,3 @@
-// setting the health in the database to 0
-_this setVariable [""ace_medical_medicClass"",_value,false];
+_unit = _this select 0;
+
+_unit setVariable ["ace_medical_medicClass",0,true];
