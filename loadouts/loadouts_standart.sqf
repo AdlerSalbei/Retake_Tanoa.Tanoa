@@ -124,13 +124,13 @@ gear_basic = {
 
 	switch _gimmeRole do {
 		case "Rifleman": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "Engineer": {[] call gearEngineer};
-		case "TL": {[] call gearTL};
-		case "Medic": {[] call gearMedic};
-		case "Sniper": {[] call gearSniper};
+		case "Engineer": {[this] call gearEngineer};
+		case "TL": {[this] call gearTL};
+		case "Medic": {[this] call gearMedic};
+		case "Sniper": {[this] call gearSniper};
 		case "MG": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "AT": {[] call gearAT};
-		case "AA": {[] call gearAA};
+		case "AT": {[this] call gearAT};
+		case "AA": {[this] call gearAA};
 		default {diag_log format ["Has no Class selected"]};
 	};
 };
