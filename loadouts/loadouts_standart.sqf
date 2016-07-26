@@ -74,76 +74,60 @@ randomHeadgear = [
 	"rhsusf_lwh_helmet_marpatwd"
 ];
 
-gearAA = {
-	diag_log format ["Yay, you made it here, %1", _gimmeRole];
-	_myAALauncher = selectRandom ["rhs_weapon_igla", "rhs_weapon_fim92"];
-	if _myAALauncher == "rhs_weapon_igla" then {} else {};
-	this addWeapon _myAALauncher;
-};
-
-gearAT = {
-	diag_log format ["Yay, you made it here, %1", _gimmeRole];
-	_myATLauncher = selectRandom ["rhs_weapon_rpg26", "rhs_weapon_rpg7", "rhs_weapon_M136"];
-	switch _myATLauncher do {
-		case "rhs_weapon_rpg7": {[this, "rhs_rpg7_PG7VL_mag", 3] call addMagazinesToBackpack;};
-		case "rhs_weapon_rpg26": {[this, "rhs_rpg7_PG7VL_mag", 3] call addMagazinesToBackpack;};
-		case "rhs_weapon_M136": {[this, "rhs_rpg7_PG7VL_mag", 3] call addMagazinesToBackpack;};
-	};
-	this addWeapon _myATLauncher;
-};
-
-gearMedic = {
-	diag_log format ["Yay, you made it here, %1", _gimmeRole];
-	[this, "ACE_fieldDressing", 40] call addItemsToBackpack;
-	[this, "ACE_Morphine", 30] call addItemsToBackpack;
-	[this, "ACE_epinephrine", 20] call addItemsToBackpack;
-};
-
 gear_basic = {
 	this = _this select 0;
-	
-	removeAllWeapons this;
-	removeGoggles this;
-	removeHeadgear this;
-	removeVest this;
-	removeUniform this;
-	removeAllAssignedItems this;
-	removeBackpack this;
-	
+
 	_gimmeWeapon = player getVariable ["myWeapon", ""];
 	_gimmeMuzzleItem = player getVariable ["myMuzzleItem", ""];
 	_gimmeScope = player getVariable ["myScope", ""];
 	_gimmeMagazin = player getVariable ["myMagazine", ""];
-	_gimmeRole = player getVariable ["myRole","Rifleman"];
+	_gimmeRole = player getVariable ["myRole",""];
 
 	diag_log format ["Role: %5, Weapon: %1 , Muzzle: %2 , Scope: %3 , Magazin: %4", _gimmeWeapon, _gimmeMuzzleItem, _gimmeScope, _gimmeMagazin, _gimmeRole];
-	
+
 	this forceAddUniform(randomUniforms call BIS_fnc_selectRandom);
 	this addVest(randomVest call BIS_fnc_selectRandom);
-	this addBackpack(randomBackpack call BIS_fnc_selectRandom);
+	if (_gimmeRole == "TL") then {
+		this addBackpack "tf_rt1523g_big_bwmod_tropen";
+	} else {
+		this addBackpack(randomBackpack call BIS_fnc_selectRandom);
+	};
+	
 	this addHeadgear(randomHeadgear call BIS_fnc_selectRandom);
-
+	
+	_mySprayPaint = selectRandom ["ACE_SpraypaintBlack", "ACE_SpraypaintBlue", "ACE_SpraypaintGreen", "ACE_SpraypaintRed"];
+	
 	[this, "ACE_fieldDressing", 10] call addItemsToUniform;
+	[this, "ACE_elasticBandage", 10] call addMagazinesToVest;
+	[this, "ACE_quikclot", 10] call addMagazinesToVest;
+	[this, "ACE_packingBandage", 10] call addItemsToUniform;
 	[this, "ACE_Morphine", 5] call addItemsToUniform;
 	[this, "ACE_epinephrine", 1] call addItemsToUniform;
-	[this, _gimmeMagazin, 5] call addMagazinesToBackpack;
-
+	[this, "ACE_salineIV_250", 1] call addMagazinesToBackpack;
+	[this, _mySprayPaint, 1] call addMagazinesToVest;
+	
+	if (_gimmeRole == "MG") then {
+		[this, _gimmeMagazin, 5] call addMagazinesToBackpack;
+	} else {
+		[this, _gimmeMagazin, 5] call addMagazinesToVest;
+	};
+	
 	this addWeapon _gimmeWeapon;
-	if _gimmeMuzzleItem != "EMPTY" then {this addPrimaryWeaponItem _gimmeMuzzleItem;};
-	if _gimmeMuzzleItem != "EMPTY" then {this addPrimaryWeaponItem _gimmeScope;};
+	if (_gimmeMuzzleItem != "EMPTY") then {this addPrimaryWeaponItem _gimmeMuzzleItem;};
+	if (_gimmeScope != "EMPTY") then {this addPrimaryWeaponItem _gimmeScope;};
 	
 	this linkItem "ItemMap";
 	this linkItem "ItemCompass";
 	this linkItem "ItemWatch";
 	this linkItem "ItemGPS";
 	this linkItem "tf_anprc148jem";
-	
+
 	switch _gimmeRole do {
 		case "Rifleman": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "TL": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "SQL": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "Engineer": {[] call gearEngineer};
+		case "TL": {[] call gearTL};
 		case "Medic": {[] call gearMedic};
-		case "Sniper": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "Sniper": {[] call gearSniper};
 		case "MG": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
 		case "AT": {[] call gearAT};
 		case "AA": {[] call gearAA};

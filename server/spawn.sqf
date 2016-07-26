@@ -1,6 +1,6 @@
 taskID1 = {
 	diag_log format ["Succesfully triggert Task1"];
-	_myRespawn = [west,[2437.18,5693.47,0],"Created on Task1"] call BIS_fnc_addRespawnPosition;
+	_myRespawn = [west,[7223.4692,2.6600001,7024.332],"Created on Task1"] call BIS_fnc_addRespawnPosition;
 };
 
 taskID2 = {

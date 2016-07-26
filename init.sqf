@@ -70,6 +70,6 @@ if (hasInterface) then {
 	runningTasksArray = [];
 	["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 	player addEventHandler ["TaskSetAsCurrent",{[_this] execVM "helpers\EH_TaskSetAsCurrent.sqf"}];
-	[player] execVM "loadouts\_client.sqf"; 
+	[player] execVM "DB\checkDB.sqf";  
 	diag_log format ["setup: loadout %1 initiated",player];	
 };
