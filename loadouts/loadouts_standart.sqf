@@ -121,8 +121,8 @@ gear_basic = {
 
 	switch _gimmeRole do {
 		case "Rifleman": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "Engineer": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "TL": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "Engineer": {[] call gearEngineer};
+		case "TL": {[] call gearTL};
 		case "Medic": {[] call gearMedic};
 		case "Sniper": {[] call gearSniper};
 		case "MG": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
