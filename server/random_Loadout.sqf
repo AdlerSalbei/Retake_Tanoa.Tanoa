@@ -119,8 +119,11 @@ _opticSniper = [
 	"FHQ_optic_LeupoldERT",
 	"FHQ_optic_LeupoldERT_tan"
   ];
-
-_role = selectRandom _classPlayer; //Defines a role for the
+if (player == commander) then {
+	_role = "TL";
+} else {
+	_role = selectRandom _classPlayer; 
+};
 _weapon = "";
 _magazine = "";
 _scope = "";
@@ -133,11 +136,11 @@ CHOSENMAGAZINES = [];
 //Waffen aussuchen, Chancen setzen ===============================================================
 switch _role do {
 	case "Rifleman": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 50; MUZZLEATTACHMENTPROB = 90;};
-	case "TL": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 50; MUZZLEATTACHMENTPROB = 50;};
-	case "SQL": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 60; MUZZLEATTACHMENTPROB = 60;};
+	case "TL": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 70; MUZZLEATTACHMENTPROB = 70;};
+	case "Engineer": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 30; MUZZLEATTACHMENTPROB = 30;};
 	case "Medic": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 30; MUZZLEATTACHMENTPROB = 30;};
 	case "Sniper": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 100; MUZZLEATTACHMENTPROB = 50;};
-	case "MG": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 10; MUZZLEATTACHMENTPROB = 60;};
+	case "MG": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 10; MUZZLEATTACHMENTPROB = 70;};
 	case "AT": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 20; MUZZLEATTACHMENTPROB = 20;};
 	case "AA": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 20; MUZZLEATTACHMENTPROB = 20;};
 	default {diag_log format ["Has no Class selected"]};
