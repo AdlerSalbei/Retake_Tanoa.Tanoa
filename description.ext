@@ -1,3 +1,6 @@
+#include "grad_buymenu\definitions\_defines.hpp"
+#include "grad_buymenu\definitions\_dialogs.hpp"
+
 OnLoadMission = "RetakeTanoa";
 author = "Salbei für Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "RetakeTanoa"; //appears in overview and loading screen
