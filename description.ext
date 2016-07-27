@@ -1,5 +1,5 @@
-#include "grad_buymenu\definitions\_defines.hpp"
-#include "grad_buymenu\definitions\_dialogs.hpp"
+#include "helpers\_defines.hpp"
+#include "helpers\_dialogs.hpp"
 
 OnLoadMission = "RetakeTanoa";
 author = "Salbei für Gruppe Adler";  //appears as author in overview and loading screen
