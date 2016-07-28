@@ -18,6 +18,7 @@ _radioFix = _radioFixArray select 0;
 diag_log format ["Unit: %1, Radio: %2, radioFixArray: %3, RadioFix: %4", _unit, _radio, _radioFixArray, _radioFix];
 _unit setUnitLoadout _gearArray;
 
+_healthArray = [];
 _healthArray = ;	//get health out of DB
 
 for [{_i=0}, {_i<10}, {_i=_i+1}] do
