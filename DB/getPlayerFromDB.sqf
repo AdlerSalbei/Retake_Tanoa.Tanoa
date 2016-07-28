@@ -25,5 +25,6 @@ for [{_i=0}, {_i<10}, {_i=_i+1}] do
 {
 _nameHealth = ((_healthArray select 0) select _i);
 _valueHealth = ((_healthArray select 2) select _i);
-player setHitPointDamage [_nameHealth, _valueHealth];
+_unit setHitPointDamage [_nameHealth, _valueHealth];
+diag_log format ["Unit: %1, Name: %2, Value: %3", _unit, _nameHealth, _valueHealth];
 };
