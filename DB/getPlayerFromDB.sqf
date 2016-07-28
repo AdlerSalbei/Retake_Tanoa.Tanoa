@@ -1,4 +1,13 @@
 _unit = _this select 0;
+
+removeAllWeapons _unit;
+removeGoggles _unit;
+removeHeadgear _unit;
+removeVest _unit;
+removeUniform _unit;
+removeAllAssignedItems _unit;
+removeBackpack _unit;
+
 _gearArray = [];
 _gearArray =      ;	//get the gear out of DB
 
