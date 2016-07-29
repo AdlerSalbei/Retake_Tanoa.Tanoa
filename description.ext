@@ -77,6 +77,21 @@ class Params
 	};
 };
 
+class ACE_Settings {
+    class ace_map_BFT_Interval {
+    value = 2;
+    typeName = "SCALAR";
+	};
+class ace_map_BFT_Enabled {
+    value = 1;
+    typeName = "BOOL";
+	};
+class ace_map_BFT_HideAiGroups {
+    value = 1;
+    typeName = "BOOL";
+	};
+};
+
 class CfgUnitInsignia
 {
 	class grad_command
