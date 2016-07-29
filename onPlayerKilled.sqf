@@ -5,3 +5,6 @@ _handle = execVM "helpers\createDeathCam.sqf";
 waitUntil {scriptdone _handle};
 
 _unit setVariable ["ace_medical_medicClass",0,true];
+
+_uID = getPlayerUID player;
+_health = [[],[],[]];
