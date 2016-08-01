@@ -13,7 +13,7 @@ if (_healthArray == [[],[],[]]) or (_healthArray == []) then {
   _unit setHitPointDamage [_nameHealth, _valueHealth];
   diag_log format ["Unit: %1, Name: %2, Value: %3", _unit, _nameHealth, _valueHealth];
   };
-}
+};
 
 _pos = ;
 _unit setPos _pos;
