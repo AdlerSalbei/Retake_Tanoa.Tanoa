@@ -1,3 +1,6 @@
+#include "helpers\_defines.hpp"
+#include "helpers\_dialogs.hpp"
+
 OnLoadMission = "RetakeTanoa";
 author = "Salbei für Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "RetakeTanoa"; //appears in overview and loading screen
@@ -71,6 +74,21 @@ class Params
 		values[] = {1,2,3,4,5};
 		texts[] = {"1","2","3","4","5"};
 		default = 3;
+	};
+};
+
+class ACE_Settings {
+    class ace_map_BFT_Interval {
+    value = 2;
+    typeName = "SCALAR";
+	};
+class ace_map_BFT_Enabled {
+    value = 1;
+    typeName = "BOOL";
+	};
+class ace_map_BFT_HideAiGroups {
+    value = 1;
+    typeName = "BOOL";
 	};
 };
 

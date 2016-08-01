@@ -131,6 +131,7 @@ gear_basic = {
 		case "MG": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
 		case "AT": {[this] call gearAT};
 		case "AA": {[this] call gearAA};
+		case "Grenadier": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
 		default {diag_log format ["Has no Class selected"]};
 	};
 };
