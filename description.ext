@@ -142,3 +142,18 @@ class CfgUnitInsignia
 		textureVehicle = ""; // Does nothing currently, reserved for future use
 	};
 };
+
+class CfgSounds
+{
+	sounds[] = {march_hell};
+	class march_hell
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "march_hell";
+		// filename, volume, pitch
+		sound[] = {"sounds\march_hell.ogg", 1, 1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = {0, ""};
+	};
+};
+
