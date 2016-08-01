@@ -4,7 +4,7 @@
 OnLoadMission = "RetakeTanoa";
 author = "Salbei für Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "RetakeTanoa"; //appears in overview and loading screen
-onLoadName = "RetakeTanoa"; //mission name for loading screen only
+onLoadName = "Retake Tanoa"; //mission name for loading screen only
 onLoadMissionTime = True;
 disabledAI = 1; //1
 enableDebugConsole = 1;
@@ -14,7 +14,7 @@ respawnDelay = 30;	//seconds
 respawnTemplatesWest[] = {"MenuPosition"};
 wreckLimit = 5;
 wreckRemovalMinTime = 30; //seconds
-wreckRemovalMaxTime = 240; //seconds
+wreckRemovalMaxTime = 180; //seconds
 taskManagement_propagate = 1;
 
 class Header
