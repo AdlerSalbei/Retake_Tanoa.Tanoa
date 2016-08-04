@@ -2,6 +2,7 @@
 _gear = [];
 _gear = getUnitLoadout player;
 _pos = getPos player;
+_dir = getDir player;
 _health = [];
 _health = getAllHitPointsDamage player;
 
@@ -13,6 +14,6 @@ _radioFix = _radioFixArray select 0;
 (_gear select 9) set [2,_radioFix];
 diag_log format ["Unit: %1, Radio: %2, radioFixArray: %3, RadioFix: %4", _unit, _radio, _radioFixArray, _radioFix];
 
-_value = format ["%1_%2_%3", _gear, _health, _pos];
+_value = format ["%1_%2_%3_%4", _gear, _health, _pos, _dir];
 profileNamespace setVariable ["GRAD_Retake_Tanoa", _value];
 saveProfileNamespace;
