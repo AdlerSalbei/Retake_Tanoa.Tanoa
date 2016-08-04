@@ -1,7 +1,13 @@
 _unit = _this select 0;
-
+_gearArray = [];
 _healthArray = [];
-_healthArray = ;	//get health out of DB
+
+_value = profileNamespace getVariable ["GRAD_Retake_Tanoa"];
+
+if (_vlaue != "any") then {
+_value params ["_gearArray", "_healthArray", "_pos"];
+
+_unit setPos _pos;
 
 if (_healthArray == [[],[],[]]) or (_healthArray == []) then {
   forceRespawn player;
@@ -15,9 +21,6 @@ if (_healthArray == [[],[],[]]) or (_healthArray == []) then {
   };
 };
 
-_pos = ;
-_unit setPos _pos;
-
 removeAllWeapons _unit;
 removeGoggles _unit;
 removeHeadgear _unit;
@@ -26,13 +29,7 @@ removeUniform _unit;
 removeAllAssignedItems _unit;
 removeBackpack _unit;
 
-_gearArray = [];
-_gearArray =      ;	//get the gear out of DB
-
-_radio = ((_gear select 9) select 2);
-_radioFixArray = _radio splitString "m";
-_radioFix = _radioFixArray select 0;
-(_gearArray select 9) set [2,_radioFix];
-diag_log format ["Unit: %1, Radio: %2, radioFixArray: %3, RadioFix: %4", _unit, _radio, _radioFixArray, _radioFix];
 _unit setUnitLoadout _gearArray;
-
+} else {
+	forceRespawn player;
+};
