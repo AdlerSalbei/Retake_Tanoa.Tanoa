@@ -6,4 +6,5 @@ waitUntil {scriptdone _handle};
 
 _unit setVariable ["ace_medical_medicClass",0,true];
 
-profileNamespace setVariable ["GRAD_Retake_Tanoa", "any"];
+_value = "any";
+profileNamespace setVariable ["GRAD_Retake_Tanoa", _value];
