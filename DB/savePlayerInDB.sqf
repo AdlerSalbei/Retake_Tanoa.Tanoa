@@ -9,10 +9,6 @@ diag_log format ["Gear: %1, Health: %2", _gear, _health];
 
 _radio = ((_gear select 9) select 2);
 
-//_radioFixArray = _radio splitString "_";
-//_radioFixArray deleteAt ((count _radioFixArray)-1);
-//_radioFix = _radioFixArray joinString "_";
-
 _radioFixArray = _radio splitString "_";
 _radioFixArray deleteAt ((count _radioFixArray)-1);
 _radioFix = _radioFixArray joinString "_";
