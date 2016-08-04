@@ -1,6 +1,3 @@
-#include "\z\ace\addons\main\script_component.hpp"
-#include "\z\ace\addons\main\script_macros.hpp"
-
 // read parameters
 TIME_OF_DAY = "TimeOfDay" call BIS_fnc_getParamValue;
 WEATHER_SETTING = "WeatherSetting" call BIS_fnc_getParamValue;
