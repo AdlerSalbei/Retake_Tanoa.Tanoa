@@ -7,6 +7,7 @@ _value = profileNamespace getVariable ["GRAD_Retake_Tanoa"];
 if (_vlaue != "any") then {
 _value params ["_gearArray", "_healthArray", "_pos"];
 
+_unit setDir _dir;
 _unit setPos _pos;
 
 if (_healthArray == [[],[],[]]) or (_healthArray == []) then {
