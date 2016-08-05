@@ -1,16 +1,17 @@
 {
     _x params ["_veh", "_pos", "_dir", "_healthArray", "_gearArray"];
     
+	//spawn vehicle
     _veh = createVehicle [_veh, _pos, [], 0, "CAN_COLLIDE"];
     _veh setDir _dir;
 
-    for [{_in=0}, {_in<10}, {_in=_in+1}] do
-    {
-        _vehHealth = ((_healthArray select 0) select _in);
-        _valueHealth = ((_healthArray select 2) select _in);
-        _veh setHitPointDamage [_vehHealth, _valueHealth];
-    };
-    
+	//set health
+	_health = _healthArray select 2;
+	{
+		_veh setHitIndex [_forEachIndex, _x];
+	} forEach _health;
+	
+	//inventory
     clearWeaponCargoGlobal _veh;
     clearItemCargoGlobal _veh;
     clearMagazineCargoGlobal _veh;
