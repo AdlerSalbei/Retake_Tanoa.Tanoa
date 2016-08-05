@@ -1,14 +1,14 @@
 {
-    _x params ["_name", "_pos", "_dir", "_healthArray", "_gearArray"];
+    _x params ["_veh", "_pos", "_dir", "_healthArray", "_gearArray"];
     
-    _veh = createVehicle [_name, _pos, [], 0, "CAN_COLLIDE"];
+    _veh = createVehicle [_veh, _pos, [], 0, "CAN_COLLIDE"];
     _veh setDir _dir;
 
     for [{_in=0}, {_in<10}, {_in=_in+1}] do
     {
-        _nameHealth = ((_healthArray select 0) select _in);
+        _vehHealth = ((_healthArray select 0) select _in);
         _valueHealth = ((_healthArray select 2) select _in);
-        _veh setHitPointDamage [_nameHealth, _valueHealth];
+        _veh setHitPointDamage [_vehHealth, _valueHealth];
     };
     
     clearWeaponCargoGlobal _veh;
@@ -18,12 +18,12 @@
 
     {
         _data = _gearArray select _x;
-        _names = _data select 0;
+        _vehs = _data select 0;
         _counts = _data select 1;
 
-        if (count _names > 0 && count _counts > 0 && (count _names) == (count _counts)) then {
-            for "_index" from 0 to ((count _names) - 1) do {
-                _currentName = _names select _index;
+        if (count _vehs > 0 && count _counts > 0 && (count _vehs) == (count _counts)) then {
+            for "_index" from 0 to ((count _vehs) - 1) do {
+                _currentName = _vehs select _index;
                 _currentCount = _counts select _index;
         
                 switch (_x) do {

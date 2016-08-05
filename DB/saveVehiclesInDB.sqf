@@ -1,19 +1,19 @@
 _vehicles = vehicles;
 
 {
-	if(alive _name) then {
-		_name = _vehicles select _x;
-		if (!isnull _name) then {
-			_pos getPos _name;
-			_dir getDir _name;
+	if  then {
+		_veh = _vehicles select _x;
+		if ((isnull _veh) && (alive _veh)) then {
+			_pos getPos _veh;
+			_dir getDir _veh;
 			_health = [];
-			_health = getAllHitPointsDamage _name;
-			_backpacks = getBackpackCargo _name;
-			_items = getItemCargo _name;
-			_magazines = getMagazineCargo _name;
-			_weapons = getWeaponCargo _name;
+			_health = getAllHitPointsDamage _veh;
+			_backpacks = getBackpackCargo _veh;
+			_items = getItemCargo _veh;
+			_magazines = getMagazineCargo _veh;
+			_weapons = getWeaponCargo _veh;
 			_gear = [_backpacks, _items, _magazines, _weapons];			
-			_value pushback [_name, _pos, _dir, _health, _gear];
+			_value pushback [_veh, _pos, _dir, _health, _gear];
 		};
 	};
 } forEach _Vehicles;
