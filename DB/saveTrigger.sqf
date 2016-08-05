@@ -3,7 +3,9 @@ while (true) do {
 	if (isServer) then  {
 		[] call "DB\saveVehiclesInDB.sqf";
 		[] call "DB\saveBoxInDB.sqf";
-	} else {
+	};
+	
+	if (hasInterface) then {
 		[] call "DB\savePlayerInDB.sqf"
 	};
 };
