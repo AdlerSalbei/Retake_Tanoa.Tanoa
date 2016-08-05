@@ -8,4 +8,5 @@ while (true) do {
 	if (hasInterface) then {
 		[] call "DB\savePlayerInDB.sqf"
 	};
+	hint format ["Saved in DB",];
 };
