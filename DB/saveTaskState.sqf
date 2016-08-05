@@ -1,5 +1,4 @@
-_name = _this select 0;
-_state = _this select 1;
+_this params ["_name", "_state"];
 
 _value = profileNamespace getVariable ["GRAD_Retake_Tanoa_Task"];
 _value pushBack [_name ,_state];
