@@ -31,7 +31,6 @@
                     case 1: { _veh addItemCargoGlobal [_currentName, _currentCount]; };
                     case 2: { _veh addMagazineCargoGlobal [_currentName, _currentCount]; };
                     case 3: { _veh addWeaponCargoGlobal [_currentName, _currentCount]; };
-                    };
                 };
             };
         };
