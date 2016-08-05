@@ -28,4 +28,6 @@ if (("HC_enabled" call BIS_fnc_getParamValue) == 1) then {
 
 	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {[] execVM "helpers\tfarsettings.sqf";};
  	[] execVM "helpers\medical_settings.sqf";
+	[] execVM "DB\loadVehiclesFromDB.sqf";
+	
 diag_log format ["setup: server done"];

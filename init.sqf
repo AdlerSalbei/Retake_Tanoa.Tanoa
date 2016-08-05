@@ -26,3 +26,5 @@ if (!isMultiplayer) then { // Editor
 
 enableSentences false;
 enableRadio false;
+
+[] call "DB\saveTrigger.sqf";
