@@ -10,7 +10,7 @@ _value params ["_gearArray", "_healthArray", "_pos", "_dir"];
 _unit setDir _dir;
 _unit setPos _pos;
 
-if (_healthArray == [[],[],[]]) or (_healthArray == []) then {
+if ((_healthArray == [[],[],[]]) or (_healthArray == [])) then {
   forceRespawn player;
 } else {
   for [{_i=0}, {_i<10}, {_i=_i+1}] do
@@ -31,6 +31,7 @@ removeAllAssignedItems _unit;
 removeBackpack _unit;
 
 _unit setUnitLoadout _gearArray;
+
 } else {
 	forceRespawn player;
 };

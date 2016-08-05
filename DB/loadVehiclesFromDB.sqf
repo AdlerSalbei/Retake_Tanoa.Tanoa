@@ -1,35 +1,23 @@
-_value = profileNamespace getVariable ["GRAD_Retake_Tanoa_Vehicle"];
+{
+    _x params ["_name", "_pos", "_dir", "_healthArray", "_gearArray"];
+    
+    _veh = createVehicle [_name, _pos, [], 0, "CAN_COLLIDE"];
+    _veh setDir _dir;
 
-_count = count _value;
+    for [{_in=0}, {_in<10}, {_in=_in+1}] do
+    {
+        _nameHealth = ((_healthArray select 0) select _in);
+        _valueHealth = ((_healthArray select 2) select _in);
+        _veh setHitPointDamage [_nameHealth, _valueHealth];
+    };
+    
+    clearWeaponCargoGlobal _veh;
+    clearItemCargoGlobal _veh;
+    clearMagazineCargoGlobal _veh;
+    clearBackpackCargoGlobal _veh;
 
-for [{_i=0}, {_i<_count}, {_i=_i+1}] do {
-	_name = ((_value select 0) select _i);
-	_pos = ((_value select 1) select _i);
-	_dir = ((_value select 2) select _i);
-	_healthArray = ((_value select 3) select _i);
-	_gearArray = ((_value select 4) select _i);
-
-	_Nil = createVehicle [_name, _pos, [], 0, "CAN_COLLIDE"];
-	
-	_name setDir _dir;
-
-	for [{_i=0}, {_i<10}, {_i=_i+1}] do
-	{
-		_nameHealth = ((_healthArray select 0) select _i);
-		_valueHealth = ((_healthArray select 2) select _i);
-		_name setHitPointDamage [_nameHealth, _valueHealth];
-		diag_log format ["Vehicle: %1, Name: %2, Value: %3", _name, _nameHealth, _valueHealth];
-	};
-	
-	clearWeaponCargoGlobal _name;
-	clearItemCargoGlobal _name;
-	clearMagazineCargoGlobal _name;
-	clearBackpackCargoGlobal _name;
-
-	{
-    _data = _itemData select _name;
-
-    if (count _data == 2) then {
+    {
+        _data = _gearArray select _x;
         _names = _data select 0;
         _counts = _data select 1;
 
@@ -37,17 +25,15 @@ for [{_i=0}, {_i<_count}, {_i=_i+1}] do {
             for "_index" from 0 to ((count _names) - 1) do {
                 _currentName = _names select _index;
                 _currentCount = _counts select _index;
-
-                switch (_name) do {
-                    case 4: { _name addBackpackCargoGlobal [_currentName, _currentCount]; };
-                    case 5: { _name addItemCargoGlobal [_currentName, _currentCount]; };
-                    case 6: { _name addMagazineCargoGlobal [_currentName, _currentCount]; };
-                    case 7: { _name addWeaponCargoGlobal [_currentName, _currentCount]; };
-
+        
+                switch (_x) do {
+                    case 0: { _veh addBackpackCargoGlobal [_currentName, _currentCount]; };
+                    case 1: { _veh addItemCargoGlobal [_currentName, _currentCount]; };
+                    case 2: { _veh addMagazineCargoGlobal [_currentName, _currentCount]; };
+                    case 3: { _veh addWeaponCargoGlobal [_currentName, _currentCount]; };
+                    };
                 };
             };
         };
-    };
-} forEach [4,5,6,7];
-	
-}; 
+    } forEach [0,1,2,3];
+} forEach (profileNamespace getVariable ["GRAD_Retake_Tanoa_Vehicle"]); 
