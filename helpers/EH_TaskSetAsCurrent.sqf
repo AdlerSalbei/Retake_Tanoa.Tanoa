@@ -11,6 +11,6 @@ _count = count runningTasksArray;	// count the entrys in the Array
 _index = runningTasksArray pushBackUnique _taskID;	// Check if the Task has allready been triggert
 
  if (_index != -1) then {
-	if (_count > _maxTasks) then {runningTasksArray deleteAt 0;};	// Check if the max amount of tasks have been triggert
+	if (_count >= _maxTasks) then {runningTasksArray deleteAt 0;};	// Check if the max amount of tasks have been triggert
 	[_taskID] call taskSelector;
  } else {diag_log format ["EH: Task(ID: %1) allready running", _taskID];};
