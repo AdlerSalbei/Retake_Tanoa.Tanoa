@@ -1,4 +1,4 @@
-private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"] 
+private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
 
 //EXECUTE AS SERVER !!!
 if (!isServer) exitWith { diag_log "ERROR restore vehicle not as server"; };
