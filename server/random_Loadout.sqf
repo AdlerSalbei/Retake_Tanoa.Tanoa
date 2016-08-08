@@ -126,7 +126,9 @@ _weaponGrenadier = [
 	"arifle_CTAR_GL_blk_F"
 ];
  
-if (player == commander) then {
+_role = ""; 
+ 
+if (str player == "commander") then {
 	_role = "TL";
 } else {
 	_role = selectRandom _classPlayer; 
