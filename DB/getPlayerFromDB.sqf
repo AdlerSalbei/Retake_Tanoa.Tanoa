@@ -5,30 +5,30 @@ _healthArray = [];
 _value = profileNamespace getVariable "GRAD_Retake_Tanoa_Player";
 
 if (_vlaue != "any") then {
-_value params ["_gearArray", "_healthArray", "_pos", "_dir"];
-
-_unit setDir _dir;
-_unit setPos _pos;
-
-if ((_healthArray == [[],[],[]]) or (_healthArray == [])) then {
-  forceRespawn player;
-} else {
-	//set health
-	_health = _healthArray select 2;
-	{
-		_unit setHitIndex [_forEachIndex, _x];
-	} forEach _health;
-};
-
-removeAllWeapons _unit;
-removeGoggles _unit;
-removeHeadgear _unit;
-removeVest _unit;
-removeUniform _unit;
-removeAllAssignedItems _unit;
-removeBackpack _unit;
-
-_unit setUnitLoadout _gearArray;
+	_value params ["_gearArray", "_healthArray", "_pos", "_dir"];
+	
+	_unit setDir _dir;
+	_unit setPos _pos;
+	
+	if ((_healthArray == [[],[],[]]) or (_healthArray == [])) then {
+		forceRespawn player;
+	} else {
+		//set health
+		_health = _healthArray select 2;
+		{
+			_unit setHitIndex [_forEachIndex, _x];
+		} forEach _health;
+	};
+	
+	removeAllWeapons _unit;
+	removeGoggles _unit;
+	removeHeadgear _unit;
+	removeVest _unit;
+	removeUniform _unit;
+	removeAllAssignedItems _unit;
+	removeBackpack _unit;
+	
+	_unit setUnitLoadout _gearArray;
 
 } else {
 	forceRespawn player;
