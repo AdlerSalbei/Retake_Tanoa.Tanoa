@@ -15,5 +15,5 @@ _radioFix = _radioFixArray select 0;
 diag_log format ["Unit: %1, Radio: %2, radioFixArray: %3, RadioFix: %4", _unit, _radio, _radioFixArray, _radioFix];
 
 _value =  [_gear, _health, _pos, _dir];
-profileNamespace setVariable ["GRAD_Retake_Tanoa", _value];
+profileNamespace setVariable ["GRAD_Retake_Tanoa_Player", _value];
 saveProfileNamespace;
