@@ -52,7 +52,7 @@ gearMedic = {
 	[this, "ACE_tourniquet", 5] call addItemsToBackpack;
 	[this, "ACE_surgicalKit", 1] call addMagazinesToVest;
 	[this, "ACE_personalAidKit", 1] call addMagazinesToVest;
-	this setVariable [""ace_medical_medicClass"",1,true];
+	this setVariable ["Ace_medical_medicClass", 1];
 };
 
 gearTL = {
