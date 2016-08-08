@@ -1,7 +1,7 @@
 private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
 
 //EXECUTE AS SERVER !!!
-if (!isServer) exitWith { diag_log "ERROR restore vehicle not as server"; };
+if (!isDedicated) exitWith { diag_log "ERROR restore vehicle not as server"; };
 
 //reconstruct each vehicle stored in "GRAD_Retake_Tanoa_Vehicle"
 {
@@ -10,6 +10,7 @@ if (!isServer) exitWith { diag_log "ERROR restore vehicle not as server"; };
     //spawn vehicle
     _veh = createVehicle [_veh, _pos, [], 0, "CAN_COLLIDE"];
     _veh setDir _dir;
+	_veh setPos _pos;
 
     //set health
     _health = _healthArray select 2;
