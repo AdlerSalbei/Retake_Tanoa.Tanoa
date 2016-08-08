@@ -7,6 +7,6 @@ while (true) do {
 	
 	if (hasInterface) then {
 		[] call "DB\savePlayerInDB.sqf";
+		hint format ["Saved %1 in DB", str player];
 	};
-	hint format ["Saved %1 in DB", str player];
 };
