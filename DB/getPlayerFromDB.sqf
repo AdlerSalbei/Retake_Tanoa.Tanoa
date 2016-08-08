@@ -2,7 +2,7 @@ _unit = _this select 0;
 _gearArray = [];
 _healthArray = [];
 
-_value = profileNamespace getVariable ["GRAD_Retake_Tanoa"];
+_value = profileNamespace getVariable "GRAD_Retake_Tanoa";
 
 if (_vlaue != "any") then {
 _value params ["_gearArray", "_healthArray", "_pos", "_dir"];
