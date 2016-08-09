@@ -8,7 +8,7 @@ _value = profileNamespace getVariable "GRAD_Retake_Tanoa_Player";
 if  ((!isNil "_value") && (_vlaue != "any")) then {
 	_value params ["_gearArray", "_healthArray", "_pos", "_dir"];
 	
-	diag_log "Player is JIP, not executing onPlayerKilled.sqf"
+	diag_log format ["Gear: %1, Health: %2, Pos: %3, Dir: %4", _gearArray, _healthArray, _pos, _dir]
 	
 	//set pos and dir
 	_unit setDir _dir;
