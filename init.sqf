@@ -2,7 +2,6 @@
 TIME_OF_DAY = "TimeOfDay" call BIS_fnc_getParamValue;
 WEATHER_SETTING = "WeatherSetting" call BIS_fnc_getParamValue;
 TIME_ACCELERATION = "Zeitbeschleunigung" call BIS_fnc_getParamValue;
-//DEBUG = ("Debug_Mode" call BIS_fnc_getParamValue;) == 1;
 
 setCustomWeather = {
 	skipTime -24;
@@ -27,4 +26,4 @@ if (!isMultiplayer) then { // Editor
 enableSentences false;
 enableRadio false;
 
-[] spawn "DB\saveTrigger.sqf";
+[] call "DB\saveTrigger.sqf";
