@@ -2,11 +2,15 @@ _unit = _this select 0;
 _gearArray = [];
 _healthArray = [];
 
+//check if there is a save
 _value = profileNamespace getVariable "GRAD_Retake_Tanoa_Player";
 
-if (_vlaue != "any") then {
+if  ((!isNil "_value") && (_vlaue != "any")) then {
 	_value params ["_gearArray", "_healthArray", "_pos", "_dir"];
 	
+	diag_log "Player is JIP, not executing onPlayerKilled.sqf"
+	
+	//set pos and dir
 	_unit setDir _dir;
 	_unit setPos _pos;
 	
@@ -20,6 +24,7 @@ if (_vlaue != "any") then {
 		} forEach _health;
 	};
 	
+	//set gear
 	removeAllWeapons _unit;
 	removeGoggles _unit;
 	removeHeadgear _unit;
