@@ -3,7 +3,7 @@ _gearArray = [];
 _healthArray = [];
 
 //check if there is a save
-_value = profileNamespace getVariable "GRAD_Retake_Tanoa_Player";
+_value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
 if  ((!isNil "_value") && (_vlaue != "any")) then {
 	_value params ["_gearArray", "_healthArray", "_pos", "_dir"];
