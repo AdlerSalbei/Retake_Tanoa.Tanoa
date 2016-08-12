@@ -12,16 +12,10 @@ _taskID = [_unit] call BIS_fnc_taskCurrent;
 _count = count slb_runningTasksArray;	
 if (_count >= _maxTasks) then { 
 	
-	_groupArray = ((slb_SpawnedUnitsArray select 0) select 0)
-	_vehicleArray = ((slb_SpawnedUnitsArray select 0) select 1)
-	
+	_groupArray = slb_SpawnedUnitsArray select 0;
 	{
 		deleteVehicle _x;
 	} forEach units group _groupArray;
-	
-	{
-		deleteVehicle _x;
-	} forEach _vehicleArray;
 	
 	slb_SpawnedUnitsArray deleteAt 0;
 	slb_runningTasksArray deleteAt 0;
