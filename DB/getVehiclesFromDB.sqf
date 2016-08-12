@@ -32,4 +32,4 @@ if (!isDedicated) exitWith { diag_log "ERROR restore vehicle not as server"; };
                     case 3: { {_veh addWeaponCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
         };
     } forEach _gearArray;
-} forEach (profileNamespace getVariable "GRAD_Retake_Tanoa_Vehicle"); 
+} forEach (profileNamespace getVariable "SLB_Retake_Tanoa_Vehicle"); 
