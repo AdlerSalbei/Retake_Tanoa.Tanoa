@@ -1,16 +1,35 @@
 _unit =((_this select 0) select 0);
 
-if  (_unit != leader player) exitWith {diag_log format ["Player %1 not the Unit Leader!", _unit];};
+if  (str _unit != "Commander") exitWith {diag_log format ["Player %1 not the Unit Leader!", _unit];};
 
-call compile preprocessFile "server\spawn.sqf";
+call compile preprocessFile "server\spawnHandler.sqf";
+call compile preprocessFile "server\selectSpawn.sqf.sqf";
 waitUntil {!isNil "SPAWNSETUPDONE"};
 
 _maxTasks = "Simultaneous_task" call BIS_fnc_getParamValue;
 _taskID = [_unit] call BIS_fnc_taskCurrent;
-_count = count runningTasksArray;	// count the entrys in the Array
-_index = runningTasksArray pushBackUnique _taskID;	// Check if the Task has allready been triggert
 
- if (_index != -1) then {
-	if (_count >= _maxTasks) then {runningTasksArray deleteAt 0;};	// Check if the max amount of tasks have been triggert
+_count = count slb_runningTasksArray;	
+if (_count >= _maxTasks) then { 
+	
+	_groupArray = ((slb_SpawnedUnitsArray select 0) select 0)
+	_vehicleArray = ((slb_SpawnedUnitsArray select 0) select 1)
+	
+	{
+		deleteVehicle _x;
+	} forEach units group _groupArray;
+	
+	{
+		deleteVehicle _x;
+	} forEach _vehicleArray;
+	
+	slb_SpawnedUnitsArray deleteAt 0;
+	slb_runningTasksArray deleteAt 0;
+};
+
+_index = slb_runningTasksArray pushBackUnique _taskID;
+if (_index != -1) then {
 	[_taskID] call taskSelector;
- } else {diag_log format ["EH: Task(ID: %1) allready running", _taskID];};
+} else {
+	diag_log format ["EH: Task(ID: %1) allready running", _taskID];
+};
