@@ -16,7 +16,6 @@ grad_salbeiMission_spawn = {
 	{
 		_x params ["_vehType", "_vehPos"];
 		_vehIndex = createVehicle [_vehType, _vehPos, [], 0, "CAN_COLLIDE"];
-		_vehicleIndexArray pushBack _vehIndex;
 	}forEach _vehicleArray;
-	slb_SpawnedUnitsArray pushBack [_unitGroupArray, _vehicleIndexArray];
+	slb_SpawnedUnitsArray pushBack _unitGroupArray;
 };
