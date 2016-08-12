@@ -1,4 +1,4 @@
-runningTasksArray = [];
+if  (str _unit == "Commander") then {slb_runningTasksArray = []; slb_SpawnedUnitsArray = [];};
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 player addEventHandler ["TaskSetAsCurrent",{[_this] execVM "helpers\EH_TaskSetAsCurrent.sqf"}];
 [player] execVM "DB\getPlayerFromDB.sqf";  
