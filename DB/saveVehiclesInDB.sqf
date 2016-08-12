@@ -27,4 +27,5 @@ _vehicles = vehicles;
 	};
 } forEach _Vehicles;
 
-profileNamespace setVariable ["GRAD_Retake_Tanoa_Vehicle", _value];
+profileNamespace setVariable ["SLB_Retake_Tanoa_Vehicle", _value];
+saveProfileNamespace;
