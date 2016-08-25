@@ -44,5 +44,6 @@ if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {[] execVM 
 [] execVM "helpers\medical_settings.sqf";
 [] execVM "DB\getVehiclesFromDB.sqf";
 [] execVM "DB\getTaskState.sqf";
-	
+[] execVM "initEVehCaching.sqf";
+
 diag_log format ["setup: server done"];
