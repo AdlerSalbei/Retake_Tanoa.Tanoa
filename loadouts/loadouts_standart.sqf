@@ -83,8 +83,6 @@ gear_basic = {
 	_gimmeMagazin = player getVariable ["myMagazine", ""];
 	_gimmeRole = player getVariable ["myRole",""];
 
-	diag_log format ["Role: %5, Weapon: %1 , Muzzle: %2 , Scope: %3 , Magazin: %4", _gimmeWeapon, _gimmeMuzzleItem, _gimmeScope, _gimmeMagazin, _gimmeRole];
-
 	this forceAddUniform(randomUniforms call BIS_fnc_selectRandom);
 	this addVest(randomVest call BIS_fnc_selectRandom);
 	if (_gimmeRole == "TL") then {
@@ -123,15 +121,13 @@ gear_basic = {
 	this linkItem "tf_anprc148jem";
 
 	switch _gimmeRole do {
-		case "Rifleman": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "Rifleman": {};
 		case "Engineer": {[this] call gearEngineer};
 		case "TL": {[this] call gearTL};
 		case "Medic": {[this] call gearMedic};
 		case "Sniper": {[this] call gearSniper};
-		case "MG": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
-		case "AT": {[this] call gearAT};
-		case "AA": {[this] call gearAA};
-		case "Grenadier": {diag_log format ["Sry, no extra gear for you, %1", _gimmeRole]};
+		case "MG": {};
+		case "Grenadier": {};
 		default {diag_log format ["Has no Class selected"]};
 	};
 };
