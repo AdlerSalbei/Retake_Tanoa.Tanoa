@@ -5,7 +5,7 @@ _healthArray = [];
 //check if there is a save
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
-if  (isNil "_value") then { forceRespawn player;};
+if  (isNil "_value") exitWith { forceRespawn player;};
 
 _value params ["_gearArray", "_healthArray", "_pos", "_dir"];
 
