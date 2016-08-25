@@ -5,24 +5,18 @@ _healthArray = [];
 //check if there is a save
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
-if  (!isNil "_value") then {
+if  (isNil "_value") then { forceRespawn player;};
 	_value params ["_gearArray", "_healthArray", "_pos", "_dir"];
-	
-	diag_log format ["Gear: %1, Health: %2, Pos: %3, Dir: %4", _gearArray, _healthArray, _pos, _dir]
 	
 	//set pos and dir
 	_unit setDir _dir;
 	_unit setPos _pos;
 	
-	if ((_healthArray == [[],[],[]]) or (_healthArray == [])) then {
-		forceRespawn player;
-	} else {
-		//set health
-		_health = _healthArray select 2;
-		{
-			_unit setHitIndex [_forEachIndex, _x];
-		} forEach _health;
-	};
+	//set health
+	_health = _healthArray select 2;
+	{
+		_unit setHitIndex [_forEachIndex, _x];
+	} forEach _health;
 	
 	//set gear
 	removeAllWeapons _unit;
@@ -35,6 +29,3 @@ if  (!isNil "_value") then {
 	
 	_unit setUnitLoadout _gearArray;
 
-} else {
-	forceRespawn player;
-};
