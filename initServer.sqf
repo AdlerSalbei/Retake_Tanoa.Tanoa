@@ -19,16 +19,30 @@ if (isDedicated) then {
 		[true,30,false,true,30,3,true,[]] execVM "headless\WerthlesHeadless.sqf";
 	};
 };
-	["Initialize"] call BIS_fnc_dynamicGroups;
 
+["Initialize"] call BIS_fnc_dynamicGroups;
+
+_value = profileNamespace getVariable "SLB_Retake_Tanoa_Time_Weather";
+_value params ["_date", "_weather"];
+if (isNil "_date") then {
 	// set to full moon date
-	setDate [2015, 2, 2, TIME_OF_DAY, 1];
-	// set time acceleration
-	setTimeMultiplier TIME_ACCELERATION;
+	setDate [2015, 2, 2, 12, 1];
+}else {
+	setDate _date;
+};
 
-	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {[] execVM "helpers\tfarsettings.sqf";};
- 	[] execVM "helpers\medical_settings.sqf";
-	[] execVM "DB\getVehiclesFromDB.sqf";
-	[] execVM "DB\getTaskState.sqf";
+if (isNil "_weather") then { _weather = 0;};
+	
+setCustomWeather = {
+	skipTime -24;
+	0 setOvercast _weather;
+	setViewDistance 5000;
+	skipTime 24;
+};
+
+if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {[] execVM "helpers\tfarsettings.sqf";};
+[] execVM "helpers\medical_settings.sqf";
+[] execVM "DB\getVehiclesFromDB.sqf";
+[] execVM "DB\getTaskState.sqf";
 	
 diag_log format ["setup: server done"];
