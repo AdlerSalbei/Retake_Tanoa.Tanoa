@@ -1,6 +1,3 @@
-#include "helpers\_defines.hpp"
-#include "helpers\_dialogs.hpp"
-
 OnLoadMission = "RetakeTanoa";
 author = "Salbei für Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "Retake Tanoa from the russians!"; //appears in overview and loading screen
@@ -134,18 +131,3 @@ class CfgUnitInsignia
 		textureVehicle = ""; // Does nothing currently, reserved for future use
 	};
 };
-
-class CfgSounds
-{
-	sounds[] = {march_hell};
-	class march_hell
-	{
-		// how the sound is referred to in the editor (e.g. trigger effects)
-		name = "march_hell";
-		// filename, volume, pitch
-		sound[] = {"sounds\march_hell.ogg", 1, 1};
-		// subtitle delay in seconds, subtitle text
-		titles[] = {0, ""};
-	};
-};
-
