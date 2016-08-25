@@ -1,12 +1,10 @@
 _classPlayer = [
 	"Rifleman",
 	"TL",
-	"SQL",
 	"Medic",
 	"Sniper",
 	"MG",
-	"AT",
-	"AA"
+	"Engineer"
 ];
 
 _weaponStandart = [
@@ -150,20 +148,17 @@ switch _role do {
 	case "Medic": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 30; MUZZLEATTACHMENTPROB = 30;};
 	case "Sniper": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 100; MUZZLEATTACHMENTPROB = 50;};
 	case "MG": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 10; MUZZLEATTACHMENTPROB = 70;};
-	case "AT": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 20; MUZZLEATTACHMENTPROB = 20;};
-	case "AA": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 20; MUZZLEATTACHMENTPROB = 20;};
 	case "Grenadier": {_weapon = selectRandom _weaponGrenadier; SCOPESPROB = 70; MUZZLEATTACHMENTPROB = 50;};
 	default {diag_log format ["Has no Class selected"]};
 };
 
- diag_log format ["Class selected: %1, Weapon: %2 ", _role, _weapon];
 CHOSENWEAPONS  pushBack _weapon;
 
 //magazines =====================================================================
-  _magazines = getArray (configFile / "CfgWeapons" / _weapon / "magazines");
-  _magazine = selectRandom _magazines;
-	CHOSENMAGAZINES pushBack _magazine;
- diag_log format ["Weapon: %1 ,Magazin: %2 , Magazines: %3", _weapon, _magazine, _magazines];
+_magazines = getArray (configFile / "CfgWeapons" / _weapon / "magazines");
+_magazine = selectRandom _magazines;
+CHOSENMAGAZINES pushBack _magazine;
+
 
 //muzzle attachments ===================================================================
   if (random 100 <= MUZZLEATTACHMENTPROB) then {
