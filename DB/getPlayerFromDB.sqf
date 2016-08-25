@@ -5,7 +5,7 @@ _healthArray = [];
 //check if there is a save
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
-if  ((!isNil "_value") && (_vlaue != "any")) then {
+if  (!isNil "_value") then {
 	_value params ["_gearArray", "_healthArray", "_pos", "_dir"];
 	
 	diag_log format ["Gear: %1, Health: %2, Pos: %3, Dir: %4", _gearArray, _healthArray, _pos, _dir]
