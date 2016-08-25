@@ -1,2 +1,6 @@
-// EMPTY ATM
-// ["saveBox","Save box content","",{},{true},{},[parameters], [0,0,0], 100] call ace_interact_menu_fnc_createAction;
+// Save content of the Box
+_boxName = "";
+
+_value = [(getBackpackCargo _boxName), (getItemCargo _boxName), (getMagazineCargo _boxName), (getWeaponCargo __boxName)];
+profileNamespace setVariable ["SLB_Retake_Tanoa_Box", _value];
+saveProfileNamespace;
