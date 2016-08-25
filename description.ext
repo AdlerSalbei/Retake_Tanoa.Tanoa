@@ -24,23 +24,6 @@ class Header
 
 class Params
 {
-	class WeatherSetting
-    {
-		title = "Weather Settings";
-		values[] = {0,1,2,3};
-		texts[] = {"SUNNY DAY","RAINY DAY","CLOUDY DAY","RANDOM WEATHER"};
-		default = 0;
-    };
-
-
-	class Zeitbeschleunigung
-	{
-		title = "Time Acceleration";
-		values[] = {1,2,4};
-		texts[] = {"normal","2h in 1h","4h in 1h"};
-		default = 1;
-	};
-
 	class HC_enabled
 	{
 		title = "Enable HC";
