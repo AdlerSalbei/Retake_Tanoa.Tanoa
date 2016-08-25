@@ -106,3 +106,7 @@ class CfgUnitInsignia
 		textureVehicle = ""; // Does nothing currently, reserved for future use
 	};
 };
+
+class CfgFunctions {
+  #include "eVehCache\cfgFunctions.hpp"
+};
