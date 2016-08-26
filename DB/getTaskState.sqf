@@ -1,5 +1,5 @@
 // load task state
-_value = profileNamespace getVariable ["SLB_Retake_Tanoa_Task"];
+_value = profileNamespace getVariable "SLB_Retake_Tanoa_Task";
 
 if isNil "_value" exitWith {};
 _count = ((count _value)-1);

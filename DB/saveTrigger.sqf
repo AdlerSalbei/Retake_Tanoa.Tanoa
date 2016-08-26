@@ -1,6 +1,6 @@
-while (true) do { 
+while {true} do { 
 	sleep 30;
-	if (isDedicated) then  {
+	if (isServer) then  {
 		[] execVM "DB\saveVehiclesInDB.sqf";
 		[] execVM "DB\saveWeatherAndDateInDB.sqf";
 	};
