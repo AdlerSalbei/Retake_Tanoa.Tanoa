@@ -23,15 +23,21 @@ if (isDedicated) then {
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Time_Weather";
-_value params ["_date", "_weather"];
-if (isNil "_date") then {
-	// set to full moon date
-	setDate [2015, 2, 2, 12, 1];
-}else {
-	setDate _date;
-};
+if (!isNil "_value") then {
+	_value params ["_date", "_weather"];
+	if (isNil "_date") then {
+		// set to full moon date
+		setDate [2015, 2, 2, 12, 1];
+	}else {
+		setDate _date;
+	};
 
-if (isNil "_weather") then { _weather = 0;};
+	if (isNil "_weather") then { _weather = 0;};
+}else{
+	_weather = 0;
+	setDate [2015, 2, 2, 12, 1];
+};
+	
 	
 setCustomWeather = {
 	skipTime -24;
