@@ -141,5 +141,6 @@ class CfgRespawnInventory
           
           uniformClass = "U_B_CombatUniform_mcam_tshirt";
           backpack = "B_AssaultPack_mcamo";
+        };
 };
 
