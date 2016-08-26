@@ -16,7 +16,7 @@ _vehicles = vehicles;
 		_health = getAllHitPointsDamage _veh;
 		
 		//cargo
-		_gear = [(getBackpackCargo _veh), (getItemCargo _veh), (getMagazineCargo _veh), (getWeaponCargo _veh),];
+		_gear = [(getBackpackCargo _veh), (getItemCargo _veh), (getMagazineCargo _veh), (getWeaponCargo _veh)];
 		
 		_fuel = getFuelCargo _veh;
 		
