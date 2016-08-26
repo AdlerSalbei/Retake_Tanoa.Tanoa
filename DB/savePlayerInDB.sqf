@@ -1,3 +1,5 @@
+private ["_value","_radio","_radioFixArray","_radioFix","_pos","_dir","_health","_gear"];
+
 // Sets gear in Database
 _gear = [];
 _gear = getUnitLoadout player;
