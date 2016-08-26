@@ -4,7 +4,7 @@ taskID1 = {
 	_name = "Test Respawn Pos";
 	[_pos, _name] execVM "helpers\addRespawnPosition.sqf";
 	_unitsArray = [];
-	_vehicleArray = [["B_Heli_Transport_03_F",[3620.2302,100.65702,12337.04]],["B_Heli_Transport_03_F",[3610.2302,120.65702,12337.04]]];
+	_vehicleArray = [["B_Heli_Transport_03_F",[3620.2302,100.65702,12337.04]],["B_T_VTOL_01_armed_olive_F",[3610.2302,120.65702,12337.04]]];
 	[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
 };
 
