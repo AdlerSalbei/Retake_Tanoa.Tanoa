@@ -21,7 +21,7 @@ _vehicles = vehicles;
 		_fuel = getFuelCargo _veh;
 		
 		//save array composition
-		_value pushback [_veh, _pos, _dir, _health, _gear, fuel];
+		_value pushback [_veh, _pos, _dir, _health, _gear, _fuel];
 	};
 } forEach _vehicles;
 
