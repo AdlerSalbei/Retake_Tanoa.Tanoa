@@ -7,12 +7,15 @@ call compile preprocessFile "server\selectSpawn.sqf";
 waitUntil {!isNil "SPAWNSETUPDONE"};
 
 _maxTasks = "Simultaneous_task" call BIS_fnc_getParamValue;
+
 _taskID = [_unit] call BIS_fnc_taskCurrent;
 
-_count = count slb_runningTasksArray;	
+_count = count slb_runningTasksArray;
+diag_log format ["EH: Count %1, MaxTasks %2", _count, _maxTasks];
 if (_count >= _maxTasks) then { 
 	
 	_groupArray = slb_SpawnedUnitsArray select 0;
+	diag_log format ["EH: GroupArray %1", _groupArray];
 	{
 		deleteVehicle _x;
 	} forEach units group _groupArray;
