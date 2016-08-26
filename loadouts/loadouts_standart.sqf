@@ -103,6 +103,7 @@ gear_basic = {
 	[this, "ACE_epinephrine", 1] call addItemsToUniform;
 	[this, "ACE_salineIV_250", 1] call addMagazinesToBackpack;
 	[this, _mySprayPaint, 1] call addMagazinesToVest;
+	[this, "rhs_mag_m67", 1] call addMagazinesToVest;
 	
 	if (_gimmeRole == "MG") then {
 		[this, _gimmeMagazin, 5] call addMagazinesToBackpack;
