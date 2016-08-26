@@ -37,4 +37,5 @@ gearEngineer = {
 	[this, "ACE_Clacker", 1] call addItemsToBackpack;
 	[this, "ACE_DefusalKit", 1] call addItemsToBackpack;
 	[this, "ACE_VMH3", 1] call addItemsToBackpack;
+	this addItemToUniform "ACE_EntrenchingTool";
 };
