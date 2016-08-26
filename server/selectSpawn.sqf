@@ -1,39 +1,39 @@
 taskID1 = {
 	diag_log format ["Succesfully triggert Task1"];
-	_pos = [3620.2302,100.65702,12337.04];
-	_name = "Test Respawn Pos";
-	[_pos, _name] execVM "helpers\addRespawnPosition.sqf";
-	_unitsArray = [];
-	_vehicleArray = [["B_Heli_Transport_03_F",[3620.2302,100.65702,12337.04]],["B_T_VTOL_01_armed_olive_F",[3610.2302,120.65702,12337.04]]];
-	[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
+	//_pos = [3620.2302,100.65702,12337.04];
+	//_name = "Test Respawn Pos";
+	//[_pos, _name] execVM "helpers\addRespawnPosition.sqf";
+	//_unitsArray = [];
+	//_vehicleArray = [["B_Heli_Transport_03_F",[3620.2302,100.65702,12337.04]],["B_T_VTOL_01_armed_olive_F",[3610.2302,120.65702,12337.04]]];
+	//[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
 };
 
 taskID2 = {
 	diag_log format ["Succesfully triggert Task2"];
-	_unitsArray = [];
-	_vehicleArray = [];
-	[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
+	//_unitsArray = [];
+	//_vehicleArray = [];
+	//[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
 };
 
 taskID3 = {
 	diag_log format ["Succesfully triggert Task3"];
-	_unitsArray = [];
-	_vehicleArray = [];
-	[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
+	//_unitsArray = [];
+	//_vehicleArray = [];
+	//[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
 };
 
 taskID4 = {
 	diag_log format ["Succesfully triggert Task4"];
-	_unitsArray = [];
-	_vehicleArray = [];
-	[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
+	//_unitsArray = [];
+	//_vehicleArray = [];
+	//[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
 };
 
 taskID5 = {
 	diag_log format ["Succesfully triggert Task5"];
-	_unitsArray = [];
-	_vehicleArray = [];
-	[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
+	//_unitsArray = [];
+	//_vehicleArray = [];
+	//[_unitsArray, _vehicleArray] call grad_salbeiMission_spawn;
 };
 
 taskSelector = {
