@@ -3,6 +3,7 @@ _gear = [];
 _gear = getUnitLoadout player;
 _pos = getPos player;
 _dir = getDir player;
+_health = [];
 _health = getAllHitPointsDamage player;
 
 
