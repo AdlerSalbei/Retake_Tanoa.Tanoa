@@ -7,7 +7,7 @@ if (isDedicated) then {
 		// 3. Debug available for all - true/Just available for admin/host - false,
 		// 4. Advanced balancing - true/Simple balancing - false,
 		// 5. Delay before executing (seconds),
-		// 6. Additional syncing time between groups transferred to try to reduce bad unit transfer caused by desyncs (seconds)	
+		// 6. Additional syncing time between groups transferred to try to reduce bad unit transfer caused by desyncs (seconds)
 		// 7. Display an initial setup report after the first cycle, showing the number of units moved to HCs,
 		// 8. Addition phrases to look for when checking whether to ignore.
 		// Unit names, group names, unit's current transport vehicle, modules synced to units and unit class names will all be checked for these phrases
@@ -37,8 +37,8 @@ if (!isNil "_value") then {
 	_weather = 0;
 	setDate [2015, 2, 2, 12, 1];
 };
-	
-	
+
+
 setCustomWeather = {
 	skipTime -24;
 	0 setOvercast _weather;
@@ -50,6 +50,6 @@ if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {[] execVM 
 [] execVM "helpers\medical_settings.sqf";
 [] execVM "DB\getVehiclesFromDB.sqf";
 [] execVM "DB\getTaskState.sqf";
-//[] execVM "initEVehCaching.sqf";
+[] execVM "initEVehCaching.sqf";
 
 diag_log format ["setup: server done"];

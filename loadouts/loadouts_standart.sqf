@@ -90,11 +90,11 @@ gear_basic = {
 	} else {
 		this addBackpack(randomBackpack call BIS_fnc_selectRandom);
 	};
-	
+
 	this addHeadgear(randomHeadgear call BIS_fnc_selectRandom);
-	
+
 	_mySprayPaint = selectRandom ["ACE_SpraypaintBlack", "ACE_SpraypaintBlue", "ACE_SpraypaintGreen", "ACE_SpraypaintRed"];
-	
+
 	[this, "ACE_fieldDressing", 10] call addItemsToUniform;
 	[this, "ACE_elasticBandage", 10] call addMagazinesToVest;
 	[this, "ACE_quikclot", 10] call addMagazinesToVest;
@@ -103,18 +103,18 @@ gear_basic = {
 	[this, "ACE_epinephrine", 1] call addItemsToUniform;
 	[this, "ACE_salineIV_250", 1] call addMagazinesToBackpack;
 	[this, _mySprayPaint, 1] call addMagazinesToVest;
-	[this, "rhs_mag_m67", 1] call addMagazinesToVest;
-	
+	[this, "rhs_mag_m67", 3] call addMagazinesToBackpack;
+
 	if (_gimmeRole == "MG") then {
 		[this, _gimmeMagazin, 5] call addMagazinesToBackpack;
 	} else {
 		[this, _gimmeMagazin, 5] call addMagazinesToVest;
 	};
-	
+
 	this addWeapon _gimmeWeapon;
 	if (_gimmeMuzzleItem != "EMPTY") then {this addPrimaryWeaponItem _gimmeMuzzleItem;};
 	if (_gimmeScope != "EMPTY") then {this addPrimaryWeaponItem _gimmeScope;};
-	
+
 	this linkItem "ItemMap";
 	this linkItem "ItemCompass";
 	this linkItem "ItemWatch";

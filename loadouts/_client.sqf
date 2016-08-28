@@ -20,5 +20,5 @@ if (local _unit) then {
 	removeBackpack _unit;
 
 	[_unit] call gear_basic;
-	diag_log format ["loadouts processed for _unit %1, becouse he didn't exsist in the database!",typeOf _unit];
+	diag_log format ["New loadout created for %1", _unit];
 } else {diag_log format ["player %1 is not local to itself -.-", _unit];};

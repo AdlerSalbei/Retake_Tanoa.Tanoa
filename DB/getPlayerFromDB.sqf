@@ -5,7 +5,10 @@ _healthArray = [];
 //check if there is a save
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
-if  (isNil "_value") exitWith { forceRespawn player;};
+diag_log format ["Loaded Value: %1", _value];
+
+if  (isNil "_value") exitWith {diag_log format ["No save %1", _unit]; forceRespawn player;};
+
 
 _value params ["_gearArray", "_healthArray", "_pos", "_dir"];
 
@@ -27,6 +30,5 @@ removeVest _unit;
 removeUniform _unit;
 removeAllAssignedItems _unit;
 removeBackpack _unit;
-	
-_unit setUnitLoadout _gearArray;
 
+_unit setUnitLoadout _gearArray;

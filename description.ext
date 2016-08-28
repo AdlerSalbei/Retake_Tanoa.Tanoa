@@ -8,6 +8,7 @@ enableDebugConsole = 1;
 loadScreen = "pic\gruppe-adler.paa";
 respawn = 3;
 respawnDelay = 5;	//seconds
+respawnOnStart = -1;
 respawnTemplatesWest[] = {"MenuPosition"};
 wreckLimit = 3;
 wreckRemovalMinTime = 30; //seconds
@@ -107,6 +108,6 @@ class CfgUnitInsignia
 	};
 };
 
-//class CfgFunctions {
-//  #include "eVehCache\cfgFunctions.hpp"
-//};
+class CfgFunctions {
+  #include "eVehCache\cfgFunctions.hpp"
+};

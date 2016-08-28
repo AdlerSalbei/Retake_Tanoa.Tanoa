@@ -21,7 +21,7 @@ _weaponSniper = [
 	//Vanilla
 	"srifle_DMR_04_F",
 	"srifle_DMR_04_Tan_F",
-	
+
 	//RHS
 	"rhs_weap_svdp",
 	"rhs_weap_svdp_npz",
@@ -33,7 +33,7 @@ _weaponSniper = [
 _weaponMG = [
 	//Vanilla
 	"LMG_Zafir_F",
-	
+
 	//RHS
 	"rhs_weap_m240B",
 	"rhs_weap_m240G",
@@ -123,13 +123,13 @@ _weaponGrenadier = [
 	"arifle_AK12_GL_F",
 	"arifle_CTAR_GL_blk_F"
 ];
- 
-_role = ""; 
- 
+
+_role = "";
+
 if (str player == "commander") then {
-	_role = "TL";
+	_role = "Sniper";
 } else {
-	_role = selectRandom _classPlayer; 
+	_role = selectRandom _classPlayer;
 };
 _weapon = "";
 _magazine = "";
