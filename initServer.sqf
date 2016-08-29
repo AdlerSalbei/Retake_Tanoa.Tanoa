@@ -38,6 +38,7 @@ if (!isNil "_value") then {
 	setDate [2015, 2, 2, 12, 1];
 };
 
+diag_log format ["Loaded weather %1 and date %2", _weather, _date];
 
 setCustomWeather = {
 	skipTime -24;
