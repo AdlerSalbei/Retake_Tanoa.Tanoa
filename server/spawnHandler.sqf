@@ -1,4 +1,4 @@
-grad_salbeiMission_spawn = {
+slb_Mission_spawn = {
 	if (isNil "_this") exitWith {};
 	_this params ["_unitArray", "_vehicleArray"];
 	
