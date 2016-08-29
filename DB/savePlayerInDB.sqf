@@ -8,19 +8,15 @@ _pos = getPos player;
 _dir = getDir player;
 _health = getAllHitPointsDamage player;
 
-_radio = ((_gear select 9) select 2);
-diag_log format ["Radio: %1", _radio];
-if (!isNil "_radio") then {
+if ("ItemRadio" in magazines player) then {
+  _radio = ((_gear select 9) select 2);
   _radioFixArray = _radio splitString "_";
-  _radioFix = _radioFixArray select 0;
-  diag_log format ["RadioArray: %1", _radioFixArray];
-  if (!isNil "_radioFix") then {
-    diag_log format ["RadioFix: %1", _radioFix];
-    (_gear select 9) set [2, _radioFix];
-  };
+  _radioFix = (str _radioFixArray select 0) + "_" + (str _radioFixArray select 1);
+  diag_log format ["Radio: %1, RadioFix: %2, RadioArray: %3", _radio, _radioFix, _radioFixArray];
+  (_gear select 9) set [2, _radioFix];
 };
 
-
+_backpack = ((_gear select 5) select 0);
 
 _value =  [_gear, _health, _pos, _dir];
 diag_log format ["Value: %1", _value];
