@@ -11,7 +11,8 @@ _health = getAllHitPointsDamage player;
 if ("ItemRadio" in magazines player) then {
   _radio = ((_gear select 9) select 2);
   _radioFixArray = _radio splitString "_";
-  _radioFix = (str _radioFixArray select 0) + "_" + (str _radioFixArray select 1);
+  _radioFixArray deleteAt ((count _radioFixArray)-1);
+  _radioFix = _radioFixArray joinString "_";
   diag_log format ["Radio: %1, RadioFix: %2, RadioArray: %3", _radio, _radioFix, _radioFixArray];
   (_gear select 9) set [2, _radioFix];
 };
