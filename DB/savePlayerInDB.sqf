@@ -3,6 +3,7 @@ private ["_value","_radio","_radioFixArray","_radioFix","_pos","_dir","_health",
 if (!Alive player) exitWith {};
 
 _radioFix = {
+  _radio = _this select 0;
   _radioFixArray = _radio splitString "_";
   _radioFixArray deleteAt ((count _radioFixArray)-1);
   _radioFixValue = _radioFixArray joinString "_";
@@ -18,11 +19,16 @@ _health = getAllHitPointsDamage player;
 if ("ItemRadio" in magazines player) then {
   _radio = ((_gear select 9) select 2);
   [_radio] call _radioFix;
-  waitUntil {!isNil "_radioFixValue"};
   (_gear select 9) set [2, _radioFixValue];
 };
 
 _backpack = ((_gear select 5) select 0);
+//_radioBackpacks = getArray (configFile >> CfgFactionClasses >> faction_class_name >> backpack_tf_faction_radio_api);
+//_index = _radioBackpacks pushBackUnique _backpack;
+//if (_index == -1) then{
+//  [_backpack] call _radioFix;
+//  (_gear select 5) set [0, _radioFixValue];
+//};
 
 _value =  [_gear, _health, _pos, _dir];
 diag_log format ["Value: %1", _value];
