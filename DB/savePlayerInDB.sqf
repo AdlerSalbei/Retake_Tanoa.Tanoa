@@ -9,7 +9,7 @@ _dir = getDir player;
 _health = getAllHitPointsDamage player;
 
 if ("ItemRadio" in magazines player) then {
- (_gear select 9) set [2, [((_gear select 9) select 2)] call salbei_fnc_tfar_remove_id];
+ (_gear select 9) set [2, [((_gear select 9) select 2)] call slb_fnc_tfar_remove_id];
 };
 
 _backpack = ((_gear select 5) select 0);
