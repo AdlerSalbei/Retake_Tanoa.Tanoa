@@ -25,21 +25,15 @@ if (isDedicated) then {
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Time_Weather";
 if (!isNil "_value") then {
 	_value params ["_date", "_weather"];
-	if (isNil "_date") then {
-		// set to full moon date
-		setDate [2015, 2, 2, 12, 1];
-	}else {
-		setDate _date;
-	};
-
+	if (isNil "_date") then {_date = [2015, 2, 2, 12, 1];};
 	if (isNil "_weather") then { _weather = 0;};
 }else{
 	_weather = 0;
-	setDate [2015, 2, 2, 12, 1];
+	_date = [2015, 2, 2, 12, 1];
 };
 
 diag_log format ["Loaded weather %1 and date %2", _weather, _date];
-
+setDate _date;
 setCustomWeather = {
 	skipTime -24;
 	0 setOvercast _weather;
