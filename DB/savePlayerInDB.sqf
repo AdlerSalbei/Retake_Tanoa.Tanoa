@@ -18,6 +18,7 @@ _health = getAllHitPointsDamage player;
 if ("ItemRadio" in magazines player) then {
   _radio = ((_gear select 9) select 2);
   [_radio] call _radioFix;
+  waitUntil {!isNil "_radioFixValue"};
   (_gear select 9) set [2, _radioFixValue];
 };
 
