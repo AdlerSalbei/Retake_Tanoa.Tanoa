@@ -2,14 +2,6 @@ private ["_value","_radio","_radioFixArray","_radioFix","_pos","_dir","_health",
   diag_log format ["Saveing !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"];
 if (!Alive player) exitWith {};
 
-_radioFix = {
-  _radio = _this select 0;
-  _radioFixArray = _radio splitString "_";
-  _radioFixArray deleteAt ((count _radioFixArray)-1);
-  _radioFixValue = _radioFixArray joinString "_";
-  diag_log format ["Radio: %1, RadioFix: %2, RadioArray: %3", _radio, _radioFixValue, _radioFixArray];
-};
-
 // Sets gear in Database
 _gear = getUnitLoadout player;
 _pos = getPos player;
@@ -17,17 +9,14 @@ _dir = getDir player;
 _health = getAllHitPointsDamage player;
 
 if ("ItemRadio" in magazines player) then {
-  _radio = ((_gear select 9) select 2);
-  [_radio] call _radioFix;
-  (_gear select 9) set [2, _radioFixValue];
+ (_gear select 9) set [2, [((_gear select 9) select 2)] call salbei_fnc_tfar_remove_id];
 };
 
 _backpack = ((_gear select 5) select 0);
 //_radioBackpacks = getArray (configFile >> CfgFactionClasses >> faction_class_name >> backpack_tf_faction_radio_api);
 //_index = _radioBackpacks pushBackUnique _backpack;
 //if (_index == -1) then{
-//  [_backpack] call _radioFix;
-//  (_gear select 5) set [0, _radioFixValue];
+//  (_gear select 5) set [0, _backpack];] call salbei_fnc_tfar_remove_id];
 //};
 
 _value =  [_gear, _health, _pos, _dir];
