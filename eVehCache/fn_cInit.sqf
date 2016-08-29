@@ -27,10 +27,10 @@ if (f_param_debugMode == 1) then {
 		sleep (f_var_cacheSleep * 1.1);
 		while {f_var_cacheRun} do {
 			_str1 = "f_fnc_cache DBG:";
-			_str2 = format["Total vehicles: %1<br/>",count vehicles];
-			_str3 = format ["Cached vehicles:%1<br/>",{_x getvariable "f_cached"} count vehicles];
-			_str4 = format ["Activated vehicles:%1<br/>",{!(_x getvariable "f_cached")} count vehicles];
-			_str5 = format ["Excluded vehicles:%1<br/>",{(_x getvariable "f_cacheExcl")} count vehicles];
+			_str2 = format["Total vehicles: %1, ",count vehicles];
+			_str3 = format ["Cached vehicles:%1, ",{_x getvariable "f_cached"} count vehicles];
+			_str4 = format ["Activated vehicles:%1, ",{!(_x getvariable "f_cached")} count vehicles];
+			_str5 = format ["Excluded vehicles:%1",{(_x getvariable "f_cacheExcl")} count vehicles];
 			diag_log (_str1+_str2+_str3+_str4+_str5);
 			sleep f_var_cacheSleep;
 		};
