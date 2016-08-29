@@ -119,7 +119,7 @@ gear_basic = {
 	this linkItem "ItemCompass";
 	this linkItem "ItemWatch";
 	this linkItem "ItemGPS";
-	this linkItem "tf_anprc148jem";
+	this linkItem "tf_anprc152";
 
 	switch _gimmeRole do {
 		case "Rifleman": {};
