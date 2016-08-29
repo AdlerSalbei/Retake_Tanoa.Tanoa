@@ -19,8 +19,9 @@ slb_Mission_spawn = {
 	
 	if (!isNil "_vehicleArray") then {
 		{
-			_x params ["_vehType", "_vehPos"];
+			_x params ["_vehType", "_vehPos", "_dir"];
 			_vehIndex = createVehicle [_vehType, _vehPos, [], 0, "CAN_COLLIDE"];
+			_vehIndex setDir _dir
 		}forEach _vehicleArray;
 	};
 	
