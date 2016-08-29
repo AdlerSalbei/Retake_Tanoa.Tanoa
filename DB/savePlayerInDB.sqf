@@ -2,6 +2,13 @@ private ["_value","_radio","_radioFixArray","_radioFix","_pos","_dir","_health",
   diag_log format ["Saveing !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"];
 if (!Alive player) exitWith {};
 
+_radioFix = {
+  _radioFixArray = _radio splitString "_";
+  _radioFixArray deleteAt ((count _radioFixArray)-1);
+  _radioFixValue = _radioFixArray joinString "_";
+  diag_log format ["Radio: %1, RadioFix: %2, RadioArray: %3", _radio, _radioFixValue, _radioFixArray];
+};
+
 // Sets gear in Database
 _gear = getUnitLoadout player;
 _pos = getPos player;
@@ -10,11 +17,8 @@ _health = getAllHitPointsDamage player;
 
 if ("ItemRadio" in magazines player) then {
   _radio = ((_gear select 9) select 2);
-  _radioFixArray = _radio splitString "_";
-  _radioFixArray deleteAt ((count _radioFixArray)-1);
-  _radioFix = _radioFixArray joinString "_";
-  diag_log format ["Radio: %1, RadioFix: %2, RadioArray: %3", _radio, _radioFix, _radioFixArray];
-  (_gear select 9) set [2, _radioFix];
+  [_radio] call _radioFix;
+  (_gear select 9) set [2, _radioFixValue];
 };
 
 _backpack = ((_gear select 5) select 0);
