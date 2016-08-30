@@ -126,11 +126,11 @@ _weaponGrenadier = [
 
 _role = "";
 
-if (str player == "commander") then {
-	_role = "Sniper";
-} else {
+//if (str player == "commander") then {
+//	_role = "TL";
+//} else {
 	_role = selectRandom _classPlayer;
-};
+//};
 _weapon = "";
 _magazine = "";
 _scope = "";
