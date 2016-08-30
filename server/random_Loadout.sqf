@@ -1,9 +1,13 @@
 _classPlayer = [
 	"Rifleman",
 	"TL",
+	"Rifleman",
 	"Medic",
+	"Rifleman",
 	"Sniper",
+	"Rifleman",
 	"MG",
+	"Rifleman",
 	"Engineer"
 ];
 
