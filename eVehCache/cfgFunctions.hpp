@@ -5,8 +5,6 @@ class F
     file = "eVehCache";
     class cInit {};
     class cTracker {};
-    class gCache {};
-    class gUncache {};
     class nearPlayer {};
   };
 }
