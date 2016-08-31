@@ -2,7 +2,11 @@
 _boxName = "";
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Box";
 
-if (isNil "_value") exitWith {};
+_value paramo ["_boxType", "_pos", "_dir", "_gear"];
+
+_boxName =
+
+if (isNil "_gear") exitWith {};
 
 {
         switch (_forEachIndex) do {
