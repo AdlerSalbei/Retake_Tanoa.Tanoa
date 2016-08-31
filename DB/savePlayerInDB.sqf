@@ -20,7 +20,6 @@ _backpack = ((_gear select 5) select 0);
 //};
 
 _value =  [_gear, _health, _pos, _dir];
-diag_log format ["Value: %1", _value];
 profileNamespace setVariable ["SLB_Retake_Tanoa_Player", _value];
 saveProfileNamespace;
 
@@ -32,6 +31,8 @@ if  (isNil "_value1") exitWith {diag_log format ["Save Failed"];};
 
 if (_value1 isEqualTo _value) then {
   hint format ["Saved %1 in DB sucessfull!", str name vehicle player];
+  sleep 2;
+    hint format [""];
 }else{
   hint format ["Saved %1 in DB Failed!", str name vehicle player];
 };

@@ -8,5 +8,5 @@ if (!isNil "_pos") then {
 		[west, _pos] call BIS_fnc_addRespawnPosition;
 	};
 }else {
-	diag_log format ["No Respawn Pso given."];
+	diag_log format ["No Respawn Pos given."];
 };

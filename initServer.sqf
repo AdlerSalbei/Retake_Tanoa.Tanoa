@@ -1,3 +1,5 @@
+private ["_date", "_weather"];
+
 if (isDedicated) then {
 	//when headless param is set, then
 	if (("HC_enabled" call BIS_fnc_getParamValue) == 1) then {
@@ -22,17 +24,9 @@ if (isDedicated) then {
 
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
-_value = profileNamespace getVariable "SLB_Retake_Tanoa_Time_Weather";
-if (!isNil "_value") then {
-	_value params ["_date", "_weather"];
-	if (isNil "_date") then {_date = [2015, 2, 2, 12, 1];};
-	if (isNil "_weather") then { _weather = 0;};
-}else{
-	_weather = 0;
-	_date = [2015, 2, 2, 12, 1];
-};
+_value = profileNamespace getVariable ["SLB_Retake_Tanoa_Time_Weather",[[2015, 2, 2, 12, 1], 0]];
+_value params ["_date", "_weather"];
 
-diag_log format ["Loaded weather %1 and date %2", _weather, _date];
 setDate _date;
 setCustomWeather = {
 	skipTime -24;

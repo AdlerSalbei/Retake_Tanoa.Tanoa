@@ -5,8 +5,6 @@ _healthArray = [];
 //check if there is a save
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
-diag_log format ["Loaded Value: %1", _value];
-
 if  (isNil "_value") exitWith {diag_log format ["No save %1", _unit]; forceRespawn player;};
 
 

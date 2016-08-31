@@ -1,4 +1,4 @@
-if (!isMultiplayer) then { 
+if (!isMultiplayer) then {
 	// Editor
 	{_x disableAI "MOVE"} forEach allUnits;
 };
