@@ -20,4 +20,4 @@ if (isNil "_gear") exitWith {};
                     case 3: { {_boxName addWeaponCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
         };
      };
-} forEach _value;
+} forEach _gear;
