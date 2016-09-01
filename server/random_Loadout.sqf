@@ -12,6 +12,21 @@ _classPlayer = [
 ];
 
 _weaponStandart = [
+	//Vanilla
+	"arifle_Mk20_plain_F",
+	"arifle_Mk20C_plain_F",
+	"arifle_TRG20_F",
+	"hgun_PDW2000_F",
+	"SMG_01_F",
+	"SMG_02_F",
+	"arifle_AK12_F",
+	"arifle_AKM_F",
+	"arifle_AKS_F",
+	"arifle_CTAR_blk_F",
+	"arifle_SPAR_01_blk_F",
+	"arifle_SPAR_01_khk_F",
+	"SMG_05_F",
+
 	//RHS
 	"rhs_weap_hk416d145",
 	"rhs_weap_m14ebrri",
@@ -23,6 +38,17 @@ _weaponSniper = [
 	//Vanilla
 	"srifle_DMR_04_F",
 	"srifle_DMR_04_Tan_F",
+	"srifle_DMR_01_F",
+	"srifle_EBR_F",
+	"srifle_DMR_02_F",
+	"srifle_DMR_03_F",
+	"srifle_DMR_03_khaki_F",
+	"srifle_DMR_05_blk_F",
+	"srifle_DMR_06_olive_F",
+	"srifle_DMR_07_blk_F",
+	"srifle_DMR_07_ghex_F",
+	"arifle_SPAR_03_blk_F",
+	"arifle_SPAR_03_khk_F",
 
 	//RHS
 	"rhs_weap_svdp",
@@ -37,12 +63,28 @@ _weaponSniper = [
 _weaponMG = [
 	//Vanilla
 	"LMG_Zafir_F",
+	"LMG_Mk200_F",
+	"MMG_01_tan_F",
+	"MMG_02_black_F",
+	"arifle_CTARS_ghex_F",
+	"LMG_03_F",
+	"arifle_SPAR_02_blk_F",
+	"arifle_SPAR_02_khk_F",
 
 	//RHS
 	"rhs_weap_m240B",
 	"rhs_weap_m240G",
 	"rhs_weap_m249_pip_L",
 	"rhs_weap_pkp"
+];
+
+_weaponGrenadier = [
+	//Vanilla
+	"arifle_SPAR_01_GL_blk_F",
+	"arifle_AK12_GL_F",
+	"arifle_CTAR_GL_blk_F",
+	"arifle_Mk20_GL_F",
+	"arifle_TRG21_GL_F"
 ];
 
 _standartScopes = [
@@ -55,6 +97,9 @@ _standartScopes = [
 	"optic_ACO_grn",
 	"optic_Aco",
 	"optic_Holosight_smg",
+	"optic_Aco_smg",
+	"optic_ACO_grn_smg",
+
 	//RHS
 	"rhsusf_acc_ACOG_USMC",
 	"rhsusf_acc_ACOG",
@@ -75,6 +120,7 @@ _standartScopes = [
 	"rhsusf_acc_eotech_552_d",
 	"rhsusf_acc_compm4",
 	"rhsusf_acc_eotech_xps3",
+
 	//FHQ
 	"FHQ_optic_AC11704",
 	"FHQ_optic_AC11704_tan",
@@ -121,12 +167,6 @@ _opticSniper = [
 	"FHQ_optic_LeupoldERT",
 	"FHQ_optic_LeupoldERT_tan"
   ];
-
-_weaponGrenadier = [
-	"arifle_SPAR_01_GL_blk_F",
-	"arifle_AK12_GL_F",
-	"arifle_CTAR_GL_blk_F"
-];
 
 _role = "";
 
