@@ -5,8 +5,6 @@ _healthArray = [];
 //check if there is a save
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
-diag_log format ["Loaded Value: %1", _value];
-
 if  (isNil "_value") exitWith {diag_log format ["No save %1", _unit]; forceRespawn player;};
 
 
@@ -19,6 +17,7 @@ _unit setPos _pos;
 //set health
 _health = _healthArray select 2;
 {
+	diag_log format ["Plyer: %1, X: %2, Index: %2", _unit, _x, _forEachIndex];
 	_unit setHitIndex [_forEachIndex, _x];
 } forEach _health;
 
