@@ -5,6 +5,23 @@ randomUniforms = [
     "U_B_CTRG_1",
     "U_O_CombatUniform_ocamo",
     "U_B_CombatUniform_mcam_vest",
+    "U_C_Poloshirt_blue",
+    "U_C_Poloshirt_burgundy",
+    "U_C_Poloshirt_stripped",
+    "U_C_Poloshirt_tricolour",
+    "U_C_Poloshirt_salmon",
+    "U_C_Poloshirt_redwhite",
+    "U_Rangemaster",
+    "U_NikosBody",
+    "U_OrestesBody",
+    "U_IG_Guerilla1_1",
+    "U_IG_Guerilla2_1",
+    "U_IG_Guerilla2_2",
+    "U_IG_Guerilla2_3",
+    "U_IG_Guerilla3_1",
+    "U_IG_Guerilla3_2",
+    "U_C_Poor_1",
+    
 
     //ARC
     "ARC_Common_MC_Uniform",
@@ -71,7 +88,13 @@ randomBackpack = [
 ];
 
 randomHeadgear = [
+	//Vanilla
+	"H_Shemag_khk",
+	"H_Shemag_olive",
+	
+	/RHS
 	"rhsusf_lwh_helmet_marpatwd"
+	
 ];
 
 gear_basic = {
@@ -91,8 +114,10 @@ gear_basic = {
 		this addBackpack(randomBackpack call BIS_fnc_selectRandom);
 	};
 
+	 if (random 100 <= 50) then {
 	this addHeadgear(randomHeadgear call BIS_fnc_selectRandom);
-
+	}
+	
 	_mySprayPaint = selectRandom ["ACE_SpraypaintBlack", "ACE_SpraypaintBlue", "ACE_SpraypaintGreen", "ACE_SpraypaintRed"];
 
 	[this, "ACE_fieldDressing", 10] call addItemsToUniform;
