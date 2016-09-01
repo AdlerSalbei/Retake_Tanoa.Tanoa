@@ -55,6 +55,7 @@ randomVest = [
     "V_PlateCarrier1_rgr",
     "V_TacVest_khk",
     "V_PlateCarrier1_rgr",
+    "V_Rangemaster_belt",
 
     //ARC
     "ARC_Common_TAN_PlateCarrier_1",
@@ -153,7 +154,6 @@ gear_basic = {
 		case "Medic": {[this] call gearMedic};
 		case "Sniper": {[this] call gearSniper};
 		case "MG": {};
-		case "Grenadier": {};
 		default {diag_log format ["Has no Class selected"]};
 	};
 };
