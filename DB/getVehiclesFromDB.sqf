@@ -17,6 +17,7 @@ private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
       //set health
       _health = _healthArray select 2;
       {
+        diag_log format ["X: %1, Index: %2", _x, _forEachIndex];
           _veh setHitIndex [_forEachIndex, _x];
       } forEach _health;
 
