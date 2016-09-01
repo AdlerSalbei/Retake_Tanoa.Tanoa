@@ -15,8 +15,6 @@ _weaponStandart = [
 	//RHS
 	"rhs_weap_hk416d145",
 	"rhs_weap_m14ebrri",
-	"rhs_weap_XM2010",
-	"rhs_weap_XM2010_wd",
 	"rhs_weap_m27iar",
 	"rhs_weap_sr25"
 ];
@@ -31,7 +29,9 @@ _weaponSniper = [
 	"rhs_weap_svdp_npz",
 	"rhs_weap_svds",
 	"rhs_weap_svds_npz",
-	"rhs_weapon_XM2010"
+	"rhs_weapon_XM2010",
+	"rhs_weap_XM2010",
+	"rhs_weap_XM2010_wd"
 ];
 
 _weaponMG = [
@@ -150,8 +150,8 @@ switch _role do {
 	case "TL": {_weapon = selectRandom _weaponGrenadier; SCOPESPROB = 70; MUZZLEATTACHMENTPROB = 10;};
 	case "Engineer": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 30; MUZZLEATTACHMENTPROB = 30;};
 	case "Medic": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 30; MUZZLEATTACHMENTPROB = 30;};
-	case "Sniper": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 100; MUZZLEATTACHMENTPROB = 50;};
-	case "MG": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 10; MUZZLEATTACHMENTPROB = 70;};
+	case "Sniper": {_weapon = selectRandom _weaponSniper; SCOPESPROB = 100; MUZZLEATTACHMENTPROB = 50;};
+	case "MG": {_weapon = selectRandom _weaponMG; SCOPESPROB = 10; MUZZLEATTACHMENTPROB = 70;};
 	default {diag_log format ["Has no Class selected"]};
 };
 
