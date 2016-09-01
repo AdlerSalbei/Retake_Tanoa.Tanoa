@@ -130,7 +130,7 @@ _weaponGrenadier = [
 
 _role = "";
 
-//if (str player == "commander") then {
+//if (str player == "rebellion_lead") then {
 //	_role = "TL";
 //} else {
 	_role = selectRandom _classPlayer;
@@ -152,7 +152,6 @@ switch _role do {
 	case "Medic": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 30; MUZZLEATTACHMENTPROB = 30;};
 	case "Sniper": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 100; MUZZLEATTACHMENTPROB = 50;};
 	case "MG": {_weapon = selectRandom _weaponStandart; SCOPESPROB = 10; MUZZLEATTACHMENTPROB = 70;};
-	case "Grenadier": {_weapon = selectRandom _weaponGrenadier; SCOPESPROB = 70; MUZZLEATTACHMENTPROB = 50;};
 	default {diag_log format ["Has no Class selected"]};
 };
 
