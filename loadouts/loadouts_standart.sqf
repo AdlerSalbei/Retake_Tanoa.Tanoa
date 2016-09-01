@@ -117,7 +117,7 @@ gear_basic = {
 
 	 if (random 100 <= 50) then {
 	this addHeadgear(randomHeadgear call BIS_fnc_selectRandom);
-	}
+	};
 	
 	_mySprayPaint = selectRandom ["ACE_SpraypaintBlack", "ACE_SpraypaintBlue", "ACE_SpraypaintGreen", "ACE_SpraypaintRed"];
 
