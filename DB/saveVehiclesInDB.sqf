@@ -20,7 +20,7 @@ if (isNil "_vehicles") exitWith {};
 	
 			//cargo
 			_gear = [(getBackpackCargo _veh), (getItemCargo _veh), (getMagazineCargo _veh), (getWeaponCargo _veh)];
-	
+			diag_log format ["Gear save: %1", _gear];
 			_fuel = getFuelCargo _veh;
 	
 			//save array composition
