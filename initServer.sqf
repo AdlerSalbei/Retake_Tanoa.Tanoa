@@ -24,8 +24,10 @@ if (isDedicated) then {
 
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
-_value = profileNamespace getVariable ["SLB_Retake_Tanoa_Time_Weather",[[2015, 2, 2, 12, 1], 0]];
+_value = profileNamespace getVariable ["SLB_Retake_Tanoa_Time_Weather", [[2015, 2, 2, 12, 1],0]];
 _value params ["_date", "_weather"];
+
+diag_log format ["D&W: %1", _value];
 
 setDate _date;
 setCustomWeather = {

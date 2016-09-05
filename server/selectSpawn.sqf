@@ -3,7 +3,7 @@ taskID1 = {
 	 _pos = [2779.55,2530.59,0.00271606];
 	_name = "Test Respawn Pos";
 	[_pos, _name] execVM "helpers\addRespawnPosition.sqf";
-	_unitsArray = [];
+	_unitsArray = [["O_G_Soldier_AR_F",[6879.71,7390.21,0.00143886],1,"",0.5,"corporal"]];
 	_vehicleArray = [["B_Heli_Transport_03_F",[6889.71,7390.21,0.00143886], 42.877],["B_T_VTOL_01_armed_olive_F",[6962.8,7363.69,0.00143886],170.327]];
 	[_unitsArray, _vehicleArray] call slb_Mission_spawn;
 };

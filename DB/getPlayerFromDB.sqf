@@ -17,6 +17,7 @@ _unit setPos _pos;
 //set health
 _health = _healthArray select 2;
 {
+	diag_log format ["Player: %1, X: %2, Index: %2", _unit, _x, _forEachIndex];
 	_unit setHitIndex [_forEachIndex, _x];
 } forEach _health;
 
