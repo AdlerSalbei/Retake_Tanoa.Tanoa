@@ -26,8 +26,10 @@ private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
       clearBackpackCargoGlobal _veh;
 
       {
+        diag_log format ["Loaded Gear X: %1", _x]; 
         if (str _x != "[[],[]]") then {
-          switch (_forEachIndex) do {
+            diag_log format ["Index: %1, Type: %2, Amount: %3 ", _forEachIndex, _x select 0, _x select 1];
+            switch (_forEachIndex) do {
                       case 0: { {_veh addBackpackCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
                       case 1: { {_veh addItemCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
                       case 2: { {_veh addMagazineCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
