@@ -1,7 +1,3 @@
- _unit =((_this select 0) select 0);
-
-if  (str _unit != "Commander") exitWith {diag_log format ["Player %1 not the Unit Leader!", _unit];};
-
 call compile preprocessFile "server\spawnHandler.sqf";
 call compile preprocessFile "server\selectSpawn.sqf";
 waitUntil {!isNil "SPAWNSETUPDONE"};
