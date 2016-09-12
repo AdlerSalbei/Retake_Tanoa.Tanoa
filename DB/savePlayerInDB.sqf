@@ -12,11 +12,10 @@ if ("ItemRadio" in magazines player) then {
 };
 
 _backpack = ((_gear select 5) select 0);
-//_radioBackpacks = getArray (configFile >> CfgFactionClasses >> faction_class_name >> backpack_tf_faction_radio_api);
-//_index = _radioBackpacks pushBackUnique _backpack;
-//if (_index == -1) then{
-//  (_gear select 5) set [0, _backpack];] call salbei_fnc_tfar_remove_id];
-//};
+_radioFixArray = _backpack splitString "_";
+if ((_radioFixArray select 0) == "tf") then{
+ (_gear select 5) set [0, _backpack];] call salbei_fnc_tfar_remove_id];
+};
 
 _value =  [_gear, _health, _pos, _dir];
 profileNamespace setVariable ["SLB_Retake_Tanoa_Player", _value];
