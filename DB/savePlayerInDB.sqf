@@ -14,7 +14,7 @@ if ("ItemRadio" in magazines player) then {
 _backpack = ((_gear select 5) select 0);
 _radioFixArray = _backpack splitString "_";
 if ((_radioFixArray select 0) == "tf") then{
- (_gear select 5) set [0, _backpack] call salbei_fnc_tfar_remove_id];
+ (_gear select 5) set [0, [_backpack] call salbei_fnc_tfar_remove_id];
 };
 
 _value =  [_gear, _health, _pos, _dir];
