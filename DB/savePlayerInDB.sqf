@@ -1,4 +1,5 @@
 private ["_value","_radio","_radioFixArray","_radioFix","_pos","_dir","_health","_gear", "_value1"];
+hint "Saving ...";
 if (!Alive player) exitWith {};
 
 // Sets gear in Database
