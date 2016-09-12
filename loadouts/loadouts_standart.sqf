@@ -148,12 +148,12 @@ gear_basic = {
 	this linkItem "tf_anprc152";
 
 	switch _gimmeRole do {
-		case "Rifleman": {};
-		case "Engineer": {[this] call gearEngineer};
-		case "TL": {[this] call gearTL};
-		case "Medic": {[this] call gearMedic};
-		case "Sniper": {[this] call gearSniper};
-		case "MG": {};
+		case "Rifleman": {hint "Rifleman";};
+		case "Engineer": {hint {Engineer}; [this] call gearEngineer; ;
+		case "TL": {hint {TL}; [this] call gearTL};
+		case "Medic": {hint {Medic}; [this] call gearMedic};
+		case "Sniper": {hint {Sniper}; [this] call gearSniper};
+		case "MG": {hint {MG};};
 		default {diag_log format ["Has no Class selected"]};
 	};
 };
