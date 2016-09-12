@@ -149,11 +149,11 @@ gear_basic = {
 
 	switch _gimmeRole do {
 		case "Rifleman": {hint "Rifleman";};
-		case "Engineer": {hint {Engineer}; [this] call gearEngineer; ;
-		case "TL": {hint {TL}; [this] call gearTL};
-		case "Medic": {hint {Medic}; [this] call gearMedic};
-		case "Sniper": {hint {Sniper}; [this] call gearSniper};
-		case "MG": {hint {MG};};
+		case "Engineer": {hint "Engineer"; [this] call gearEngineer;};
+		case "TL": {hint "TL"; [this] call gearTL;};
+		case "Medic": {hint "Medic"; [this] call gearMedic;};
+		case "Sniper": {hint "Sniper"; [this] call gearSniper;};
+		case "MG": {hint "MG";};
 		default {diag_log format ["Has no Class selected"]};
 	};
 };
