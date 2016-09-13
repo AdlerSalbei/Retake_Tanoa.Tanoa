@@ -130,6 +130,7 @@ gearMedic = {
 gearTL = {
 	this = _this select 0;
 	[this, "ACE_MapTools", 1] call addMagazinesToVest;
+	this addWeapon "Binocular";
 };
 
 gearEngineer = {
