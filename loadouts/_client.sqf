@@ -6,7 +6,6 @@ call compile preprocessFile "server\random_Loadout.sqf";
 waitUntil {!isNil "WEAPONSETUPDONE"};
 
 call compile preprocessFile "loadouts\loadouts_standart.sqf";
-call compile preprocessFile "loadouts\rolle.sqf";
 call compile preprocessFile "loadouts\loadout_fillfunctions.sqf";
 
 if (local _unit) then {
