@@ -1,7 +1,7 @@
 private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
 
 //EXECUTE AS SERVER !!!
-//if (!isDedicated) exitWith { diag_log "ERROR restore vehicle not as server"; };
+if (!isDedicated) exitWith { diag_log "Not dedicated leaving getVehiclesFromDB.sqf!"; };
 
 //reconstruct each vehicle stored in "GRAD_Retake_Tanoa_Vehicle"
 {
