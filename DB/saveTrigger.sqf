@@ -1,13 +1,18 @@
 slb_fnc_tfar_remove_id = compile preprocessfilelinenumbers "helpers\fn_tfar_remove_id.sqf";
 
-while {true} do { 
-	sleep 30;
-	if (isServer) then  {
-		[] execVM "DB\saveVehiclesInDB.sqf";
-		[] execVM "DB\saveWeatherAndDateInDB.sqf";
-	};
+_saveServer = {
+	[] execVM "DB\saveVehiclesInDB.sqf";
+	[] execVM "DB\saveWeatherAndDateInDB.sqf";
+};
 	
-	if (hasInterface) then {
-		[] execVM "DB\savePlayerInDB.sqf";
-	};
+_savePlayer = {
+	[] execVM "DB\savePlayerInDB.sqf";
+};
+
+if (isServer) = {
+	[_saveServer, 30, []] call CBA_fnc_addPerFrameHandler;
+};
+
+if (hasInterface) = {
+	[_savePlayer, 30, []] call CBA_fnc_addPerFrameHandler;
 };
