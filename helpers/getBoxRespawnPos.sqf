@@ -3,7 +3,7 @@ _box = "RespawnBox";
 _oldPos = [];
 
 _loop = {
-	_loop params [_box, _oldPos];
+	_loop params ["_box", "_oldPos"];
 	_pos = getPos _box;
 	if (_pos != _oldPos) then {
 		if (!isNil "_id") then {
