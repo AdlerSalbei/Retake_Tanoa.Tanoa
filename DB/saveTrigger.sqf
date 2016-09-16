@@ -1,12 +1,12 @@
 slb_fnc_tfar_remove_id = compile preprocessfilelinenumbers "helpers\fn_tfar_remove_id.sqf";
 
 _saveServer = {
-	[] execVM "DB\saveVehiclesInDB.sqf";
-	[] execVM "DB\saveWeatherAndDateInDB.sqf";
+	nul = [] execVM "DB\saveVehiclesInDB.sqf";
+	nul = [] execVM "DB\saveWeatherAndDateInDB.sqf";
 };
 	
 _savePlayer = {
-	[] execVM "DB\savePlayerInDB.sqf";
+	nul = [] execVM "DB\savePlayerInDB.sqf";
 };
 
 if (isServer) then {
