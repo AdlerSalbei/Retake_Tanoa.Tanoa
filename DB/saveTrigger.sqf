@@ -9,10 +9,10 @@ _savePlayer = {
 	[] execVM "DB\savePlayerInDB.sqf";
 };
 
-if (isServer) = {
+if (isServer) then {
 	[_saveServer, 30, []] call CBA_fnc_addPerFrameHandler;
 };
 
-if (hasInterface) = {
+if (hasInterface) then {
 	[_savePlayer, 30, []] call CBA_fnc_addPerFrameHandler;
 };
