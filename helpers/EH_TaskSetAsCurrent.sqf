@@ -26,7 +26,7 @@ if (_count >= _maxTasks) then {
 _index = slb_runningTasksArray pushBackUnique _taskID;
 diag_log format ["EH: Tasks %1", slb_runningTasksArray];
 if (_index != -1) then {
-	[_taskID] call taskSelector;
+	[] call compile format ["taskID%1", _taskID];
 } else {
 	diag_log format ["EH: Task(ID: %1) allready running", _taskID];
 };
