@@ -1,5 +1,3 @@
-call compile preprocessFile "server\spawnHandler.sqf";
-call compile preprocessFile "server\selectSpawn.sqf";
 waitUntil {!isNil "SPAWNSETUPDONE"};
 
 _maxTasks = "Simultaneous_task" call BIS_fnc_getParamValue;
