@@ -9,7 +9,7 @@ if  (str player == "rebellion_lead") then {
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
 [player] execVM "DB\getPlayerFromDB.sqf"; 
-[] execVM "helpers/getBoxRespawnPos.sqf"; 
+[] execVM "helpers\getBoxRespawnPos.sqf"; 
 
 
 diag_log format ["setup: loadout %1 initiated", str player];	
