@@ -1,3 +1,5 @@
+_unit = _this select 0;
+
 waitUntil {!isNil "SPAWNSETUPDONE"};
 
 _maxTasks = "Simultaneous_task" call BIS_fnc_getParamValue;
