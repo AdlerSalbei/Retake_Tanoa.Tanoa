@@ -27,7 +27,7 @@ if (!isDedicated) exitWith { diag_log "Not dedicated leaving getVehiclesFromDB.s
 
       {
         diag_log format ["Loaded Gear X: %1", _x]; 
-        if (str _x != "[[],[]]") then {
+        if !(str _x isEqualTo [[],[]]) then {
             diag_log format ["Index: %1, Type: %2, Amount: %3 ", _forEachIndex, _x select 0, _x select 1];
             switch (_forEachIndex) do {
                       case 0: { {_veh addBackpackCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
