@@ -8,7 +8,7 @@ if  (str player == "rebellion_lead") then {
 
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
-[player] execVM "DB\getPlayerFromDB.sqf"; 
+[player] execVM "DB\Load\getPlayerFromDB.sqf"; 
 [] execVM "helpers\getBoxRespawnPos.sqf"; 
 
 
