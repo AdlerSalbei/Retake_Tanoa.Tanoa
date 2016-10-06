@@ -1,10 +1,10 @@
 _saveServer = {
-	nul = [] execVM "DB\saveVehiclesInDB.sqf";
-	nul = [] execVM "DB\saveWeatherAndDateInDB.sqf";
+	nul = [] execVM "DB\Save\saveVehiclesInDB.sqf";
+	nul = [] execVM "DB\Save\saveWeatherAndDateInDB.sqf";
 };
 	
 _savePlayer = {
-	nul = [] execVM "DB\savePlayerInDB.sqf";
+	nul = [] execVM "DB\Save\savePlayerInDB.sqf";
 };
 
 if (isServer) then {
