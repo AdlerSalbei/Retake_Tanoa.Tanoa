@@ -1,5 +1,3 @@
-slb_fnc_tfar_remove_id = compile preprocessfilelinenumbers "helpers\fn_tfar_remove_id.sqf";
-
 _saveServer = {
 	nul = [] execVM "DB\saveVehiclesInDB.sqf";
 	nul = [] execVM "DB\saveWeatherAndDateInDB.sqf";
@@ -14,5 +12,6 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
+	slb_fnc_tfar_remove_id = compile preprocessfilelinenumbers "helpers\fn_tfar_remove_id.sqf";
 	[_savePlayer, 30, []] call CBA_fnc_addPerFrameHandler;
 };
