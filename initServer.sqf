@@ -37,8 +37,8 @@ setCustomWeather = {
 
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {[] execVM "helpers\tfarsettings.sqf";};
 [] execVM "helpers\medical_settings.sqf";
-[] execVM "DB\getVehiclesFromDB.sqf";
-[] execVM "DB\getTaskState.sqf";
+[] execVM "DB\Load\getVehiclesFromDB.sqf";
+[] execVM "DB\Load\getTaskState.sqf";
 [] execVM "initEVehCaching.sqf";
 
-diag_log format ["setup: server done"];
+diag_log format ["Setup: Server done"];
