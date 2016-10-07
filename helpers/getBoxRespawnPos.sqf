@@ -6,6 +6,8 @@ _loop = {
     _oldPos = _box getVariable ["grad_oldpos",[]];
     _id = _box getVariable ["grad_id", -1];
     _pos = getPos _box;
+	
+	diag_log format ["Respawnbox old pos: %1 new pos: %2", _oldPos, _pos];
 
     if !(_pos isEqualTo _oldPos) then {
 	    if (_id != -1) then {
