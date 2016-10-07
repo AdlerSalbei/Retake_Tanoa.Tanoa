@@ -8,6 +8,7 @@ private ["_weather", "_date"];
 
 //set value
 _value = [_date, _weather];
-diag_log format ["D&W: %1", _value];
+
+//save Date & Weather
 profileNamespace setVariable ["SLB_Retake_Tanoa_Time_Weather", _value];
 saveProfileNamespace;

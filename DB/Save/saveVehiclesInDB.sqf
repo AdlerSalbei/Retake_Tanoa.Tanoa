@@ -22,12 +22,11 @@ if (isNil "_vehicles") exitWith {};
 	
 			//cargo
 			_gear = [(getBackpackCargo _veh), (getItemCargo _veh), (getMagazineCargo _veh), (getWeaponCargo _veh)];
-			diag_log format ["Veh: %1, Gear: %2", _veh, _gear];
 			_fuel = getFuelCargo _veh;
 	
 			//save array composition
+			diag_log format ["Veh: %1, Pos: %2, Dir: %3, Gear: %4, Fuel: %5", _vehType, _pos, _dir, _gear, _fuel];
 			_value pushback [_vehType, _pos, _dir, _health, _gear, _fuel];
-			diag_log format ["Value: %1", _value];
 		}
 	};
 } forEach _vehicles;
