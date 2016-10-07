@@ -1,9 +1,5 @@
 if  (str player == "rebellion_lead") then {
-  call compile preprocessFile "server\spawnHandler.sqf";
-  call compile preprocessFile "server\selectSpawn.sqf";
-  slb_runningTasksArray = []; 
-  slb_SpawnedUnitsArray = []; 
-  player addEventHandler ["TaskSetAsCurrent",{[_this] execVM "helpers\EH_TaskSetAsCurrent.sqf"}];
+  [] execVM "helpers\setUpLeader.sqf"; 
 };
 
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;

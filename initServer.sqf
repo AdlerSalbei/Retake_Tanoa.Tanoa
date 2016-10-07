@@ -35,6 +35,10 @@ setCustomWeather = {
 	skipTime 24;
 };
 
+slb_allSpawnedVehicles_save = profileNamespace getVariable ["SLB_Retake_Tanoa_spawnedVehicles", []];
+
+
+
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {[] execVM "helpers\tfarsettings.sqf";};
 [] execVM "helpers\medical_settings.sqf";
 [] execVM "DB\Load\getVehiclesFromDB.sqf";
