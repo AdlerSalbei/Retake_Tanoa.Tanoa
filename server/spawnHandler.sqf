@@ -1,4 +1,6 @@
 slb_Mission_spawn = {
+	diag_log format["Made it to Unit & vehicle spawn"];
+
 	if (isNil "_this") exitWith {};
 	_this params ["_unitArray", "_vehicleArray"];
 	
@@ -20,12 +22,15 @@ slb_Mission_spawn = {
 	};
 	
 	if (!isNil "_vehicleArray") then {
-		{
-			_x params ["_vehType", "_vehPos", "_vehDir"];
-			_vehIndex = createVehicle [_vehType, _vehPos, [], 0, "CAN_COLLIDE"];
-			_vehIndex setDir _vehDir;
-			diag_log format ["VehType: %1, Pos: %2, Dir: %3", _vehType, _vehPos, vehDir];
-		}forEach _vehicleArray;
+		_index = slb_allSpawnedVehicles pushBackUnique _vehicleArray;
+		if (_index != -1) then {
+			{
+				_x params ["_vehType", "_vehPos", "_vehDir"];
+				_vehIndex = createVehicle [_vehType, _vehPos, [], 0, "CAN_COLLIDE"];
+				_vehIndex setDir _vehDir;
+				diag_log format ["SPAWNED VehType: %1, Pos: %2, Dir: %3", _vehType, _vehPos, vehDir];
+			}forEach _vehicleArray;
+		};
 	};
 	
 	if (!isNil "_unitGroupArray") then {slb_SpawnedUnitsArray pushBack _unitGroupArray;};
