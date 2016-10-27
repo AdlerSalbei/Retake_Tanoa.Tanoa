@@ -1,3 +1,4 @@
+diag_log format ["Setting up Leader."];
 call compile preprocessFile "server\spawnHandler.sqf";
 call compile preprocessFile "server\selectSpawn.sqf";
 slb_runningTasksArray = []; 

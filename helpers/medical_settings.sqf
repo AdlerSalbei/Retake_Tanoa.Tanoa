@@ -21,4 +21,4 @@ ace_medical_enableoverdosing = true; // Enable Overdosing - Enable overdosing of
 ace_medical_amountofrevivelives = -1; // Max Revive lives - Max amount of lives a unit. 0 or -1 is disabled
 ace_medical_consumeitem_pak = 0; // Remove PAK on use (Adv) - Should PAK be removed on usage? - No = 0, Yes - 1
 ace_medical_uselocation_pak = 0; // Locations PAK (Adv) - Where can the personal aid kit be used? - Anywhere = 0, Medical Vehicles = 1, Medical facility = 2, Vehicles & facility = 3, Disabled = 4
-ace_medical_littercleanupdelay = (60 * 30); // Life time of litter objects - How long should litter objects stay? In seconds. -1 is forever
+ace_medical_littercleanupdelay = (60 * 15); // Life time of litter objects - How long should litter objects stay? In seconds. -1 is forever
