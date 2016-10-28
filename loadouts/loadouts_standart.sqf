@@ -1,202 +1,108 @@
-randomUniforms = [
-    //VANILLA
-    "U_B_CombatUniform_mcam",
-    "U_I_CombatUniform",
-    "U_B_CTRG_1",
-    "U_O_CombatUniform_ocamo",
-    "U_B_CombatUniform_mcam_vest",
-    "U_C_Poloshirt_blue",
-    "U_C_Poloshirt_burgundy",
-    "U_C_Poloshirt_stripped",
-    "U_C_Poloshirt_tricolour",
-    "U_C_Poloshirt_salmon",
-    "U_C_Poloshirt_redwhite",
-    "U_Rangemaster",
-    "U_NikosBody",
-    "U_OrestesBody",
-    "U_IG_Guerilla1_1",
-    "U_IG_Guerilla2_1",
-    "U_IG_Guerilla2_2",
-    "U_IG_Guerilla2_3",
-    "U_IG_Guerilla3_1",
-    "U_IG_Guerilla3_2",
-    "U_C_Poor_1",
-    
-
-    //ARC
-    "ARC_Common_MC_Uniform",
-    "ARC_GER_Flecktarn_Uniform",
-
-    //RHS
-    "rhs_uniform_cu_ocp",
-    "rhs_uniform_emr_patchless",
-    "rhs_uniform_flora_patchless_alt",
-    "rhs_uniform_FROG01_wd",
-    "rhs_uniform_g3_blk",
-    "rhs_uniform_g3_m81",
-    "rhs_uniform_g3_mc",
-    "rhs_uniform_g3_rgr",
-    "rhs_uniform_mvd_izlom",
-    "rhsgref_uniform_para_ttsko_mountain",
-    "rhsgref_uniform_para_ttsko_urban",
-    "rhsgref_uniform_vsr",
-    "rhsgref_uniform_ttsko_forest",
-    "rhsgref_uniform_ttsko_mountain",
-    "rhsgref_uniform_alpenflage",
-    "rhsgref_uniform_tigerstripe",
-    "rhsgref_uniform_woodland",
-    "rhsgref_uniform_specter"
-  ];
-
-randomVest = [
-    //VANILLA
-    "V_PlateCarrier1_rgr",
-    "V_Chestrig_oli",
-    "V_PlateCarrier1_rgr",
-    "V_TacVest_khk",
-    "V_PlateCarrier1_rgr",
-    "V_Rangemaster_belt",
-
-    //ARC
-    "ARC_Common_TAN_PlateCarrier_1",
-    "ARC_GER_Flecktarn_Plate_Carrier",
-
-    //RHS
-    "rhsusf_iotv_ocp_SAW",
-    "rhs_6b23_digi_rifleman",
-    "rhs_6b23_ML",
-    "rhsusf_spc",
-    "V_TacVest_oli",
-    "V_TacVest_oli",
-    "rhsusf_spc",
-    "V_TacVest_khk",
-    "V_I_G_resistanceLeader_F",
-    "rhsgref_6b23_ttsko_mountain",
-    "rhsgref_6b23_ttsko_mountain",
-    "rhsgref_6b23_khaki_rifleman",
-    "rhsgref_6b23_khaki_rifleman",
-    "rhsgref_6b23_ttsko_mountain",
-    "rhs_6b23",
-    "rhs_6b13_Flora",
-    "rhs_6b13_Flora",
-    "rhsgref_6b23_khaki_rifleman"
-  ];
-
-
-randomBackpack = [
-	"rhsusf_assault_eagleaiii_coy",
-	"B_AssaultPack_mcamo"
-];
-
-randomHeadgear = [
-	//Vanilla
-	"H_Shemag_khk",
-	"H_Shemag_olive",
+_gearRifleman = {
+	_unit = _this select 0;
+	_number = 0;
 	
-	//RHS
-	"rhsusf_lwh_helmet_marpatwd"
-];
-
-gearSniper = {
-	this = _this select 0;
-	hint format ["All hail me, I rule here as Sniper"];
-	this addItemToBackpack "ACE_RangeCard";
-	this addItemToBackpack "ACE_SpottingScope";
-	this addItemToBackpack "ACE_Tripod";
-	this addItemToBackpack "ACE_MapTools";
-	this addItemToBackpack "ACE_Kestrel4500";
-	this addItemToBackpack "ACE_ATragMX";
-	this addWeapon "ACE_Yardage450";
+	switch _number do {
+		case "0": {_unit setUnitLoadout [["rhs_weap_hk416d10","","rhsusf_acc_anpeq15_bk","rhsusf_acc_eotech_552",["rhs_mag_30Rnd_556x45_Mk262_Stanag",30],[],""],[],["rhsusf_weap_m9","","","",["rhsusf_mag_15Rnd_9x19_JHP",15],[],""],["rhs_uniform_g3_rgr",[["ACE_microDAGR",1],["ACE_NVG_Gen2",1],["rhsusf_mag_15Rnd_9x19_JHP",2,15]]],["V_TacChestrig_oli_F", [["30Rnd_556x45_Stanag_Tracer_Red",10,30],["rhs_mag_30Rnd_556x45_Mk262_Stanag",6,30]]],["B_ViperLightHarness_oli_F",[["ACE_fieldDressing",10],["ACE_CableTie",3],["ACE_epinephrine",3],["ACE_morphine",4],["ACE_DefusalKit",1],["ACE_Flashlight_MX991",1],["rhs_mag_m67",3,1],["rhs_mag_an_m8hc",3,1],["rhs_mag_m18_purple",2,1]]],"rhsusf_opscore_fg","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","tf_anprc148jem","ItemCompass","ItemWatch",""]];};
+		case "1": {_unit setUnitLoadout [];};
+		case "2": {_unit setUnitLoadout [];};
+		case "3": {_unit setUnitLoadout [];};
+		case "4": {_unit setUnitLoadout [];};
+		case "5": {_unit setUnitLoadout [];};
+		default {diag_log format ["%1 has no number of gear selected for role: Rifleman", str name vehicle player];};
+	};
 };
 
-
-gearMedic = {
-	this = _this select 0;
-	hint format ["I'm a fucking Medic, I'm the one who saves the mission!"];
-	[this, "ACE_fieldDressing", 20] call addMagazinesToBackpack;
-	[this, "ACE_elasticBandage", 20] call addMagazinesToBackpack;
-	[this, "ACE_quikclot", 20] call addMagazinesToBackpack;
-	[this, "ACE_packingBandage", 20] call addMagazinesToBackpack;
-	[this, "ACE_salineIV_250", 5] call addMagazinesToBackpack;
-	[this, "ACE_Morphine", 10] call addMagazinesToBackpack;
-	[this, "ACE_epinephrine", 10] call addMagazinesToBackpack;
-	[this, "ACE_atropine", 10] call addMagazinesToBackpack;
-	[this, "ACE_tourniquet", 5] call addMagazinesToBackpack;
-	[this, "ACE_surgicalKit", 1] call addMagazinesToVest;
-	[this, "ACE_personalAidKit", 1] call addMagazinesToVest;
-	this setVariable ["Ace_medical_medicClass", 1];
+_gearEngineer = {
+	_unit = _this select 0;
+	_number = selectRandom [0,1,2,3,4,5];
+	
+	switch _number do {
+		case "0": {_unit setUnitLoadout [];};
+		case "1": {_unit setUnitLoadout [];};
+		case "2": {_unit setUnitLoadout [];};
+		case "3": {_unit setUnitLoadout [];};
+		case "4": {_unit setUnitLoadout [];};
+		case "5": {_unit setUnitLoadout [];};
+		default {diag_log format ["%1 has no number of gear selected for role: Engineer", str name vehicle player];};
+	};
 };
 
-gearTL = {
-	this = _this select 0;
-	[this, "ACE_MapTools", 1] call addMagazinesToVest;
-	this addWeapon "Binocular";
+_gearTL = {
+	_unit = _this select 0;
+	//_number = selectRandom [0,1,2,3,4,5];
+	_number = 0;
+	switch _number do {
+		case "0": {_unit setUnitLoadout [["rhs_weap_hk416d10","","rhsusf_acc_anpeq15_bk","rhsusf_acc_eotech_552",["rhs_mag_30Rnd_556x45_Mk262_Stanag",30],[],""],[],["rhsusf_weap_m9","","","",["rhsusf_mag_15Rnd_9x19_JHP",15],[],""],["rhs_uniform_g3_rgr",[["ACE_microDAGR",1],["ACE_NVG_Gen2",1],["rhsusf_mag_15Rnd_9x19_JHP",2,15]]],["V_TacChestrig_oli_F",[["30Rnd_556x45_Stanag_Tracer_Red",10,30],["rhs_mag_30Rnd_556x45_Mk262_Stanag",6,30]]],["tf_rt1523g_bwmod",[["ACE_fieldDressing",10],["ACE_CableTie",3],["ACE_epinephrine",3],["ACE_morphine",4],["ACE_DefusalKit",1],["ACE_Flashlight_MX991",1],["rhs_mag_m67",3,1],["rhs_mag_an_m8hc",3,1],["rhs_mag_m18_purple",2,1]]],"rhsusf_opscore_fg","G_Balaclava_TI_blk_F",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","tf_anprc148jem","ItemCompass","ItemWatch",""]];};
+		case "1": {_unit setUnitLoadout [];};
+		case "2": {_unit setUnitLoadout [];};
+		case "3": {_unit setUnitLoadout [];};
+		case "4": {_unit setUnitLoadout [];};
+		case "5": {_unit setUnitLoadout [];};
+		default {diag_log format ["%1 has no number of gear selected for role: TL", str name vehicle player];};
+	};
 };
 
-gearEngineer = {
-	this = _this select 0;
-	[this, "ACE_Clacker", 1] call addMagazinesToBackpack;
-	[this, "ACE_DefusalKit", 1] call addMagazinesToBackpack;
-	[this, "ACE_VMH3", 1] call addMagazinesToBackpack;
-	this addItemToUniform "ACE_EntrenchingTool";
+_gearMedic = {
+	_unit = _this select 0;
+	//_number = selectRandom [0,1,2,3,4,5];
+	_number = 0;
+	switch _number do {
+		case "0": {_unit setUnitLoadout [["rhs_weap_hk416d10","","rhsusf_acc_anpeq15_bk","rhsusf_acc_eotech_552",["rhs_mag_30Rnd_556x45_Mk262_Stanag",30],[],""],[],["rhsusf_weap_m9","","","",["rhsusf_mag_15Rnd_9x19_JHP",15],[],""],["rhs_uniform_g3_rgr",[["ACE_microDAGR",1],["ACE_NVG_Gen2",1],["rhsusf_mag_15Rnd_9x19_JHP",2,15]]],["V_TacChestrig_grn_F",[["30Rnd_556x45_Stanag_Tracer_Red",10,30],["rhs_mag_30Rnd_556x45_Mk262_Stanag",6,30]]],["B_ViperLightHarness_oli_F",[["ACE_fieldDressing",50],["ACE_CableTie",3],["ACE_epinephrine",18],["ACE_morphine",34],["ACE_quikclot",50],["ACE_DefusalKit",1],["ACE_Flashlight_MX991",1],["ACE_bloodIV_250",10],["ACE_bodyBag",3],["rhs_mag_m67",3,1],["rhs_mag_an_m8hc",3,1],["rhs_mag_m18_purple",2,1]]],"rhsusf_opscore_fg","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","tf_anprc148jem","ItemCompass","ItemWatch",""]];};
+		case "1": {_unit setUnitLoadout [];};
+		case "2": {_unit setUnitLoadout [];};
+		case "3": {_unit setUnitLoadout [];};
+		case "4": {_unit setUnitLoadout [];};
+		case "5": {_unit setUnitLoadout [];};
+		default {diag_log format ["%1 has no number of gear selected for role: Medic", str name vehicle player];};
+	};
+};
+
+_gearSniper = {
+	_unit = _this select 0;
+	_number = selectRandom [0,1,2,3,4,5];
+	
+	switch _number do {
+		case "0": {_unit setUnitLoadout [];};
+		case "1": {_unit setUnitLoadout [];};
+		case "2": {_unit setUnitLoadout [];};
+		case "3": {_unit setUnitLoadout [];};
+		case "4": {_unit setUnitLoadout [];};
+		case "5": {_unit setUnitLoadout [];};
+		default {diag_log format ["%1 has no number of gear selected for role: Sniper", str name vehicle player];};
+	};
+};
+
+_gearMG = {
+	_unit = _this select 0;
+	//_number = selectRandom [0,1,2,3,4,5];
+	_number = 0;
+	switch _number do {
+		case "0": {_unit setUnitLoadout [["rhs_weap_m249_pip_L_para","","","rhsusf_acc_eotech_552",["rhs_200rnd_556x45_T_SAW",200],[],""],[],["rhsusf_weap_m9","","","",["rhsusf_mag_15Rnd_9x19_JHP",15],[],""],["rhs_uniform_g3_rgr",[["ACE_microDAGR",1],["ACE_NVG_Gen2",1],["ACE_DefusalKit",1],["rhsusf_mag_15Rnd_9x19_JHP",2,15]]],["V_TacChestrig_grn_F",[["rhs_200rnd_556x45_T_SAW",1,200],["rhs_200rnd_556x45_T_SAW",1,200]]],["B_ViperLightHarness_oli_F",[["ACE_fieldDressing",8],["ACE_CableTie",3],["ACE_epinephrine",2],["ACE_morphine",3],["ACE_Flashlight_MX991",1],["rhs_mag_m67",1,1],["rhs_200rnd_556x45_T_SAW",3,200],["rhs_mag_an_m8hc",3,1],["rhs_mag_m18_purple",2,1]]],"rhsusf_opscore_fg_pelt_cam","",""],["Binocular","","","",[],[],""],["ItemMap","ItemGPS","tf_anprc148jem","ItemCompass","ItemWatch",""]];};
+		case "1": {_unit setUnitLoadout [];};
+		case "2": {_unit setUnitLoadout [];};
+		case "3": {_unit setUnitLoadout [];};
+		case "4": {_unit setUnitLoadout [];};
+		case "5": {_unit setUnitLoadout [];};
+		default {diag_log format ["%1 has no number of gear selected for role: MG", str name vehicle player];};
+	};
 };
 
 gear_basic = {
-	this = _this select 0;
+	_unit = _this select 0;
+	_role = = selectRandom ["Rifleman","Rifleman","Rifleman","Rifleman","Rifleman","TL","Medic","MG"]; //"Engineer","Sniper",
 
-	_gimmeWeapon = player getVariable ["myWeapon", ""];
-	_gimmeMuzzleItem = player getVariable ["myMuzzleItem", ""];
-	_gimmeScope = player getVariable ["myScope", ""];
-	_gimmeMagazin = player getVariable ["myMagazine", ""];
-	_gimmeRole = player getVariable ["myRole",""];
-
-	this forceAddUniform(randomUniforms call BIS_fnc_selectRandom);
-	this addVest(randomVest call BIS_fnc_selectRandom);
-	if (_gimmeRole == "TL") then {
-		this addBackpack "tf_rt1523g_big_bwmod_tropen";
-	} else {
-		this addBackpack(randomBackpack call BIS_fnc_selectRandom);
-	};
-
-	 if (random 100 <= 50) then {
-	this addHeadgear(randomHeadgear call BIS_fnc_selectRandom);
-	};
-	
-	_mySprayPaint = selectRandom ["ACE_SpraypaintBlack", "ACE_SpraypaintBlue", "ACE_SpraypaintGreen", "ACE_SpraypaintRed"];
-
-	[this, "ACE_fieldDressing", 10] call addItemsToUniform;
-	[this, "ACE_elasticBandage", 10] call addMagazinesToVest;
-	[this, "ACE_quikclot", 10] call addMagazinesToVest;
-	[this, "ACE_packingBandage", 10] call addItemsToUniform;
-	[this, "ACE_Morphine", 5] call addItemsToUniform;
-	[this, "ACE_epinephrine", 1] call addItemsToUniform;
-	[this, "ACE_salineIV_250", 1] call addMagazinesToBackpack;
-	[this, _mySprayPaint, 1] call addMagazinesToVest;
-	[this, "rhs_mag_m67", 3] call addMagazinesToBackpack;
-
-	if (_gimmeRole == "MG") then {
-		[this, _gimmeMagazin, 5] call addMagazinesToBackpack;
-	} else {
-		[this, _gimmeMagazin, 5] call addMagazinesToVest;
-	};
-
-	this addWeapon _gimmeWeapon;
-	if (_gimmeMuzzleItem != "EMPTY") then {this addPrimaryWeaponItem _gimmeMuzzleItem;};
-	if (_gimmeScope != "EMPTY") then {this addPrimaryWeaponItem _gimmeScope;};
-
-	this linkItem "ItemMap";
-	this linkItem "ItemCompass";
-	this linkItem "ItemWatch";
-	this linkItem "ItemGPS";
-	this linkItem "tf_anprc152";
-
-	switch _gimmeRole do {
-		case "Rifleman": {hint "Rifleman";};
-		case "Engineer": {hint "Engineer"; [this] call gearEngineer;};
-		case "TL": {hint "TL"; [this] call gearTL;};
-		case "Medic": {hint "Medic"; [this] call gearMedic;};
-		case "Sniper": {hint "Sniper"; [this] call gearSniper;};
-		case "MG": {hint "MG";};
-		default {diag_log format ["Has no Class selected"]};
+	switch _role do {
+		case "Rifleman": {hint "Rifleman"; [_unit] call _gearRifleman;};
+		case "Engineer": {hint "Engineer"; [_unit] call _gearEngineer;};
+		case "TL": {hint "TL"; [_unit] call _gearTL;};
+		case "Medic": {hint "Medic"; [_unit] call _gearMedic;};
+		case "Sniper": {hint "Sniper"; [_unit] call _gearSniper;};
+		case "MG": {hint "MG"; [_unit] call _gearMG;};
+		default {diag_log format ["%1 has no Class selected", str name vehicle player];};
 	};
 };
+
+
+	
+	

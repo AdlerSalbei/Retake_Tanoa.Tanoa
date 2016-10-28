@@ -2,9 +2,6 @@ _unit = _this select 0;
 
 waitUntil {!isNull _unit };
 
-call compile preprocessFile "server\random_Loadout.sqf";
-waitUntil {!isNil "WEAPONSETUPDONE"};
-
 call compile preprocessFile "loadouts\loadouts_standart.sqf";
 call compile preprocessFile "loadouts\loadout_fillfunctions.sqf";
 
