@@ -1,4 +1,4 @@
-taskID0 = {diag_log format ["EH: Error becouse of no TaskID for Player", str name vehicle player];}
+taskID0 = {diag_log format ["EH: Error becouse of no TaskID for Player", str name vehicle player];};
 
 taskID1 = {
 	diag_log format ["Succesfully triggert Task1"];
