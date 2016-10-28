@@ -7,8 +7,9 @@ _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
 if  (isNil "_value") exitWith {diag_log format ["No save %1", _unit]; forceRespawn player;};
 
-
 _value params ["_gearArray", "_healthArray", "_pos", "_dir"];
+
+diag_log format ["Player: %1, Pos: %2, Dir: %2, Gear: %3, Health: %4", str name vehicle player, _pos, _dir, _gearArray, _healthArray];
 
 //set pos and dir
 _unit setDir _dir;
@@ -17,7 +18,6 @@ _unit setPos _pos;
 //set health
 _health = _healthArray select 2;
 {
-	diag_log format ["Player: %1, X: %2, Index: %2", _unit, _x, _forEachIndex];
 	_unit setHitIndex [_forEachIndex, _x];
 } forEach _health;
 
