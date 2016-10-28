@@ -57,7 +57,7 @@ class AddonsMetaData
 randomSeed=463222;
 class ScenarioData
 {
-	author="Salbei";
+	author="Slant & Salbei";
 };
 class Mission
 {
@@ -4087,7 +4087,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Walk";
+							value="Task 01: Polizeisperre";
 						};
 					};
 				};
@@ -4106,7 +4106,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="asda";
+							value="Die tanoanische Polizei hat eine Straßensperre errichtet. Damit sollen Rebellen in der Zivilbevölkerung aufgedeckt werden. Zusätzlich erhofft man sich die eine oder andere Festnahme von Drogenkurieren. Das Ziel ist es, diese Polizeisperre zu zerschlagen um die zivile Bevölkerung für unseren Widerstand zu gewinnen.";
 						};
 					};
 				};

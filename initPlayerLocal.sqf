@@ -8,4 +8,4 @@ if  (str player == "rebellion_lead") then {
 [] execVM "helpers\getBoxRespawnPos.sqf"; 
 
 
-diag_log format ["setup: loadout %1 initiated", str player];	
+diag_log format ["setup: loadout %1 initiated", str name vehicle player];	

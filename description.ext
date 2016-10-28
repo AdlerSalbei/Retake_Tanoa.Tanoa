@@ -44,7 +44,7 @@ class Params
 
 class ACE_Settings {
     class ace_map_BFT_Interval {
-    value = 2;
+    value = 5;
     typeName = "SCALAR";
 	};
 class ace_map_BFT_Enabled {
