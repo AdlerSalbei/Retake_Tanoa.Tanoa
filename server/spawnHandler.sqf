@@ -12,7 +12,7 @@ slb_Mission_spawn = {
 			_groupArray = allGroups;
 			_groupIndex = _groupArray pushBackUnique _groupUnit;
 			if (_groupIndex != -1) then {
-				createGroup _groupUnit;
+				_groupUnit = createGroup west;
 			};
 			diag_log format ["GoupUnit: %1, GroupIndex: %2, AllGroups: %3", _groupUnit, _groupIndex, _groupArray];
 				
