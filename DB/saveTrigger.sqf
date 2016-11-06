@@ -1,3 +1,5 @@
+sleep 60;
+
 _saveServer = {
 	diag_log format ["Saveing Vehicles!"];
 	nul = [] execVM "DB\Save\saveVehiclesInDB.sqf";
@@ -5,7 +7,6 @@ _saveServer = {
 };
 	
 _savePlayer = {
-	diag_log format ["Saving Player!"];
 	nul = [] execVM "DB\Save\savePlayerInDB.sqf";
 };
 

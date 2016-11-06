@@ -16,9 +16,9 @@ private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
 		_veh setPos _pos;
 
 		//set health
+		diag_log format ["Veh: %1, Health: %1", _veh, _healthArray];
 		_health = _healthArray select 2;
 		{
-			diag_log format ["X: %1, Index: %2", _x, _forEachIndex];
 			_veh setHitIndex [_forEachIndex, _x];
 		} forEach _health;
 
@@ -29,14 +29,12 @@ private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
 		clearBackpackCargoGlobal _veh;
 
 		{
-			diag_log format ["Loaded Gear X: %1", _x]; 
-			if ((count _x) != 0) then {
-				diag_log format ["Index: %1, Type: %2, Amount: %3 ", _forEachIndex, _x select 0, _x select 1];
+			if !(_x isEqualTo [[],[]]) then {	
 				switch (_forEachIndex) do {
-					case 0: { {_veh addBackpackCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
-					case 1: { {_veh addItemCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
-					case 2: { {_veh addMagazineCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
-					case 3: { {_veh addWeaponCargoGlobal [_x select 0, _x select 1]; } forEach _x; };
+					case 0: { {_veh addBackpackCargoGlobal [_x select 0, _x select 1]; } forEach _x; diag_log format ["Index: %1, Type: %2, Amount: %3 ", _forEachIndex, _x select 0, _x select 1];};
+					case 1: { {_veh addItemCargoGlobal [_x select 0, _x select 1]; } forEach _x; diag_log format ["Index: %1, Type: %2, Amount: %3 ", _forEachIndex, _x select 0, _x select 1];};
+					case 2: { {_veh addMagazineCargoGlobal [_x select 0, _x select 1]; } forEach _x; diag_log format ["Index: %1, Type: %2, Amount: %3 ", _forEachIndex, _x select 0, _x select 1];};
+					case 3: { {_veh addWeaponCargoGlobal [_x select 0, _x select 1]; } forEach _x; diag_log format ["Index: %1, Type: %2, Amount: %3 ", _forEachIndex, _x select 0, _x select 1];};
 				};
 			};
 		} forEach _gearArray;
