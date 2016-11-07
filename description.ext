@@ -1,6 +1,6 @@
 OnLoadMission = "RetakeTanoa";
 author = "Slant & Salbei für Gruppe Adler";  //appears as author in overview and loading screen
-overviewText = "Retake Tanoa from the Russians!"; //appears in overview and loading screen
+overviewText = "Retake Tanoa von den Russen und Kollaborateure!"; //appears in overview and loading screen
 onLoadName = "Retake Tanoa"; //mission name for loading screen only
 onLoadMissionTime = True;
 disabledAI = 1; //1
