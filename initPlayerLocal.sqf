@@ -1,4 +1,4 @@
-["Retake Tanoa", "by Slant & Salbei ", "v1.0 ", "Retake Tanoa von den Russen und Kollaborateure!" , 9] execVM "helpers/missionIntro.sqf";
+["Retake Tanoa", "by Slant and Salbei ", "v1.0 ", "Loading Player ..."] execVM "helpers\missionIntro.sqf";
 
 if  (str player == "rebellion_lead") then {
   [] execVM "helpers\setUpLeader.sqf"; 
