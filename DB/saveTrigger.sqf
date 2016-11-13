@@ -1,7 +1,6 @@
 sleep 60;
 
 _saveServer = {
-	diag_log format ["Saveing Vehicles!"];
 	nul = [] execVM "DB\Save\saveVehiclesInDB.sqf";
 	nul = [] execVM "DB\Save\saveWeatherAndDateInDB.sqf";
 };
