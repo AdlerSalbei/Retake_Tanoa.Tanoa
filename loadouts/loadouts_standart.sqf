@@ -1,3 +1,8 @@
+_finished = {
+	LOADSETUPDONE = true;
+	publicVariable "LOADSETUPDONE";
+};
+
 _gearRifleman = {
 	_unit = _this select 0;
 	_number = 0;
@@ -11,6 +16,8 @@ _gearRifleman = {
 		case 5: {_unit setUnitLoadout [];};
 		default {diag_log format ["%1 has no number of gear selected for role: Rifleman", str name vehicle player];};
 	};
+	
+	[] call _finished;
 };
 
 _gearEngineer = {
@@ -26,6 +33,8 @@ _gearEngineer = {
 		case 5: {_unit setUnitLoadout [];};
 		default {diag_log format ["%1 has no number of gear selected for role: Engineer", str name vehicle player];};
 	};
+	
+	[] call _finished;
 };
 
 _gearTL = {
@@ -41,6 +50,8 @@ _gearTL = {
 		case 5: {_unit setUnitLoadout [];};
 		default {diag_log format ["%1 has no number of gear selected for role: TL", str name vehicle player];};
 	};
+	
+	[] call _finished;
 };
 
 _gearMedic = {
@@ -56,6 +67,8 @@ _gearMedic = {
 		case 5: {_unit setUnitLoadout [];};
 		default {diag_log format ["%1 has no number of gear selected for role: Medic", str name vehicle player];};
 	};
+	
+	[] call _finished;
 };
 
 _gearSniper = {
@@ -71,6 +84,8 @@ _gearSniper = {
 		case 5: {_unit setUnitLoadout [];};
 		default {diag_log format ["%1 has no number of gear selected for role: Sniper", str name vehicle player];};
 	};
+	
+	[] call _finished;
 };
 
 _gearMG = {
@@ -86,6 +101,8 @@ _gearMG = {
 		case 5: {_unit setUnitLoadout [];};
 		default {diag_log format ["%1 has no number of gear selected for role: MG", str name vehicle player];};
 	};
+	
+	[] call _finished;
 };
 
 gear_basic = {
