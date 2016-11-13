@@ -31,3 +31,6 @@ removeAllAssignedItems _unit;
 removeBackpack _unit;
 
 _unit setUnitLoadout _gearArray;
+
+LOADSETUPDONE = true;
+publicVariable "LOADSETUPDONE";

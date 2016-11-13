@@ -17,11 +17,12 @@ private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
 
 		//set health
 		diag_log format ["Veh: %1, Health: %1", _veh, _healthArray];
-		_health = _healthArray select 2;
-		{
-			_veh setHitIndex [_forEachIndex, _x];
-		} forEach _health;
-
+		if !(_health isEqualTo _veh) then {
+			_health = _healthArray select 2;
+			{
+				_veh setHitIndex [_forEachIndex, _x];
+			} forEach _health;
+		};
 		//inventory
 		clearWeaponCargoGlobal _veh;
 		clearItemCargoGlobal _veh;
