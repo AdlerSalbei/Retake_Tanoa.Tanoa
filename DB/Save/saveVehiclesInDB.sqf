@@ -5,10 +5,10 @@ _vehicles = vehicles;
 
 if (isNil "_vehicles") exitWith {};
 {
-	if(!isnull _x && alive _x) then {
+	if(!isnull _x && alive _x ) then {
 
 		_vehType = typeOf _x;
-		diag_log format ["Vehicle Type: %1", _vehType];
+		diag_log format ["Vehicle Type: %1, Name: %2", _vehType];
 		if (str _vehType != "WeaponHolderSimulated") then {
 			
 			//base
