@@ -1,26 +1,3 @@
-/*
-	Author: kylania
-
-	Description:
-	Fade in from black intro, with a quote and Arma 3 style SitRep Date/Time/Mission credits.  
-	Run via execVM from playerInitLocal.sqf
-
-	Parameter(s):
-	0: STRING - Name of the mission.  SemiBold font under date during sitrep typing effect. Default: "An Arma 3 mission"
-	1: STRING - Author of the mission.  Displayed under the mission name in medium font. Use a " " for nothing. Default: "by a Community Author"
-	2: STRING - Version of the mission.  Displayed under the mission author in a medium font. Use a " " for nothing. Default: "Version 1.0"
-	3: STRING - Quote for center screen display on black screen.  Default: "Not so long ago, not so far away...\n\n-A quote"
-	4: NUMBER - Duration of quote display.  Default: 9
-	
-	
-	Returns:
-	Nothing.
-	
-	Examples:
-	["Jungle Trek", "By Rip", "Version 1", '"A cat is a lion in a jungle of small bushes."\n\n-Indian proverb'] execVM "missionIntro.sqf";
-	["A Mission", " ", " ", "", 0] execVM "missionIntro.sqf";
-*/
-
 // Start with a silent black screen.
 titleCut ["", "BLACK FADED", 999];
 0 fadeSound 0;
@@ -28,17 +5,18 @@ titleCut ["", "BLACK FADED", 999];
 // Spawn text effects.
 _this spawn {
 
-	
 	params[
 		["_missionName", "An Arma 3 mission"],
 		["_missionAuthor", "by a Community Author"],
 		["_missionVersion", "Version 1.0"],
-		["_quote", "Not so long ago, not so far away...\n\n-A quote"],
-		["_duration", 9]
+		["_quote", "Not so long ago, not so far away...\n\n-A quote"]
 	];
-
+	
 	// Starting quote as volume fades in.
+	_duration = 1;
 	titleText [_quote,"PLAIN"];
+	waitUntil {!isNil "LOADSETUPDONE"};
+
 	titleFadeOut _duration;
 	_duration fadeSound 1;
 	sleep (_duration - 2);
