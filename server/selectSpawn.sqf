@@ -1,8 +1,55 @@
 taskID0 = {diag_log format ["EH: Error becouse of no TaskID for Player", str name vehicle player];};
 
+/*
+[
+_unitsArray= [
+				[
+					Group1,
+					[
+						[Unit Type,				Pos,							Init,	Skill,	Rang],
+						["O_G_Soldier_AR_F",	[6962.8,7363.69,0.00143886], 	"", 	0.5, 	"SERGEANT"]
+					],
+					[
+						[Waypoint Pos					Type,		, Behavior, 	Combatmode, Completionradius, 	Formation,	Speed],
+						[[6960.8,7360.69,0.00143886], 	"Move",		"COMBAT",		 	"RED", 		30, 			"Line", 	"Full"]
+					]
+				],
+				[
+					Group2
+					[],
+					[]
+				]
+			]
+			
+_vehicleArray = [
+					[Vehicle Typ, 				Pos,							Dir]
+					["B_Heli_Transport_03_F",	[6958.4,7396.93,0.00143886], 	42.877]
+				]
+*/
+
+
 taskID1 = {
 	diag_log format ["Succesfully triggert Task1"];
-	_unitsArray = [["O_G_Soldier_AR_F",[6962.8,7363.69,0.00143886], 1, "", 0.5, "SERGEANT"]];
+	_unitsArray = [
+					[
+						1,
+						[	
+							["O_G_Soldier_AR_F",[6962.8,7363.69,0.00143886], "", 0.5, "SERGEANT"]
+						],
+						[
+							[[6960.8,7360.69,0.00143886], "Move", "COMBAT", "RED", 30, "Line", "Full"]
+						]
+					],
+					[
+						2,
+						[
+							["O_G_Soldier_AR_F",[6965,7363.69,0.00143886], "", 0.5, "SERGEANT"]
+						],
+						[
+							[[6980,7360.69,0.00143886], "Move", "COMBAT", "BLUE", 20, "Line", "Full"]
+						]
+					]
+				];
 	_vehicleArray = [["B_Heli_Transport_03_F",[6958.4,7396.93,0.00143886], 42.877]];
 	diag_log format ["Units: %1", _unitsArray];
 	diag_log format ["Vehicles: %1", _vehicleArray];
@@ -39,3 +86,5 @@ taskID5 = {
 
 SPAWNSETUPDONE = true;
 publicVariable "SPAWNSETUPDONE";
+
+

@@ -6,18 +6,34 @@ slb_Mission_spawn = {
 	
 	if (!isNil "_unitArray") then {
 		{
-			_x params ["_typeUnit", "_posUnit", "_groupUnit", "_initUnit", "_skillUnit", "_rankUnit"];
-			diag_log format ["Type: %1, Pos: %2, Group: %3, Init: %4, Skill: %5, Rank: %6", _typeUnit, _posUnit, _groupUnit, _initUnit, _skillUnit, _rankUnit];
+			_x params ["_groupUnit", "_unit", "_waypoints"];
 			
 			_groupArray = allGroups;
 			_groupIndex = _groupArray pushBackUnique _groupUnit;
 			if (_groupIndex != -1) then {
 				_groupUnit = createGroup west;
 			};
-			diag_log format ["GoupUnit: %1, GroupIndex: %2, AllGroups: %3", _groupUnit, _groupIndex, _groupArray];
-				
-			_typeUnit createUnit [_posUnit, _groupUnit, _initUnit, _skillUnit, _rankUnit];
+			
+			{
+				_x params ["_typeUnit", "_posUnit", "_initUnit", "_skillUnit", "_rankUnit"];
+				diag_log format ["Type: %1, Pos: %2, Group: %3, Init: %4, Skill: %5, Rank: %6", _typeUnit, _posUnit, _groupUnit, _initUnit, _skillUnit, _rankUnit];
+					
+				_typeUnit createUnit [_posUnit, _groupUnit, _initUnit, _skillUnit, _rankUnit];
+			}forEach _unit;
+			
+			{
+				_x params ["_waypointPos", "_waypointTyp", "_waypointBehavior", "_waypointCombatmode", "_waypointCompletionRadius", "_waypointFormation", "_waypointSpeed"];
+				_waypointIndex = _groupUnit addWaypoint [_waypointPos, 0];
+				[_groupUnit, _waypointIndex] setWaypointType _waypointTyp;
+				[_groupUnit, _waypointIndex] setWaypointBehaviour _waypointBehavior;
+				[_groupUnit, _waypointIndex] setWaypointCombatMode _waypointCombatmode;
+				[_groupUnit, _waypointIndex] setWaypointCompletionRadius _waypointCompletionRadius;
+				[_groupUnit, _waypointIndex] setWaypointFormation _waypointFormation;
+				[_groupUnit, _waypointIndex] setWaypointSpeed _waypointSpeed;	
+			}forEach _waypoints;
+			
 			slb_SpawnedUnitsArray pushBackUnique _groupUnit;
+			
 		}forEach _unitArray;
 	};
 	
