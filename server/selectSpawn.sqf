@@ -1,13 +1,12 @@
 taskID0 = {diag_log format ["EH: Error becouse of no TaskID for Player", str name vehicle player];};
 
 /*
-[
 _unitsArray= [
 				[
 					Group1,
 					[
 						[Unit Type,				Pos,							Init,	Skill,	Rang],
-						["O_G_Soldier_AR_F",	[6962.8,7363.69,0.00143886], 	"", 	0.5, 	"SERGEANT"]
+						["O_G_Soldier_AR_F",	[6962.8,7363.69,0.00143886], 	"_this setVehicleVarName "BigMG";", 	0.5, 	"SERGEANT"]
 					],
 					[
 						[Waypoint Pos					Type,		, Behavior, 	Combatmode, Completionradius, 	Formation,	Speed],
