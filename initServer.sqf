@@ -1,5 +1,11 @@
 private ["_date", "_weather"];
 
+call compile preprocessFile "server\selectSpawn.sqf";
+slb_runningTasksArray = []; 
+slb_SpawnedUnitsArray = [];
+waituntil {!isNil "slb_allSpawnedVehicles_save"};
+slb_allSpawnedVehicles = slb_allSpawnedVehicles_save;
+
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 _value = profileNamespace getVariable ["SLB_Retake_Tanoa_Time_Weather", [[2015, 2, 2, 12, 1],0]];
@@ -14,8 +20,6 @@ setCustomWeather = {
 };
 
 slb_allSpawnedVehicles_save = profileNamespace getVariable ["SLB_Retake_Tanoa_spawnedVehicles", []];
-
-
 
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {[] execVM "helpers\tfarsettings.sqf";};
 [] execVM "helpers\medical_settings.sqf";
