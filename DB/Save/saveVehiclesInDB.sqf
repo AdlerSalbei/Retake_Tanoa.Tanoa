@@ -19,9 +19,10 @@ if (isNil "_vehicles") exitWith {};
 			//cargo
 			_gear = [(getBackpackCargo _x), (getItemCargo _x), (getMagazineCargo _x), (getWeaponCargo _x)];
 			_fuel = getFuelCargo _x;
+			_varName =vehicleVarName _x;
 	
 			//save array composition
-			_value pushback [_vehType, _pos, _dir, _health, _gear, _fuel];
+			_value pushback [_vehType, _pos, _dir, _health, _gear, _fuel, _varName];
 		}
 	};
 } forEach _vehicles;
