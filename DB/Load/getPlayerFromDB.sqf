@@ -5,11 +5,14 @@ _healthArray = [];
 //check if there is a save
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
-if  (isNil "_value") exitWith {diag_log format ["No save %1", _unit]; forceRespawn player;};
+if  (isNil "_value") exitWith {
+	LOADSETUPDONE = true;
+	publicVariable "LOADSETUPDONE";
+	diag_log format ["No save %1", _unit];
+	forceRespawn player;
+};
 
 _value params ["_gearArray", "_healthArray", "_pos", "_dir"];
-
-diag_log format ["Player: %1, Pos: %2, Dir: %2, Gear: %3, Health: %4", str name vehicle player, _pos, _dir, _gearArray, _healthArray];
 
 //set pos and dir
 _unit setDir _dir;
@@ -31,6 +34,3 @@ removeAllAssignedItems _unit;
 removeBackpack _unit;
 
 _unit setUnitLoadout _gearArray;
-
-LOADSETUPDONE = true;
-publicVariable "LOADSETUPDONE";
