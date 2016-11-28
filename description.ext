@@ -25,14 +25,6 @@ class Header
 
 class Params
 {
-	class HC_enabled
-	{
-		title = "Enable HC";
-		values[] = {0,1};
-		texts[] = {"no","yes"};
-		default = 1;
-	};
-
 	class Simultaneous_tasks
 	{
 		title = "Simultaneous Tasks";
