@@ -1,6 +1,6 @@
 params ["_unit"];
 private ["_medicalSys"];
-_medicalSys = missionNamespace getVariable "r0ed_SurvivableCrashesVar_MedicalSystem";
+_medicalSys = missionNamespace getVariable "survivableCrashesVar_MedicalSystem";
 if(_medicalSys == "NONE") exitWith {};
 if (local _unit) then {
 	_unit addEventHandler ["HandleDamage", {
@@ -17,8 +17,8 @@ if (local _unit) then {
 			_health = _unit getHit _part; 
 		};
 		
-		if ((vehicle _unit) getVariable ["r0ed_SurvivableCrashes", false] && _health + _dmg > .88) then {
-			_medicalSys = missionNamespace getVariable "r0ed_SurvivableCrashesVar_MedicalSystem";
+		if ((vehicle _unit) getVariable ["survivableCrashes", false] && _health + _dmg > .88) then {
+			_medicalSys = missionNamespace getVariable "survivableCrashesVar_MedicalSystem";
 			switch (_medicalSys) do {
 				case "ACE": {
 					switch (_part) do {
