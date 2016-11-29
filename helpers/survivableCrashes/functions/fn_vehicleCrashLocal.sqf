@@ -1,8 +1,8 @@
 params ["_unit"];
-_medicalSystem = missionNamespace getVariable "r0ed_SurvivableCrashesVar_MedicalSystem";
-_visualEffectsEnabled = missionNamespace getVariable "r0ed_SurvivableCrashesVar_VisualEffectsEnabled";
-_damageMultiplier = missionNamespace getVariable "r0ed_SurvivableCrashesVar_CrewDamageMultiplier";
-_crewPostCrashCode = missionNamespace getVariable "r0ed_SurvivableCrashesVar_CrewPostCrashCode";
+_medicalSystem = missionNamespace getVariable "survivableCrashesVar_MedicalSystem";
+_visualEffectsEnabled = missionNamespace getVariable "survivableCrashesVar_VisualEffectsEnabled";
+_damageMultiplier = missionNamespace getVariable "survivableCrashesVar_CrewDamageMultiplier";
+_crewPostCrashCode = missionNamespace getVariable "survivableCrashesVar_CrewPostCrashCode";
 
 switch (_medicalSystem) do {
     case "ACE": { 	
