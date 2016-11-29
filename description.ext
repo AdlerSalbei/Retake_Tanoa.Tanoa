@@ -51,7 +51,16 @@ class ace_map_BFT_HideAiGroups {
 
 class CfgFunctions 
 {
-  #include "helpers\eVehCache\cfgFunctions.hpp"
+	class F
+	{
+		class cache
+		{
+			file = "helpers\eVehCache";
+			class cInit {};
+			class cTracker {};
+			class nearPlayer {};
+		};
+	}
   
   class r0ed
 	{
@@ -70,7 +79,7 @@ class CfgSounds {
 	class AutorotationWarn
 	{
 		name = "AutorotationWarn";
-		sound[]={"r0ed_SurvivableCrashes\sounds\ACE_AutorotationWarning.ogg",4,1};
+		sound[]={"helpers\survivableCrashes\sounds\ACE_AutorotationWarning.ogg",4,1};
 		titles[]={};
 	};
 	
