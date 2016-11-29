@@ -1,8 +1,8 @@
-## Retake_Tanoa
+# Retake_Tanoa
 
 Es ist an der Zeit unsere wundervolle Insel von der russischen Herrschaft zu befreien. 
 
-# Rückblick:
+## Rückblick:
 
 25 März 2014 
 Russlands Präsident Vladimir Putin setzt sich mit dem Premierminister von Tanoa in Verbindung um über einen Beitritt der Inselgruppe zu verhandeln.
