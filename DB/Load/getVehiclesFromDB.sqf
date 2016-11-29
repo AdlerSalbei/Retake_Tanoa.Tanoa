@@ -3,7 +3,7 @@ private ["_veh", "_classname", "_pos", "_dir", "_healthArray", "_gearArray"];
 //EXECUTE AS SERVER !!!
 //if (!isDedicated) exitWith {diag_log "Not dedicated leaving getVehiclesFromDB.sqf!"; };
 
-//reconstruct each vehicle stored in "GRAD_Retake_Tanoa_Vehicle"
+//reconstruct each vehicle stored in "SLB_Retake_Tanoa_Vehicle"
 {
     _x params ["_veh", "_pos", "_dir", "_healthArray", "_gearArray", "_fuel" "_varName"];
     if (!isNil "_veh") then {
