@@ -1,7 +1,7 @@
 params ["_veh"];
-if (!(missionNamespace getVariable ["r0ed_SurvivableCrashesVar_ModEnabled", true])) exitWith {};
-_vehKindWhitelist = missionNamespace getVariable ["r0ed_SurvivableCrashesVar_VehicleKindWhitelist", true];
-if (_veh getVariable ["r0ed_SurvivableCrashes", false]) exitWith {};
+if (!(missionNamespace getVariable ["survivableCrashesVar_ModEnabled", true])) exitWith {};
+_vehKindWhitelist = missionNamespace getVariable ["survivableCrashesVar_VehicleKindWhitelist", true];
+if (_veh getVariable ["survivableCrashes", false]) exitWith {};
 
 private ["_isAllowed"];
 _isAllowed = false;
@@ -13,8 +13,8 @@ _isAllowed = false;
 } forEach _vehKindWhitelist;
 if (!(_isAllowed)) exitWith {};
 
-_veh setVariable ["r0ed_SurvivableCrashes", true];
-_veh setVariable ["r0ed_SurvivableCrashes_NotShotDown", true];
+_veh setVariable ["survivableCrashes", true];
+_veh setVariable ["survivableCrashes_NotShotDown", true];
 
 _veh addEventHandler ["HandleDamage", {
 	private ["_veh", "_part", "_dmg", "_index", "_health","_returnVal", "_isCrash"];
@@ -39,9 +39,9 @@ _veh addEventHandler ["HandleDamage", {
 			_isCrash = true;
 		};
 		if(_isCrash) then {
-			if (_veh getVariable "r0ed_SurvivableCrashes_NotShotDown") then {
-				_veh setVariable ["r0ed_SurvivableCrashes_NotShotDown", false];
-				[_veh, _this] call r0ed_SurvivableCrashes_OnVehicleCrash;
+			if (_veh getVariable "survivableCrashes_NotShotDown") then {
+				_veh setVariable ["survivableCrashes_NotShotDown", false];
+				[_veh, _this] call survivableCrashes_OnVehicleCrash;
 			};
 		};
 	};
