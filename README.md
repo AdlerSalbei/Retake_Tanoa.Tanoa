@@ -2,7 +2,7 @@
 
 Es ist an der Zeit unsere wundervolle Insel von der russischen Herrschaft zu befreien. 
 
-## Rückblick:
+### Rückblick:
 
 25 März 2014 
 Russlands Präsident Vladimir Putin setzt sich mit dem Premierminister von Tanoa in Verbindung um über einen Beitritt der Inselgruppe zu verhandeln.
@@ -25,7 +25,7 @@ Einheimische gründen eine Vereinigung zur Bekämpfung der Russen mit dem Namen 
 31 Dezember 2016
 Nach einem Jahr der Unterdrückung ist die Inselgruppe zu 90 % verlassen. Ein Großteil der Zivilbevölkerung ist entweder Tot, geflohen oder Deportiert worden. Die einzigen verbleibenden sind die Russischen Besatzungstruppen, die Kollaborateure (die Polizei), das Kartell und wir. Es wird Zeit zurück zu Schlagen.
 
-Features:
+### Features:
 
 - Speichern und Laden von Spielern, Fahrzeugen und Task Status
 - Task basiertes Missionen System
