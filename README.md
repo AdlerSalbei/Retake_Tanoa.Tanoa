@@ -4,5 +4,10 @@ Es ist an der Zeit unsere wundervolle Insel von der russischen Herrschaft zu bef
 
 Features:
 
-- Speichern und Laden von Spielern und Fahrzeugen
+- Speichern und Laden von Spielern, Fahrzeugen und Task Status
 - Task basiertes Missonen System
+- Gesteigerte Überlebenschancen bei einem Hubschrauber Absturz
+- Chaching von Unbenutzten Fahrzeugen
+- Verschiebare Respawn Position
+
+
