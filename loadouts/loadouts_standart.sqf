@@ -113,7 +113,7 @@ gear_basic = {
 		case "Rifleman": {hint "Rifleman"; [_unit] call _gearRifleman;};
 		case "Engineer": {hint "Engineer"; [_unit] call _gearEngineer;};
 		case "TL": {hint "TL"; [_unit] call _gearTL;};
-		case "Medic": {hint "Medic"; [_unit] call _gearMedic;};
+		case "Medic": {hint "Medic"; [_unit] call _gearMedic; player setVariable ["Ace_medical_medicClass", 1];};
 		case "Sniper": {hint "Sniper"; [_unit] call _gearSniper;};
 		case "MG": {hint "MG"; [_unit] call _gearMG;};
 		default {diag_log format ["%1 has no Class selected", str name vehicle player];};

@@ -7,3 +7,5 @@ enableSentences false;
 enableRadio false;
 
 [] execVM "DB\saveTrigger.sqf";
+[] execVM "helpers\survivableCrashes\init.sqf"
+

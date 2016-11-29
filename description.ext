@@ -49,6 +49,39 @@ class ace_map_BFT_HideAiGroups {
 	};
 };
 
-class CfgFunctions {
-  #include "eVehCache\cfgFunctions.hpp"
+class CfgFunctions 
+{
+	class F
+	{
+		class cache
+		{
+			file = "helpers\eVehCache";
+			class cInit {};
+			class cTracker {};
+			class nearPlayer {};
+		};
+	}
+  
+  class r0ed
+	{
+		tag = "r0ed";
+		class SurvivableCrashes
+		{
+			file = "helpers\survivableCrashes\functions";
+			class vehicleCrashLocal{};
+			class crashVisualEffects{};
+			class vehicleInit{};
+		};
+	};
 };
+
+class CfgSounds {
+	class AutorotationWarn
+	{
+		name = "AutorotationWarn";
+		sound[]={"helpers\survivableCrashes\sounds\ACE_AutorotationWarning.ogg",4,1};
+		titles[]={};
+	};
+	
+};
+
