@@ -2,10 +2,9 @@
 [player] execVM "DB\Load\getPlayerFromDB.sqf";
 
 if  (str player == "rebellion_lead") then {
-  [] execVM "helpers\setUpLeader.sqf"; 
+	player addEventHandler ["TaskSetAsCurrent",{[[[_this], "server\EH_TaskSetAsCurrent.sqf"],"BIS_fnc_execVM",false,true ] call BIS_fnc_MP;}]; 
 };
 
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 [] execVM "helpers\getBoxRespawnPos.sqf"; 
-
-diag_log format ["setup: loadout %1 initiated", str name vehicle player];	
+	
