@@ -1,9 +1,9 @@
 params ["_veh","_HandleDamageEvent"];
 private ["_vehRestCode", "_sfxEnabled", "_exagEffectsEnabled"];
-_vehRestCode = missionNamespace getVariable "r0ed_SurvivableCrashesVar_VehicleRestCode";
-_sfxEnabled = missionNamespace getVariable "r0ed_SurvivableCrashesVar_SoundEffectsEnabled";
-_exagEffectsEnabled = missionNamespace getVariable "r0ed_SurvivableCrashesVar_ExaggeratedEffectsEnabled";
-_onCrashCode = missionNamespace getVariable "r0ed_SurvivableCrashesVar_OnCrashCode";
+_vehRestCode = missionNamespace getVariable "survivableCrashesVar_VehicleRestCode";
+_sfxEnabled = missionNamespace getVariable "survivableCrashesVar_SoundEffectsEnabled";
+_exagEffectsEnabled = missionNamespace getVariable "survivableCrashesVar_ExaggeratedEffectsEnabled";
+_onCrashCode = missionNamespace getVariable "survivableCrashesVar_OnCrashCode";
 
 _veh setFuel 0;
 _veh setDamage .88;
@@ -24,7 +24,7 @@ _veh allowDamage false;
 	params ["_veh","_sfxEnabled", "_exagEffectsEnabled",  "_vehRestCode", "_fire"];
 	private ["_velocityVehPrev"];
 	if (_sfxEnabled) then {
-		[_veh] remoteExec ["r0ed_SurvivableCrashes_PlaySfx", -2];
+		[_veh] remoteExec ["survivableCrashes_PlaySfx", -2];
 	};
 	_velocityVeh = vectorMagnitude velocity _veh;
 	waitUntil{
@@ -68,7 +68,7 @@ _veh allowDamage false;
 	};
 };
 {
-	[_x] remoteExecCall ["r0ed_fnc_vehicleCrashLocal", _x];
+	[_x] remoteExecCall ["fnc_vehicleCrashLocal", _x];
 } forEach crew _veh;
 
 [_veh, _HandleDamageEvent] spawn _onCrashCode;
