@@ -51,9 +51,11 @@ slb_Mission_spawn = {
 	
 	if (!isNil "_triggerArray") then {
 		{
-			_x params ["_triggerPos", "_triggerType", "_triggerTrigger", "_triggerActivation", "_triggerDeactivation", "_timeoutMin", "_timoutMid", "_timeoutMax", "_timeoutInterruptable"];
+			_x params ["_triggerPos", "_triggerType", "_triggerWho", "_triggerHow", "_triggerCycle", "_triggerCondition", "_triggerActivation", "_triggerDeactivation", "_triggerAx", "_triggerBx", "_triggerCx", "_triggerRotaion", "_triggerIsRectangle", "_timeoutMin", "_timoutMid", "_timeoutMax", "_timeoutInterruptable"];
 			_trigger = createTrigger [_triggerType, _triggerPos, false];
-			_trigger setTriggerStatements [_triggerTrigger, _triggerActivation, _triggerDeactivation];
+			_trigger setTriggerActivation [_triggerWho, _triggerHow, _triggerCycle];
+			_trigger setTriggerStatements [_triggerCondition, _triggerActivation, _triggerDeactivation];
+			_trigger setTriggerArea [_triggerAx, _triggerBx, _triggerRotaion, _triggerIsRectangle, _triggerCx];
 			_trigger setTriggerTimeout [_timeoutMin, _timoutMid, _timeoutMax, _timeoutInterruptable];
 		}forEach _triggerArray;
 	};
