@@ -5,12 +5,24 @@ _unitsArray= [
 				[
 					Group1,
 					[
-						[Unit Type,				Pos,							Init,	Skill,	Rang],
-						["O_G_Soldier_AR_F",	[6962.8,7363.69,0.00143886], 	"_this setVehicleVarName "BigMG";", 	0.5, 	"SERGEANT"]
+						[
+							"O_G_Soldier_AR_F",			//Unit Type
+							[6962.8,7363.69,0.00143886],		//Pos
+							"_this setVehicleVarName "BigMG";",	//Init
+							0.5,					//Skill
+							"SERGEANT"				//Rang
+						]
 					],
 					[
-						[Waypoint Pos					Type,		, Behavior, 	Combatmode, Completionradius, 	Formation,	Speed],
-						[[6960.8,7360.69,0.00143886], 	"Move",		"COMBAT",		 	"RED", 		30, 			"Line", 	"Full"]
+						[
+							[6960.8,7360.69,0.00143886],		//Waypoint Pos
+							"Move",					//Type
+							"COMBAT",				//Behavior
+							"RED", 					//Combatmode
+							30, 					//Completionradius
+							"Line", 				//Formation
+							"Full"					//Speed
+						]
 					]
 				],
 				[
@@ -21,9 +33,33 @@ _unitsArray= [
 			]
 			
 _vehicleArray = [
-					[Vehicle Typ, 				Pos,							Dir]
-					["B_Heli_Transport_03_F",	[6958.4,7396.93,0.00143886], 	42.877]
-				]
+			[
+				"B_Heli_Transport_03_F",					//Vehicle Typ
+				[6958.4,7396.93,0.00143886], 					//Pos
+				42.877								//Dir
+			]
+		]
+_triggerArray = [
+			[
+				"EmptyDetector", 						//Type
+				[6958.4,7396.93,0.00143886], 					//Pos
+				"CIV", 								//Wer triggert
+				"PRESENT", 							//Wie triggert
+				true, 								//Cycle
+				"this", 							//Condition
+				"hint 'Civilian near player'", 					//Activation
+				"hint 'no civilian near'",					//Deactivation
+				5, 								//Länge
+				5, 								//Breite
+				5, 								//Höhe
+				0, 								//Rotaion
+				false,								//Ist Rectangle
+				5,								//Timeout Min, 
+				10,  								//Timout Mid, 
+				7,								//Timeout Max, 
+				false								//Interruptable
+			]
+		]
 */
 
 
