@@ -41,9 +41,9 @@ slb_Mission_spawn = {
 		_index = slb_allSpawnedVehicles pushBackUnique _vehicleArray;
 		if (_index != -1) then {
 			{
-				_x params ["_vehType", "_vehPos", "_vehDir"];
+				_x params ["_vehType", "_vehPos", "_vehDir", "_vectorUp"];
 				_vehIndex = createVehicle [_vehType, _vehPos, [], 0, "CAN_COLLIDE"];
-				_vehIndex setDir _vehDir;
+				_vehIndex setVectorDirAndUp [_vehDir, _vectorUp];
 				diag_log format ["SPAWNED VehType: %1, Pos: %2, Dir: %3", _vehType, _vehPos, _vehDir];
 			}forEach _vehicleArray;
 		};
