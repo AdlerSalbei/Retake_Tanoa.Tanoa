@@ -2,7 +2,7 @@ slb_Mission_spawn = {
 	diag_log format["Made it to Unit & vehicle spawn"];
 
 	if (isNil "_this") exitWith {};
-	_this params ["_unitArray", "_vehicleArray", "_triggerArray"];
+	_this params [["_unitArray", Nil], ["_vehicleArray", Nil], ["_triggerArray", Nil]];
 	
 	if (!isNil "_unitArray") then {
 		{
@@ -51,12 +51,16 @@ slb_Mission_spawn = {
 	
 	if (!isNil "_triggerArray") then {
 		{
-			_x params ["_triggerPos", "_triggerType", "_triggerWho", "_triggerHow", "_triggerCycle", "_triggerCondition", "_triggerActivation", "_triggerDeactivation", "_triggerAx", "_triggerBx", "_triggerCx", "_triggerRotaion", "_triggerIsRectangle", "_timeoutMin", "_timoutMid", "_timeoutMax", "_timeoutInterruptable"];
+			_x params ["_triggerPos", "_triggerType", "_triggerWho", "_triggerHow", "_triggerCycle", "_triggerCondition", "_triggerActivation", "_triggerDeactivation", "_triggerAx", "_triggerBx", "_triggerCx", "_triggerRotaion", "_triggerIsRectangle", ["_timeoutMin", Nil], ["_timoutMid", Nil], ["_timeoutMax", Nil], "_timeoutInterruptable"];
 			_trigger = createTrigger [_triggerType, _triggerPos, false];
+			sleep 1;
 			_trigger setTriggerActivation [_triggerWho, _triggerHow, _triggerCycle];
 			_trigger setTriggerStatements [_triggerCondition, _triggerActivation, _triggerDeactivation];
 			_trigger setTriggerArea [_triggerAx, _triggerBx, _triggerRotaion, _triggerIsRectangle, _triggerCx];
-			_trigger setTriggerTimeout [_timeoutMin, _timoutMid, _timeoutMax, _timeoutInterruptable];
+			if (!isNil "_timeoutMin" && !isNil "_timoutMid" && !isNil "_timeoutMax") then {
+				_trigger setTriggerTimeout [_timeoutMin, _timoutMid, _timeoutMax, _timeoutInterruptable];
+			};
+			diag_log format ["Spawned Trigger: %1 as %2 at %3", _trigger, _triggerType, _triggerPos];
 		}forEach _triggerArray;
 	};
 	
