@@ -6,7 +6,7 @@ slb_Mission_spawn = {
 	
 	if (!isNil "_unitArray") then {
 		{
-			_x params ["_groupUnit", "_unit", "_waypoints"];
+			_x params ["_groupUnit", "_unit", "_groupSetting", "_waypoints"];
 			
 			_groupArray = allGroups;
 			_groupIndex = _groupArray pushBackUnique _groupUnit;
@@ -20,6 +20,12 @@ slb_Mission_spawn = {
 					
 				_typeUnit createUnit [_posUnit, _groupUnit, _initUnit, _skillUnit, _rankUnit];
 			}forEach _unit;
+			
+			_groupSetting params ["_groupFormation","_groupCombatMode","_groupBehaviour","_groupSpeedMode"];
+			_groupUnit setFormation _groupFormation;    
+			_groupUnit setCombatMode _groupCombatMode; 
+			_groupUnit setBehaviour _groupBehaviour;
+			_groupUnit setSpeedMode _groupSpeedMode;
 			
 			{
 				_x params ["_waypointPos", "_waypointTyp", "_waypointBehavior", "_waypointCombatmode", "_waypointCompletionRadius", "_waypointFormation", "_waypointSpeed"];
