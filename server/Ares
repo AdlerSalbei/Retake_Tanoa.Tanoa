@@ -176,74 +176,61 @@
                     _sideString = "?";
                 };
             };
-            _output pushBack format[
-                "_newGroup = createGroup %1; ",
-                _sideString];
-            _groupVehicles = [];
+            _output pushBack format["[%1 [", _x];
+			
             // Process all the infantry in the group
             {
                 if (vehicle _x == _x) then {
                     _output pushBack format[
-                        "_newUnit = _newGroup createUnit ['%1', %2, [], 0, 'CAN_COLLIDE']; _newUnit setSkill %3; _newUnit setRank '%4'; _newUnit setFormDir %5; _newUnit setDir %5; _newUnit setPosASL %6;",
+                        "[%1, %2, $3, %4, %5, %6]",
                         (typeOf _x),
                         (position _x),
                         (skill _x),
                         (rank _x),
                         (getDir _x),
-                        (getPosASL _x)];
-                }
-                else {
-                    if (not((vehicle _x) in _groupVehicles)) then {
-                        _groupVehicles pushBack(vehicle _x);
-                    };
+                        (getPosASL _x)];          
                 };
                 _totalUnitsProcessed = _totalUnitsProcessed + 1;
             }
             forEach(units _x);
-            // Create the vehicles that are part of the group.
-            {
-                _output pushBack format[
-                    "_newUnit = createVehicle ['%1', %2, [], 0, 'CAN_COLLIDE']; createVehicleCrew _newUnit; (crew _newUnit) join _newGroup; _newUnit setDir %3; _newUnit setFormDir %3; _newUnit setPosASL %4;",
-                    (typeOf _x),
-                    (position _x),
-                    (getDir _x),
-                    (getPosASL _x)];
-            }
-            forEach _groupVehicles;
+			
+             _output pushBack format["],"];
+			 
             // Set group behaviours
             _output pushBack format[
-                "_newGroup setFormation '%1'; _newGroup setCombatMode '%2'; _newGroup setBehaviour '%3'; _newGroup setSpeedMode '%4';",
+                "[%1, %2, %3, %4],[",
                 (formation _x),
                 (combatMode _x),
                 (behaviour(leader _x)),
-                (speedMode _x)]; {
+                (speedMode _x)]; 
+			
+			{
                 if (_forEachIndex > 0) then {
                     _output pushBack format[
-                        "_newWaypoint = _newGroup addWaypoint [%1, %2]; _newWaypoint setWaypointType '%3';%4 %5 %6",
+                        "[%1, %2, %3, %4, %5, %6]",
                         (waypointPosition _x),
-                        0,
                         (waypointType _x),
-                        if ((waypointSpeed _x) != 'UNCHANGED') then {
-                                "_newWaypoint setWaypointSpeed '" + (waypointSpeed _x) + "'; "
-                            } else {
-                                ""
-                            },
-                            if ((waypointFormation _x) != 'NO CHANGE') then {
-                                    "_newWaypoint setWaypointFormation '" + (waypointFormation _x) + "'; "
-                                } else {
-                                    ""
-                                },
-                                if ((waypointCombatMode _x) != 'NO CHANGE') then {
-                                    "_newWaypoint setWaypointCombatMode '" + (waypointCombatMode _x) + "'; "
-                                } else {
-                                    ""
-                                }
+                        
+                        if ((waypointFormation _x) != 'NO CHANGE') then {
+                             waypointFormation _x;
+                        } else {
+                             ""
+                        },
+                        if ((waypointCombatMode _x) != 'NO CHANGE') then {
+                            waypointCombatMode _x;
+                        } else {
+                            ""
+                        }
+						if ((waypointSpeed _x) != 'UNCHANGED') then {
+                            waypointSpeed _x;
+                        } else {
+                            ""
+                        },
                     ];
                 };
-            }
-            forEach(waypoints _x)
-        }
-        forEach _groups;
+            } forEach(waypoints _x)
+        } forEach _groups;
+		
         if (_includeTriggers) then {
 			_alltriggers = allMissionObjects "EmptyDetector";
             {
