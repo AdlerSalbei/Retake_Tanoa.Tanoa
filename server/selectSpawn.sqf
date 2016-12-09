@@ -6,12 +6,18 @@ _unitsArray= [
 					Group1,
 					[
 						[
-							"O_G_Soldier_AR_F",			//Unit Type
-							[6962.8,7363.69,0.00143886],		//Pos
-							"_this setVehicleVarName "BigMG";",	//Init
-							0.5,					//Skill
-							"SERGEANT"				//Rang
+							"O_G_Soldier_AR_F",						//Unit Type
+							[6962.8,7363.69,0.00143886],			//Pos
+							"_this setVehicleVarName "BigMG";",		//Init
+							0.5,									//Skill
+							"SERGEANT"								//Rang
 						]
+					],
+					[
+						"Line",		//Group Formation  
+						"RED",		//Group CombatMode; 
+						"COMBAT",	//Group Behaviour;
+						"Full"		//Group SpeedMode
 					],
 					[
 						[
@@ -34,29 +40,30 @@ _unitsArray= [
 			
 _vehicleArray = [
 			[
-				"B_Heli_Transport_03_F",					//Vehicle Typ
-				[6958.4,7396.93,0.00143886], 					//Pos
-				42.877								//Dir
+				"B_Heli_Transport_03_F",			//Vehicle Typ
+				[6958.4,7396.93,0.00143886], 		//Pos
+				42.877								//Vector Dir
+				1									//Vector Up
 			]
 		]
 _triggerArray = [
 			[
-				"EmptyDetector", 						//Type
-				[6958.4,7396.93,0.00143886], 					//Pos
+				"EmptyDetector", 					//Type
+				[6958.4,7396.93,0.00143886], 		//Pos
 				"CIV", 								//Wer triggert
 				"PRESENT", 							//Wie triggert
 				true, 								//Cycle
 				"this", 							//Condition
-				"hint 'Civilian near player'", 					//Activation
-				"hint 'no civilian near'",					//Deactivation
-				5, 								//Länge
-				5, 								//Breite
-				5, 								//Höhe
-				0, 								//Rotaion
+				"hint 'Civilian near player'", 		//Activation
+				"hint 'no civilian near'",			//Deactivation
+				5, 									//Länge
+					5, 								//Breite
+					5, 								//Höhe
+					0, 								//Rotaion
 				false,								//Ist Rectangle
-				5,								//Timeout Min, 
+				5,									//Timeout Min, 
 				10,  								//Timout Mid, 
-				7,								//Timeout Max, 
+				7,									//Timeout Max, 
 				false								//Interruptable
 			]
 		]
