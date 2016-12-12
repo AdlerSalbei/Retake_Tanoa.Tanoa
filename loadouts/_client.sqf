@@ -3,7 +3,6 @@ _unit = _this select 0;
 waitUntil {!isNull _unit };
 
 call compile preprocessFile "loadouts\loadouts_standart.sqf";
-call compile preprocessFile "loadouts\loadout_fillfunctions.sqf";
 
 if (local _unit) then {
 
