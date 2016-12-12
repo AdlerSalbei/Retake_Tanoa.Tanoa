@@ -149,7 +149,7 @@
                 "_newObject = [%1, %2, %3, %4, %5],",
                 (typeOf _x),
                 (position _x),
-                (getPosASL _x),
+                (getPos _x),
                 (vectorDir _x),
                 (vectorUp _x)];
         }
@@ -184,11 +184,12 @@
                     _output pushBack format[
                         "[%1, %2, $3, %4, %5, %6]",
                         (typeOf _x),
-                        (position _x),
+						(getPos _x)
+						(getDir _x),
                         (skill _x),
                         (rank _x),
-                        (getDir _x),
-                        (getPosASL _x)];          
+                        
+                        ];          
                 };
                 _totalUnitsProcessed = _totalUnitsProcessed + 1;
             }
@@ -237,7 +238,7 @@
                 _output pushBack format[
                     "[%1, %2, %3, %4, %5]",
                     (getTriggerPos _x),
-					          (triggerType _x),
+					(triggerType _x),
                     (triggerActivation _x),
                     (triggerStatements _x),
                     (triggerArea _x),
