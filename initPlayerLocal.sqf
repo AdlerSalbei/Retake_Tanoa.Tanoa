@@ -1,5 +1,6 @@
 ["Retake Tanoa", "by Slant and Salbei ", "v1.0 ", "Loading Player ..."] execVM "helpers\missionIntro.sqf";
 [] execVM "helpers\getBoxRespawnPos.sqf"; 
+STHud_NoSquadBarMode = true;
 [player] execVM "DB\Load\getPlayerFromDB.sqf";
 
 if  (str player == "rebellion_lead") then {
