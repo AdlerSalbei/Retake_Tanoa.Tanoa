@@ -1,1 +1,1 @@
-[player] execVM "loadouts\_client.sqf";
+[] call rt_fnc_loadouts;

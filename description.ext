@@ -1,3 +1,10 @@
+#define MODULES_DIRECTORY node_modules
+#include "buyables\cfgBuyables.hpp"
+#include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
+#include "node_modules\grad-moneymenu\grad_moneymenu.hpp"
+//#include "node_modules\grad-armorBar\grad_armorBar.hpp"
+
+//MISC ==========================================================================
 OnLoadMission = "RetakeTanoa";
 author = "Slant & Salbei für Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "Retake Tanoa von den Russen und Kollaborateure!"; //appears in overview and loading screen
@@ -11,6 +18,7 @@ respawnDelay = 5;	//seconds
 respawnOnStart = -1;
 respawnTemplatesWest[] = {"MenuPosition"};
 
+//CORPS & WRECKS =================================================================
 corpseManagerMode = 1; 					// Type of removed bodies: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable
 corpseLimit = 30	; 						// Max number of bodies which can be available at the same time. When exceeded, start deleting immediately.
 corpseRemovalMinTime = 300; 		// Minimal time in seconds a body stays in the scene (can't be removed sooner).
@@ -23,6 +31,7 @@ wreckRemovalMaxTime = 1200; // Maximal time in seconds after which a wreck is re
 
 taskManagement_propagate = 1;
 
+//HEADER =======================================================================
 class Header
 {
 	gameType = COOP;
@@ -30,7 +39,7 @@ class Header
 	maxPlayers = 50;
 };
 
-
+//PARAMETER ====================================================================
 class Params
 {
 	class Simultaneous_tasks
@@ -42,6 +51,7 @@ class Params
 	};
 };
 
+//BFT ==========================================================================
 class ACE_Settings {
     class ace_map_BFT_Interval {
     value = 5;
@@ -57,39 +67,21 @@ class ace_map_BFT_HideAiGroups {
 	};
 };
 
-class CfgFunctions 
-{
-	class F
-	{
-		class cache
-		{
-			file = "helpers\eVehCache";
-			class cInit {};
-			class cTracker {};
-			class nearPlayer {};
-		};
-	}
-  
-  class r0ed
-	{
-		tag = "r0ed";
-		class SurvivableCrashes
-		{
-			file = "helpers\survivableCrashes\functions";
-			class vehicleCrashLocal{};
-			class crashVisualEffects{};
-			class vehicleInit{};
-		};
-	};
+//FUNCTIONS ====================================================================
+class CfgFunctions {
+    #include "functions\cfgFunctions.hpp"
+    #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
+	#include "node_modules\grad-moneymenu\cfgFunctions.hpp"
+	//#include "node_modules\grad-armorBar\cfgFunctions.hpp"
 };
 
-class CfgSounds {
-	class AutorotationWarn
-	{
-		name = "AutorotationWarn";
-		sound[]={"helpers\survivableCrashes\sounds\ACE_AutorotationWarning.ogg",4,1};
-		titles[]={};
-	};
-	
-};
 
+//Money Menu ==================================================================
+class CfgGradMoneymenu {
+    canGiveDefault = 1;                                                    
+    canTransferToSidesDefault[] = {};
+    canTakeFromDeadDefault = 1;        
+    canSendDirectlyDefault = 0;                                    
+    canTakeFromSurrenderedDefault = 1;                                                                                      
+    atmObjects[] = {};                                      
+};
