@@ -1,8 +1,6 @@
 private ["_radioFixArray"];
 params ["_radio"];
 
-diag_log format ["RT: Removing Tfar radio id: %1", _radio];
-
 _radioFixArray = _radio splitString "_";
 
 if (count _radioFixArray > 0) then{
@@ -11,6 +9,4 @@ if (count _radioFixArray > 0) then{
 		 _radioFixArray joinString "_";
 	};
 };
-
-diag_log format ["RT: Returning radio: %1", _radio];
 _radio;

@@ -40,7 +40,7 @@ diag_log format ["EH: Index %1", _index];
 //if it is not running, spawn it. Else do nothing.
 if (_index != -1) then {
 	diag_log format ["EH: Made it to spawn task, spawning number %1 now.", _taskID];
-	[] call (missionNamespace getVariable [format ["taskID%1", _taskID],"taskID0"]);
+	[_index] call rt_fnc_spawnHandler;
 } else {
 	diag_log format ["EH: Task(ID: %1) allready running!", _taskID];
 };
