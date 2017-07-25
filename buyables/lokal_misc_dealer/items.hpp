@@ -55,13 +55,6 @@ class Items {
         stock = 20;
     };
 	
-	class LIB_Binocular_GER {
-        displayName = "Binocular";
-		description = "Binocular with a scratch, no good Officer wants a damaged one.";
-        price = 700;
-        stock = 10;
-    };
-	
 	class ACE_EntrenchingTool {
         displayName = "Entrenching Tool";
 	description = "Tool to build small trenches.";
