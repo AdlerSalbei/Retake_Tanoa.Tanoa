@@ -5,10 +5,9 @@ _vehicles = vehicles;
 
 if (isNil "_vehicles") exitWith {};
 {
-	if(!isnull _x && alive _x ) then {
+	if(!isNull _x && alive _x ) then {
 
 		_vehType = typeOf _x;
-		diag_log format ["Vehicle Type: %1, Name: %2", _vehType];
 		if (str _vehType != "WeaponHolderSimulated") then {
 			
 			//base
@@ -19,11 +18,26 @@ if (isNil "_vehicles") exitWith {};
 			//cargo
 			_gear = [(getBackpackCargo _x), (getItemCargo _x), (getMagazineCargo _x), (getWeaponCargo _x)];
 			_fuel = getFuelCargo _x;
+			
+			//Vehicle spezifics
 			_varName = vehicleVarName _x;
-	
+			_killTimer = _x getVariable "SLB_KILLTIMER";
+			if (isNil "_killTimer") then {_killTimer = 5};
+			_var1 = profileNamespace setVariable "SLB_Retake_Tanoa_Vehicle";
+			if !(isNil "_var") then {
+				params ["", "_oldPos", "_oldDir"];
+				if (_oldPos != _pos || _oldDir != _dir || _pos inArea RT_BASE_MARKER) then {
+					_x setVariable ["SLB_KILLTIMER", 5];
+				}else{
+					_killTimer = _killTimer -1;
+				};
+			};
+			
 			//save array composition
-			_value pushback [_vehType, _pos, _dir, _health, _gear, _fuel, _varName];
-		}
+			if (_killTimer > 0) then {
+				_value pushback [_vehType, _pos, _dir, _health, _gear, _fuel, _varName, _killTimer];
+			};
+		};
 	};
 } forEach _vehicles;
 

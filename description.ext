@@ -2,7 +2,6 @@
 #include "buyables\cfgBuyables.hpp"
 #include "node_modules\grad-listBuymenu\grad_listBuymenu.hpp"
 #include "node_modules\grad-moneymenu\grad_moneymenu.hpp"
-//#include "node_modules\grad-armorBar\grad_armorBar.hpp"
 
 //MISC ==========================================================================
 OnLoadMission = "RetakeTanoa";
@@ -72,9 +71,7 @@ class CfgFunctions {
     #include "functions\cfgFunctions.hpp"
     #include "node_modules\grad-listbuymenu\cfgFunctions.hpp"
 	#include "node_modules\grad-moneymenu\cfgFunctions.hpp"
-	//#include "node_modules\grad-armorBar\cfgFunctions.hpp"
 };
-
 
 //Money Menu ==================================================================
 class CfgGradMoneymenu {
@@ -84,4 +81,9 @@ class CfgGradMoneymenu {
     canSendDirectlyDefault = 0;                                    
     canTakeFromSurrenderedDefault = 1;                                                                                      
     atmObjects[] = {};                                      
+};
+
+class aissp_configs
+{
+	#include "node_modules\LV\config_aissp.hpp"
 };
