@@ -1,6 +1,7 @@
 class rt {
 	class common {
         file = functions\common;
+		class addMissionMenu {};
 		class missionIntro {};
 		class tfar_remove_id {};
 		class loadouts {};
@@ -8,22 +9,21 @@ class rt {
 	class database {
         file = functions\database;
 		class getPlayerFromDB {};
-		class getTaskState {};
 		class getVehiclesFromDB {};
 		class savePlayerInDB {};
 		class saveTrigger {};
-		class fn_saveVehiclesArray {};
-		class fn_saveVehiclesInDB {};
-		class fn_saveWeatherAndDateInDB {};
+		class saveVehiclesInDB {};
+		class saveWeatherAndDateInDB {};
 	};
-	class server {
-        file = functions\server;
-		
+	class missions {
+        file = functions\missions;
+		class cleanUp {};
+		class spawnSmallGarrison {};
+		class spawnSmalRaodblock {};
 	};
 	class settings {
         file = functions\settings;
 		class medical_settings {};
 		class tfarsettings {};
-		
 	};
 };

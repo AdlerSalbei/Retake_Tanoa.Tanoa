@@ -23,9 +23,10 @@ if (isNil "_vehicles") exitWith {};
 			_varName = vehicleVarName _x;
 			_killTimer = _x getVariable "SLB_KILLTIMER";
 			if (isNil "_killTimer") then {_killTimer = 5};
-			_var1 = profileNamespace setVariable "SLB_Retake_Tanoa_Vehicle";
-			if !(isNil "_var") then {
-				params ["", "_oldPos", "_oldDir"];
+			_var1 = profileNamespace getVariable "SLB_Retake_Tanoa_Vehicle";
+			if !(isNil "_var1") then {
+				_var1 params ["", "_oldPos", "_oldDir"];
+				diag_log format ["Retake: %1/%3, %2/%4", _pos, _dir, _oldPos, _oldDir];
 				if (_oldPos != _pos || _oldDir != _dir || _pos inArea RT_BASE_MARKER) then {
 					_x setVariable ["SLB_KILLTIMER", 5];
 				}else{

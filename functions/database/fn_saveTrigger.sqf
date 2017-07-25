@@ -16,4 +16,3 @@
 		[_savePlayer, 30, []] call CBA_fnc_addPerFrameHandler;
 	};
 },[], 60] call CBA_fnc_waitAndExecute;
-

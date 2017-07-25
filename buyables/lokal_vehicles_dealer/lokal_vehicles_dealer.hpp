@@ -1,4 +1,4 @@
-class lokal_arms_dealer {
+class lokal_vehicles_dealer {
     #include "cars.hpp"
 	#include "trucks.hpp"
 	#include "ifv.hpp"

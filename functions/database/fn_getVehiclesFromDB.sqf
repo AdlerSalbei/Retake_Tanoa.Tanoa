@@ -7,7 +7,7 @@ if (!isServer) exitWith {};
 {
     _x params ["_veh", "_pos", "_dir", "_healthArray", "_gearArray", "_fuel", "_varName", "_killTimer"];
     if (!isNil "_veh") then {
-		
+		diag_log format ["Retake: %1", _fuel];
 		//spawn vehicle
 		_veh = createVehicle [_veh, _pos, [], 0, "CAN_COLLIDE"];
 		_veh setDir _dir;
@@ -26,7 +26,6 @@ if (!isServer) exitWith {};
 		clearBackpackCargoGlobal _veh;
 
 		{
-			diag_log format ["X: %1", _x];
 			if !(_x isEqualTo [[],[]]) then {	
 				switch (_forEachIndex) do {
 					case 0: { {_veh addBackpackCargoGlobal [_x select 0, _x select 1]; } forEach _x;};

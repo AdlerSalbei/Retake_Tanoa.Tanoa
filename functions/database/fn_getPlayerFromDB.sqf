@@ -6,8 +6,6 @@ _healthArray = [];
 _value = profileNamespace getVariable "SLB_Retake_Tanoa_Player";
 
 if  (isNil "_value") exitWith {
-	LOADSETUPDONE = true;
-	publicVariable "LOADSETUPDONE";
 	diag_log format ["Retake: No save %1", _unit];
 	forceRespawn player;
 };
@@ -34,3 +32,4 @@ removeAllAssignedItems _unit;
 removeBackpack _unit;
 
 _unit setUnitLoadout _gearArray;
+LOADSETUPDONE = true;

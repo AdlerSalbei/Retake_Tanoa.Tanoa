@@ -83,7 +83,6 @@ class CfgGradMoneymenu {
     atmObjects[] = {};                                      
 };
 
-class aissp_configs
-{
+class aissp_configs {
 	#include "node_modules\LV\config_aissp.hpp"
 };
