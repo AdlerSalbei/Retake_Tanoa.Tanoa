@@ -19,7 +19,7 @@ class rt {
         file = functions\missions;
 		class cleanUp {};
 		class spawnSmallGarrison {};
-		class spawnSmalRaodblock {};
+		class spawnSmallRoadblock {};
 	};
 	class settings {
         file = functions\settings;

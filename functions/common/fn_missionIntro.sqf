@@ -13,13 +13,12 @@ _this spawn {
 	];
 	
 	// Starting quote as volume fades in.
-	_duration = 1;
 	titleText [_quote,"PLAIN"];
 	waitUntil {!isNil "LOADSETUPDONE"};
 
-	titleFadeOut _duration;
-	_duration fadeSound 1;
-	sleep (_duration - 2);
+	titleFadeOut 5;
+	5 fadeSound 1;
+	sleep 3;
 
 	// New "sitrep style" text in bottom right corner, typed out over time.
 	[ 

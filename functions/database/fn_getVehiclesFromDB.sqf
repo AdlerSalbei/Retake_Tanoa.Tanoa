@@ -5,19 +5,20 @@ if (!isServer) exitWith {};
 
 //reconstruct each vehicle stored in "SLB_Retake_Tanoa_Vehicle"
 {
-    _x params ["_veh", "_pos", "_dir", "_healthArray", "_gearArray", "_fuel", "_varName", "_killTimer"];
-    if (!isNil "_veh") then {
+    _x params ["_vehName", "_pos", "_dir", "_healthArray", "_gearArray", "_fuel", "_varName"];
+	diag_log format ["Retake Vehicle: %1, %2, %3, %4, %5",_vehName,_pos,_dir,_fuel,_varName];
+	diag_log format ["Retake Vehicle: %1, %2",_healthArray,_gearArray];
+    if (!isNil "_vehName") then {
 		diag_log format ["Retake: %1", _fuel];
 		//spawn vehicle
-		_veh = createVehicle [_veh, _pos, [], 0, "CAN_COLLIDE"];
+		_veh = createVehicle [_vehName, _pos, [], 0, "CAN_COLLIDE"];
 		_veh setDir _dir;
 		_veh setPos _pos;
 
 		//set health
-		_health = _healthArray select 2;
 		{
 			_veh setHitIndex [_forEachIndex, _x];
-		} forEach _health;
+		} forEach (_healthArray select 2);
 		
 		//inventory
 		clearWeaponCargoGlobal _veh;
@@ -37,6 +38,5 @@ if (!isServer) exitWith {};
 		} forEach _gearArray;
 		_veh setFuel _fuel;
 		_veh setVehicleVarName _varName;
-		_veh setVariable ["SLB_KILLTIMER", _killTimer];
 	};
 } forEach (profileNamespace getVariable "SLB_Retake_Tanoa_Vehicle");
