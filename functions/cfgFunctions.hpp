@@ -1,6 +1,7 @@
 class rt {
 	class common {
         file = functions\common;
+		class addBuyMenu {};
 		class addMissionMenu {};
 		class missionIntro {};
 		class tfar_remove_id {};

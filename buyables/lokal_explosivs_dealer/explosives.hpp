@@ -2,8 +2,8 @@ class explosives {
     displayName = "Explosives";
     kindOf = "Ammunition";
 	
-	class LIB_shg24 {
-        displayName = "LIB_shg24";
+	class rhsusf_m112_mag {
+        displayName = "M112";
         price = 0;
         stock = 2;
     };

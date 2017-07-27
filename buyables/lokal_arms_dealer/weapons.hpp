@@ -1,11 +1,11 @@
 class Weapons {
 	displayName = "Weapons";
 	kindOf = "Weapons";
-	class LIB_MP40 {
-		displayName = "MP40 Mashienenpistole + 2 Magazins";
-		description = "The MP 40 (Maschinenpistole 40) was a submachine gun chambered for the 9×19mm Parabellum cartridge.";
+	class rhs_weap_m4a1_blockII {
+		displayName = "M4 BLOCK II + 2 Magazins";
+		description = "";
 		price = 550;
 		stock = 20;
-		code = "(_this select 0) addItemToVest 'LIB_32Rnd_9x19'; (_this select 0) addItemToVest 'LIB_32Rnd_9x19';";
+		code = "(_this select 0) addItemToVest 'rhs_mag_30Rnd_556x45_Mk318_Stanag'; (_this select 0) addItemToVest 'rhs_mag_30Rnd_556x45_Mk318_Stanag';";
 	};
 };

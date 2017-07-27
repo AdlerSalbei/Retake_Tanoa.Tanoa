@@ -1,15 +1,14 @@
 class ifv {
-    permissionLevel = 3;
+    //permissionLevel = 3;
 
     displayName = "IFV";
     kindOf = "Vehicles";
     spawnEmpty = 1;
 	
-	class LIB_Kfz1 {
-        displayName = "Kfz 1";
-        price = 2000;
+	class RHS_M2A2_wd {
+        displayName = "M2A2";
+        price = 0;
         stock = 10;
-		code = "if (isNil 'BLUFORSPAWN' && isServer) then {deleteVehicle (_this select 2); VEHICLEARRAY pushBack [(_this select 1), 0]; publicVariable 'VEHICLEARRAY';};";
     };
 };
 

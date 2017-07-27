@@ -2,9 +2,9 @@ class accessories {
     displayName = "Accessories";
     kindOf = "Items";
 
-    class lib_8Rnd_9x19 {
-        displayName = "9mm 8Rnd";
-        description = "Used in:<br/>P38";
+    class optic_ACO_grn {
+        displayName = "ACO";
+        description = "Used in:<br/>M4";
         price = 10;
         stock = 500;
     };

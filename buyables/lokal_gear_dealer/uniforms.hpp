@@ -2,7 +2,7 @@ class uniforms {
 	kindOf = "Wearables";
 	displayName = "Uniforms";
 		
-	class U_LIB_GER_Soldier_camo {
+	class rhssaf_uniform_m10_digital_tan_boots {
         displayName = "1";
         price = 0;
         stock = 100;

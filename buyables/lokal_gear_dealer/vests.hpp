@@ -2,7 +2,7 @@ class vests {
 	kindOf = "Wearables";
 	displayName = "Vests";
 	
-	class V_LIB_GER_VestMP40 {
+	class rhssaf_vest_md99_md2camo {
         displayName = "Vest MP 40";
         price = 0;
         stock = 10;

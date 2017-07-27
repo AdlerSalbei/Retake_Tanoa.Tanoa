@@ -9,7 +9,7 @@ if (isNil "_vehicles") exitWith {};
 
 		_vehType = typeOf _x;
 		diag_log format ["RT Vehicle %1, Name: %2", _vehType, vehicleVarName _x];
-		if (str _vehType != "WeaponHolderSimulated" || isNil (str (vehicleVarName _x))) then {
+		if (str _vehType != "WeaponHolderSimulated" || (str (vehicleVarName _x)) == "" || (str _vehType != "Laptop_EP1")) then {
 			
 			//base
 			_pos = getPos _x;
@@ -22,7 +22,9 @@ if (isNil "_vehicles") exitWith {};
 			_magazines = magazinesAllTurrets _x;
 			
 			//save array composition
+			/*
 			_value pushback [_vehType, _pos, _dir, _health, _gear, _fuel, _magazines];
+			*/
 		};
 	};
 } forEach _vehicles;
