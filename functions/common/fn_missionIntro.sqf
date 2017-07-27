@@ -15,7 +15,7 @@ _this spawn {
 	// Starting quote as volume fades in.
 	titleText [_quote,"PLAIN"];
 	waitUntil {!isNil "LOADSETUPDONE"};
-
+	
 	titleFadeOut 5;
 	5 fadeSound 1;
 	sleep 3;

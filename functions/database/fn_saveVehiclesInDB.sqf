@@ -8,7 +8,8 @@ if (isNil "_vehicles") exitWith {};
 	if(!isNull _x && alive _x ) then {
 
 		_vehType = typeOf _x;
-		if (str _vehType != "WeaponHolderSimulated") then {
+		diag_log format ["RT Vehicle %1, Name: %2", _vehType, vehicleVarName _x];
+		if (str _vehType != "WeaponHolderSimulated" || isNil (str (vehicleVarName _x))) then {
 			
 			//base
 			_pos = getPos _x;
@@ -18,11 +19,10 @@ if (isNil "_vehicles") exitWith {};
 			//cargo
 			_gear = [(getBackpackCargo _x), (getItemCargo _x), (getMagazineCargo _x), (getWeaponCargo _x)];
 			_fuel = fuel _x;
+			_magazines = magazinesAllTurrets _x;
 			
-			//Vehicle spezifics
-			_varName = vehicleVarName _x;
 			//save array composition
-			_value pushback [_vehType, _pos, _dir, _health, _gear, _fuel, _varName];
+			_value pushback [_vehType, _pos, _dir, _health, _gear, _fuel, _magazines];
 		};
 	};
 } forEach _vehicles;
